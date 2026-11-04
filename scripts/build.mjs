@@ -201,7 +201,6 @@ ${analyticsTag(content)}
 <style>
 *{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#141414;font-family:'Be Vietnam Pro',Helvetica,Arial,sans-serif}
 a{color:#e8590c;text-decoration:none}a:hover{color:#1f9d4d}
-header{background:rgba(250,250,248,.92);border-bottom:1px solid #ececE6}
 .wrap{max-width:760px;margin:0 auto;padding:0 24px}.bar{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
 .brand{font-weight:800;color:#141414;font-size:16px;display:flex;align-items:center;gap:10px}.brand img{width:34px;height:34px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.14)}
 .meta{display:flex;gap:10px;font-size:12px;font-weight:800;letter-spacing:.06em}
@@ -227,14 +226,24 @@ ${LANG_CSS}
 .clamp2,.clamp3{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}.clamp2{-webkit-line-clamp:2}.clamp3{-webkit-line-clamp:3}
 .card{height:100%}.card .txt{display:flex;flex-direction:column;gap:10px;flex:1}
 .more{display:block;margin:32px auto 0;font:inherit;font-weight:700;font-size:15px;border:1.5px solid #141414;background:none;border-radius:999px;padding:11px 26px;cursor:pointer}
-footer{padding:40px 0;color:#6a6a64;font-size:14px}
+.hd-top{background:#141414;color:#e9e9e4;font-size:13px}.hd-top>div{max-width:1200px;margin:0 auto;padding:9px 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.hd-top a{color:#ff8a45;font-weight:700}.hd-top a:hover{color:#fff}
+.hd{position:sticky;top:0;z-index:20;background:rgba(250,250,248,.92);backdrop-filter:blur(10px);border-bottom:1px solid #ececE6}.hd>div{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.hd-logo{display:flex;align-items:center;gap:10px;color:#141414}.hd-logo:hover{color:#141414}.hd-logo img{width:40px;height:40px;border-radius:11px;box-shadow:0 2px 8px rgba(0,0,0,.14);display:block}.hd-logo span{display:flex;flex-direction:column;line-height:1.15}.hd-logo b{font-weight:800;font-size:16px}.hd-logo i{font-style:normal;font-size:10px;font-weight:700;letter-spacing:.12em;color:#6a6a64}
+.hd-nav{display:flex;gap:24px;flex-wrap:wrap;font-size:14px;font-weight:600}.hd-nav a{color:#141414}.hd-nav a:hover{color:#e8590c}
+.hd-cta{background:#e8590c;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:700}.hd-cta:hover{background:#c94a05;color:#fff}
+.back{display:inline-block;margin-top:8px;font-weight:700}
+.ft{background:#141414;color:#c9c9c2;margin-top:48px}.ft>div{max-width:1200px;margin:0 auto;padding:28px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px}.ft strong{font-weight:800;color:#fff}.ft nav{display:flex;gap:18px;flex-wrap:wrap}.ft a{color:#c9c9c2}.ft a:hover{color:#ff8a45}
 </style></head><body>
-<header><div class="bar"><a class="brand" href="${lang.base}/"><img src="${esc(content.logo)}" alt="" width="34" height="34">KỸ SƯ THẬP CẨM</a>
-<nav style="display:flex;gap:20px;font-size:14px;font-weight:600;align-items:center"><a href="${lang.base}/#thiet-bi">${esc(content.ui.navDevices)}</a><a href="${lang.base}/${lang.articles}/">${esc(content.ui.navShare)}</a><a href="${lang.base}/#lien-he">${esc(content.ui.navCta.replace(/\s*↗/, ''))}</a>${langMenuHtml(lang, hrefs)}</nav></div></header>
+<div class="hd-top"><div><span>${esc(content.ui.topbar)}</span><span>${esc(content.ui.city)} · <a href="tel:${esc(content.phoneLink)}">${esc(content.phoneDisplay)}</a></span></div></div>
+<header class="hd"><div><a class="hd-logo" href="${lang.base}/"><img src="${esc(content.logo)}" alt="Kỹ Sư Thập Cẩm" width="40" height="40"><span><b>KỸ SƯ THẬP CẨM</b><i>${esc(content.ui.tagline)}</i></span></a>
+<nav class="hd-nav"><a href="${lang.base}/#linh-vuc">${esc(content.ui.navFields)}</a><a href="${lang.base}/#thiet-bi">${esc(content.ui.navDevices)}</a><a href="${lang.base}/#cach-hoat-dong">${esc(content.ui.navHow)}</a>${content.projects.length ? `<a href="${lang.base}/#du-an">${esc(content.ui.navProjects)}</a>` : ''}<a href="${lang.base}/${lang.articles}/">${esc(content.ui.navShare)}</a><a href="${lang.base}/#hoi-dap">${esc(content.ui.navFaq)}</a></nav>
+<a class="hd-cta" href="${lang.base}/#lien-he">${esc(content.ui.navCta)}</a>${langMenuHtml(lang, hrefs)}</div></header>
 <main class="wrap${wide ? ' wide' : ''}">${body}
 <div class="cta"><strong>${esc(content.ui.articleCta)}</strong><br>
 <a href="tel:${esc(content.phoneLink)}">${esc(content.phoneDisplay)}</a> · <a href="mailto:${esc(content.contactEmail)}">${esc(content.contactEmail)}</a></div>
-</main><script>${LANG_JS}</script><footer><div class="wrap"><a href="${lang.base}/">${esc(content.ui.backHome)}</a></div></footer></body></html>`;
+<a class="back" href="${lang.base}/">${esc(content.ui.backHome)}</a>
+</main><script>${LANG_JS}</script>
+<footer class="ft"><div><strong>KỸ SƯ THẬP CẨM</strong><span>${esc(content.ui.footerCopy)}</span><nav><a href="tel:${esc(content.phoneLink)}">${esc(content.ui.footPhone)}</a><a href="mailto:${esc(content.contactEmail)}">${esc(content.ui.footEmail)}</a><a href="${esc(content.fbUrl)}" target="_blank" rel="noopener">${esc(content.ui.footFb)}</a><a href="#top">${esc(content.ui.footTop)}</a></nav></div></footer></body></html>`;
 
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
