@@ -3,7 +3,8 @@ title: "Chọn PLC cho máy nhỏ: cần cân nhắc gì"
 date: 2026-11-04
 tag: PLC
 color: "#e8590c"
-excerpt: "Số I/O, kiểu ngõ ra, truyền thông và khả năng mở rộng — những điều cần chốt trước khi chọn model PLC cho máy nhỏ."
+excerpt: Số I/O, kiểu ngõ ra, truyền thông và khả năng mở rộng — những điều cần
+  chốt trước khi chọn model PLC cho máy nhỏ.
 draft: false
 ---
 Với một máy đơn lẻ, PLC thường chỉ là một hộp nhỏ trong tủ điện. Nhưng chọn sai model có thể khiến bạn phải đi dây lại, mua thêm module hoặc đổi cả phần mềm lập trình sau vài tháng. Dưới đây là những điểm nên chốt trước khi đặt hàng.
