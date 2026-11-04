@@ -35,7 +35,7 @@
     {
       "tag": "IoT",
       "color": "#1f9d4d",
-      "title": "IoT công nghiệp",
+      "title": "IoT Công nghiệp",
       "desc": "Kết nối cảm biến và máy móc để biến dữ liệu vận hành thành thông tin dễ dùng.",
       "items": [
         "Cảm biến & gateway",
