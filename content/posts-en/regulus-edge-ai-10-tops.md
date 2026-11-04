@@ -3,7 +3,7 @@ title: "REGULUS Edge AI SoC: 10 TOPS under 3W for robotics and IoT"
 date: 2026-11-04
 tag: IoT
 color: "#1f9d4d"
-cover: /media/regulus-edge-ai-news.svg
+cover: https://static.wixstatic.com/media/4ddc53_93601241e41b4bd096ede65dd00377bc~mv2.png
 excerpt: "Ceva and Mobilint combine SensPro AI DSP and NeuPro-Nano NPU for efficient on-device inference in robots, smart cameras and IoT."
 draft: false
 ---
@@ -37,4 +37,5 @@ Potential uses include conveyor-based defect detection, product counting, safety
 - [IoT Now — Ceva and Mobilint advance Physical AI with REGULUS edge AI SoC (November 3, 2026)](https://iot-now.com/2026/11/03/159158-ceva-mobilint-physical-ai-regulus-edge-ai-soc/)
 - [Mobilint — REGULUS](https://www.mobilint.com/regulus)
 
-*Summarized and edited by Kỹ Sư Thập Cẩm from the cited sources. The cover is an original editorial illustration rather than an official product photograph.*
+*Summarized and edited by Kỹ Sư Thập Cẩm from the cited sources.*
+*Cover image: REGULUS chip image from Mobilint's official website, linked to the manufacturer's image host. Image rights remain with Mobilint.*
