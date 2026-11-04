@@ -37,7 +37,8 @@ const TRANSLATABLE = {
   projects: ['tag', 'title', 'desc'],
   faqs: ['q', 'a'],
 };
-const SHARED_SINGLE = ['phoneDisplay', 'phoneLink', 'contactEmail', 'fbUrl', 'showBlog'];
+const SHARED_SINGLE = ['phoneDisplay', 'phoneLink', 'contactEmail', 'fbUrl', 'showBlog', 'logo'];
+const ICON_LINKS = `<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">`;
 const isEmpty = (v) => v === undefined || v === null || v === '' || (Array.isArray(v) && v.length === 0);
 const mapItems = (list, fn) => (Array.isArray(list) ? list.map(fn) : []);
 function stripTranslations(c) {
@@ -92,7 +93,7 @@ const relPath = (p, prefix) => {
 const relativizeHtml = (html, prefix) =>
   html.replace(/\b(href|src)="\/(?!\/)([^"]*)"/g, (_, attr, rest) => `${attr}="${relPath(rest, prefix)}"`);
 const relativizeJs = (js, prefix) =>
-  js.replace(/"(image|cover|href|altHref|articlesHref)": "\/(?!\/)([^"]*)"/g, (_, key, rest) => `"${key}": "${relPath(rest, prefix)}"`);
+  js.replace(/"(image|cover|logo|href|altHref|articlesHref)": "\/(?!\/)([^"]*)"/g, (_, key, rest) => `"${key}": "${relPath(rest, prefix)}"`);
 
 async function loadArticles(lang) {
   const dir = path.join(root, 'content', lang.posts);
@@ -125,6 +126,7 @@ const shell = (lang, content, { title, description, body, alt }) => `<!doctype h
 <html lang="${lang.code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)} · Kỹ Sư Thập Cẩm</title>
 <meta name="description" content="${esc(description)}">
+${ICON_LINKS}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -132,7 +134,7 @@ const shell = (lang, content, { title, description, body, alt }) => `<!doctype h
 a{color:#e8590c;text-decoration:none}a:hover{color:#1f9d4d}
 header{background:rgba(250,250,248,.92);border-bottom:1px solid #ececE6}
 .wrap{max-width:760px;margin:0 auto;padding:0 24px}.bar{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-.brand{font-weight:800;color:#141414;font-size:16px}
+.brand{font-weight:800;color:#141414;font-size:16px;display:flex;align-items:center;gap:10px}.brand img{width:34px;height:34px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.14)}
 .meta{display:flex;gap:10px;font-size:12px;font-weight:800;letter-spacing:.06em}
 h1{font-size:clamp(28px,4vw,42px);line-height:1.15;letter-spacing:-.02em;margin:12px 0 0}
 .cover{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:18px;margin-top:28px;display:block}
@@ -146,7 +148,7 @@ h1{font-size:clamp(28px,4vw,42px);line-height:1.15;letter-spacing:-.02em;margin:
 ${LANG_CSS}
 footer{padding:40px 0;color:#6a6a64;font-size:14px}
 </style></head><body>
-<header><div class="bar"><a class="brand" href="${lang.base}/">KỸ SƯ THẬP CẨM</a>
+<header><div class="bar"><a class="brand" href="${lang.base}/"><img src="${esc(content.logo)}" alt="" width="34" height="34">KỸ SƯ THẬP CẨM</a>
 <nav style="display:flex;gap:20px;font-size:14px;font-weight:600;align-items:center"><a href="${lang.base}/#thiet-bi">${esc(content.ui.navDevices)}</a><a href="${lang.base}/${lang.articles}/">${esc(content.ui.navShare)}</a><a href="${lang.base}/#lien-he">${esc(content.ui.navCta.replace(/\s*↗/, ''))}</a>${langMenuHtml(lang)}</nav></div></header>
 <main class="wrap">${body}
 <div class="cta"><strong>${esc(content.ui.articleCta)}</strong><br>
@@ -169,6 +171,7 @@ for (const lang of LANGS) {
   content.metaDescription = content.metaDescription || defaults.metaDescription || '';
   content.ui = { ...(defaults.ui || {}), ...(content.ui || {}) };
   content.projects = content.projects || [];
+  content.logo = content.logo || '/media/logo.png';
   for (const key of REQUIRED) {
     if (!(key in content)) throw new Error(`${lang.site}: missing required field "${key}"`);
   }
@@ -197,7 +200,7 @@ for (const lang of LANGS) {
     .replace('<html lang="vi">', `<html lang="${lang.code}">`)
     .replace('{{ siteTitle }}', esc(content.siteTitle || 'Kỹ Sư Thập Cẩm'))
     .replace('{{ metaDescription }}', esc(content.metaDescription || ''))
-    .replace('</head>', `${hreflang}\n<style>${LANG_CSS}</style><script>${LANG_JS}</script>\n</head>`);
+    .replace('</head>', `${hreflang}\n${ICON_LINKS}\n<style>${LANG_CSS}</style><script>${LANG_JS}</script>\n</head>`);
   const outDir = path.join(output, lang.base.replace(/^\//, ''));
   await mkdir(outDir, { recursive: true });
   const homePrefix = lang.base ? '../' : '';

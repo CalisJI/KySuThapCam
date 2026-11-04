@@ -8,6 +8,9 @@ content:
   path: content/site.json
   format: json
   fields:
+  - name: logo
+    label: Logo website (hiện ở đầu trang; vuông, tối thiểu 256x256)
+    type: image
   - name: siteTitle
     label: Tiêu đề trang (tab trình duyệt)
     type: string
