@@ -8,6 +8,8 @@
   "phoneLink": "+84394469461",
   "contactEmail": "kysuthapcam@gmail.com",
   "fbUrl": "https://www.facebook.com/profile.php?id=61596332606004",
+  "googleVerification": "content=\"google-site-verification=42NXACx5VxNdfp1joSH1j5EqMDxntTtihk3AcSs9MYk\"",
+  "siteUrl": "https://kysuthapcam.com",
   "showBlog": true,
   "fields": [
     {
@@ -278,6 +280,5 @@
     "articleCta": "Cần tư vấn thiết bị, cảm biến cho dây chuyền?",
     "backHome": "← Về trang chủ",
     "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa."
-  },
-  "siteUrl": "https://kysuthapcam.com"
+  }
 }
