@@ -3,7 +3,7 @@ title: "Robot xếp pallet dùng cảm biến siêu âm 3D: vùng an toàn di ch
 date: 2026-11-04
 tag: Robotics
 color: "#1f9d4d"
-cover: ""
+cover: /media/robot-3d-ultrasonic-safety.svg
 excerpt: "beRobox và Sonair giới thiệu vùng bảo vệ 3D di động cho robot xếp pallet PALTZ, giúp phối hợp an toàn với người vận hành."
 draft: false
 ---
