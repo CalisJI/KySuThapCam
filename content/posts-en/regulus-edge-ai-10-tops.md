@@ -6,6 +6,7 @@ color: "#1f9d4d"
 cover: https://static.wixstatic.com/media/4ddc53_93601241e41b4bd096ede65dd00377bc~mv2.png
 excerpt: "Ceva and Mobilint combine SensPro AI DSP and NeuPro-Nano NPU for efficient on-device inference in robots, smart cameras and IoT."
 draft: false
+translation: regulus-edge-ai-10-tops
 ---
 
 On **November 3, 2026**, IoT Now reported that **Ceva and Mobilint** integrated Ceva's **SensPro AI DSP** and **NeuPro-Nano NPU** into Mobilint's **REGULUS Edge AI system-on-chip**.

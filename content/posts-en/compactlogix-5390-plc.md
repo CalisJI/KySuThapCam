@@ -6,6 +6,7 @@ color: "#e8590c"
 cover: https://rockwellautomation.scene7.com/is/image/rockwellautomation/5039-MKTGsolo_right_screw_L9100TS_noNFC.2400.png
 excerpt: "The CompactLogix 5390 brings PointMax I/O, EtherNet/IP, OPC UA and integrated safety and security features to connected machine control."
 draft: false
+translation: compactlogix-5390-plc
 ---
 
 On October 29, 2026, Control.com reported that **Rockwell Automation introduced the CompactLogix 5390**, a PLC aimed at machine builders and system integrators. According to the manufacturer's specifications cited in the report, its footprint is **43% smaller** than the CompactLogix 5380 while expanding motion-control and connectivity capabilities.

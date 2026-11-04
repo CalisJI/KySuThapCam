@@ -6,6 +6,7 @@ color: "#1f9d4d"
 cover: https://static.wixstatic.com/media/4ddc53_93601241e41b4bd096ede65dd00377bc~mv2.png
 excerpt: "Ceva và Mobilint giới thiệu REGULUS Edge AI SoC, tích hợp AI DSP và NPU để chạy AI trực tiếp trên robot, camera và thiết bị IoT."
 draft: false
+translation: regulus-edge-ai-10-tops
 ---
 
 Ngày **03/11/2026**, IoT Now đưa tin **Ceva và Mobilint** hợp tác đưa bộ xử lý **SensPro AI DSP** và bộ tăng tốc **NeuPro-Nano NPU** vào hệ thống chip **REGULUS Edge AI SoC**.

@@ -6,6 +6,7 @@ color: "#e8590c"
 cover: https://rockwellautomation.scene7.com/is/image/rockwellautomation/5039-MKTGsolo_right_screw_L9100TS_noNFC.2400.png
 excerpt: "Rockwell giới thiệu CompactLogix 5390 với PointMax I/O, EtherNet/IP, OPC UA và các tính năng an toàn, bảo mật cho nhà máy kết nối."
 draft: false
+translation: compactlogix-5390-plc
 ---
 
 Ngày 29/10/2026, Control.com đưa tin **Rockwell Automation giới thiệu CompactLogix 5390**, dòng PLC hướng tới các nhà chế tạo máy và đơn vị tích hợp hệ thống. Theo thông tin Rockwell được báo dẫn lại, dòng mới có kích thước **nhỏ hơn 43%** so với CompactLogix 5380, đồng thời mở rộng khả năng điều khiển chuyển động và kết nối công nghiệp.
