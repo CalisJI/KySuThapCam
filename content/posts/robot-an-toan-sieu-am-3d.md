@@ -3,7 +3,7 @@ title: "Robot xếp pallet dùng cảm biến siêu âm 3D: vùng an toàn di ch
 date: 2026-11-04
 tag: Robotics
 color: "#1f9d4d"
-cover: /media/robot-3d-ultrasonic-safety.svg
+cover: https://cdn.prod.website-files.com/660c0a9ae7eeb8588c079803/67bda15bb22846465c0ef194_cl2.png
 excerpt: "beRobox và Sonair giới thiệu vùng bảo vệ 3D di động cho robot xếp pallet PALTZ, giúp phối hợp an toàn với người vận hành."
 draft: false
 ---
@@ -42,3 +42,4 @@ Công nghệ đáng theo dõi đối với các dây chuyền đóng gói, thự
 - [Thông số kỹ thuật cảm biến ADAR One — Sonair](https://www.sonair.com/products)
 
 *Bài viết do Kỹ Sư Thập Cẩm biên tập và diễn giải từ các nguồn được dẫn; thông số và khả năng ứng dụng là thông tin nhà sản xuất công bố, không phải kết quả thử nghiệm độc lập tại Việt Nam.*
+*Ảnh bìa: ảnh thật cảm biến Sonair ADAR lắp trên robot di động do Sonair công bố (không phải ảnh hệ thống beRobox PALTZ được mô tả trong bài). Ảnh dẫn trực tiếp từ máy chủ Sonair; bản quyền thuộc chủ sở hữu.*
