@@ -3,7 +3,7 @@ title: "REGULUS Edge AI: Chip xử lý 10 TOPS dưới 3W cho robot và IoT"
 date: 2026-11-04
 tag: IoT
 color: "#1f9d4d"
-cover: /media/regulus-edge-ai-news.svg
+cover: https://static.wixstatic.com/media/4ddc53_93601241e41b4bd096ede65dd00377bc~mv2.png
 excerpt: "Ceva và Mobilint giới thiệu REGULUS Edge AI SoC, tích hợp AI DSP và NPU để chạy AI trực tiếp trên robot, camera và thiết bị IoT."
 draft: false
 ---
@@ -37,4 +37,5 @@ Một số hướng ứng dụng có thể cân nhắc gồm camera phát hiện
 - [IoT Now — Ceva and Mobilint advance Physical AI with REGULUS edge AI SoC (03/11/2026)](https://iot-now.com/2026/11/03/159158-ceva-mobilint-physical-ai-regulus-edge-ai-soc/)
 - [Mobilint — REGULUS](https://www.mobilint.com/regulus)
 
-*Bài viết được Kỹ Sư Thập Cẩm biên tập từ nguồn công khai. Ảnh bìa là hình minh họa do trang tự thiết kế, không phải ảnh chip chính thức.*
+*Bài viết được Kỹ Sư Thập Cẩm biên tập từ nguồn công khai.*
+*Ảnh bìa: hình sản phẩm REGULUS từ trang chính thức Mobilint; hình được dẫn trực tiếp từ máy chủ của hãng. Bản quyền thuộc Mobilint.*
