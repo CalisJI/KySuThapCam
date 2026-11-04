@@ -65,6 +65,9 @@ content:
           - name: name
             label: Tên thiết bị
             type: string
+          - name: image
+            label: Ảnh thiết bị
+            type: image
           - name: href
             label: Liên kết / nút hỏi giá
             type: string
@@ -93,6 +96,9 @@ content:
           - name: tag
             label: Nhãn
             type: string
+          - name: image
+            label: Ảnh dự án
+            type: image
           - name: title
             label: Tên dự án
             type: string
@@ -141,3 +147,44 @@ content:
           - name: a
             label: Trả lời
             type: text
+
+  - name: articles
+    label: Bài viết chia sẻ
+    type: collection
+    path: content/posts
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, date, tag]
+      primary: title
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Tiêu đề bài viết
+        type: string
+        required: true
+      - name: date
+        label: Ngày đăng
+        type: date
+        required: true
+      - name: tag
+        label: Chủ đề (PLC, IoT, Biến tần...)
+        type: string
+      - name: color
+        label: Màu nhấn (mã hex, vd #e8590c)
+        type: string
+      - name: cover
+        label: Ảnh đại diện
+        type: image
+      - name: excerpt
+        label: Mô tả ngắn (hiện trên trang chủ)
+        type: text
+      - name: draft
+        label: Nháp (không hiển thị)
+        type: boolean
+      - name: body
+        label: Nội dung
+        type: rich-text

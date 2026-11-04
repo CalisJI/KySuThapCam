@@ -5,11 +5,16 @@ Trang được dựng theo `Ky Su Thap Cam v2.dc.html` trong ZIP người dùng 
 ## Cập nhật nội dung không sửa code
 
 1. Mở Pages CMS (`app.pagescms.org`) và đăng nhập bằng GitHub.
-2. Cho phép Pages CMS truy cập repository `CalisJI/ky-su-thap-cam`.
+2. Cho phép Pages CMS truy cập repository `CalisJI/KySuThapCam`.
 3. Chọn **Nội dung trang** để sửa tiêu đề, mô tả, thông tin liên hệ, lĩnh vực dịch vụ, thiết bị, quy trình, bài viết nổi bật và FAQ.
 4. Lưu/commit trong CMS. GitHub nhận commit; sau khi nối repo với Cloudflare Pages, Cloudflare tự build và publish.
 
 Không sửa HTML khi cập nhật các trường đã cấu hình. Thêm loại nội dung hoặc bố cục mới vẫn cần thay đổi code một lần.
+
+## Đăng nội dung mới trong Pages CMS
+* **Nội dung trang → Thiết bị / Dự án**: mỗi mục có ô *Ảnh* (tải ảnh lên, lưu vào `site/media/`).
+* **Bài viết chia sẻ** (mục riêng): bấm *Add an entry*, nhập tiêu đề, ngày, chủ đề, ảnh đại diện, mô tả ngắn và nội dung (có chèn ảnh trong bài). Bài lưu ở `content/posts/*.md`, build tự tạo trang `/bai-viet/<tên-file>/`, danh sách `/bai-viet/` và hiện lên trang chủ. Bật *Nháp* để chưa hiển thị.
+* Khi chưa đủ 3 bài thật, trang chủ vẫn hiện các ô "Sắp đăng" trong *Nội dung trang → Bài viết trên trang chủ*.
 
 ## Cấu trúc
 
@@ -32,7 +37,7 @@ Mở `dist/index.html` sau khi build. Build không cần cài dependency ngoài.
 
 ## Cloudflare Pages + GitHub
 
-Trong Cloudflare Dashboard → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**, chọn repository `CalisJI/ky-su-thap-cam` và cấu hình:
+Trong Cloudflare Dashboard → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**, chọn repository `CalisJI/KySuThapCam` và cấu hình:
 
 - Production branch: `main`
 - Build command: `npm run build`
@@ -42,7 +47,7 @@ Mỗi commit từ Pages CMS lên `main` sẽ kích hoạt Cloudflare Pages build
 
 ## Pages CMS lần đầu
 
-Sau khi repository có trên GitHub, vào `app.pagescms.org`, đăng nhập bằng GitHub, cài/cho phép GitHub App trên repository `ky-su-thap-cam`, rồi mở repo. CMS đọc `.pages.yml` để hiện form biên tập. Chủ tài khoản cần tự xác nhận quyền truy cập GitHub App; không nhập mật khẩu/token vào chat.
+Sau khi repository có trên GitHub, vào `app.pagescms.org`, đăng nhập bằng GitHub, cài/cho phép GitHub App trên repository `KySuThapCam`, rồi mở repo. CMS đọc `.pages.yml` để hiện form biên tập. Chủ tài khoản cần tự xác nhận quyền truy cập GitHub App; không nhập mật khẩu/token vào chat.
 
 ## Lưu ý
 
