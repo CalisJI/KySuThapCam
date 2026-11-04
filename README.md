@@ -16,6 +16,12 @@ Không sửa HTML khi cập nhật các trường đã cấu hình. Thêm loại
 * **Bài viết chia sẻ** (mục riêng): bấm *Add an entry*, nhập tiêu đề, ngày, chủ đề, ảnh đại diện, mô tả ngắn và nội dung (có chèn ảnh trong bài). Bài lưu ở `content/posts/*.md`, build tự tạo trang `/bai-viet/<tên-file>/`, danh sách `/bai-viet/` và hiện lên trang chủ. Bật *Nháp* để chưa hiển thị.
 * Khi chưa đủ 3 bài thật, trang chủ vẫn hiện các ô "Sắp đăng" trong *Nội dung trang → Bài viết trên trang chủ*.
 
+## Hai ngôn ngữ (Tiếng Việt / English)
+* Tiếng Việt ở `/`, English ở `/en/`. Nút VI/EN ở thanh menu chuyển qua lại.
+* Pages CMS có 2 mục nội dung trang: **Nội dung trang (Tiếng Việt)** → `content/site.json` và **Nội dung trang (English)** → `content/site.en.json`. Mỗi file có đủ trường, kể cả nhóm **Các dòng chữ cố định** (menu, tiêu đề mục, nút, chân trang). Số điện thoại, email, Fanpage nhập ở cả hai file.
+* Bài viết: **Bài viết chia sẻ (Tiếng Việt)** → `content/posts/`, URL `/bai-viet/...`; **Bài viết chia sẻ (English)** → `content/posts-en/`, URL `/en/articles/...`.
+* Thêm ngôn ngữ mới: thêm 1 dòng vào `LANGS` trong `scripts/build.mjs`, tạo `content/site.<mã>.json` và mục tương ứng trong `.pages.yml`.
+
 ## Cấu trúc
 
 - `site/index.html` — bản HTML nguồn theo ZIP v2, đã thay các nội dung CMS bằng binding.

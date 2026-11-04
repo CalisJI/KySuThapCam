@@ -7,67 +7,53 @@ import { marked } from 'marked';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const source = path.join(root, 'site');
 const output = path.join(root, 'dist');
-const contentPath = path.join(root, 'content', 'site.json');
-const postsDir = path.join(root, 'content', 'posts');
 
-const content = JSON.parse(await readFile(contentPath, 'utf8'));
-for (const key of ['heroTitle', 'heroHighlight', 'heroDescription', 'contactEmail', 'phoneDisplay', 'phoneLink', 'fields', 'products', 'steps', 'posts', 'faqs']) {
-  if (!(key in content)) throw new Error(`Missing required content field: ${key}`);
-}
-if (!Array.isArray(content.posts) || !Array.isArray(content.fields)) {
-  throw new Error('Content schema error: posts and fields must be arrays.');
-}
+// One entry per language. Add a new entry (plus its content/site.<lang>.json and posts folder) to add a language.
+const LANGS = [
+  { code: 'vi', label: 'VI', locale: 'vi-VN', site: 'site.json', posts: 'posts', base: '', articles: 'bai-viet' },
+  { code: 'en', label: 'EN', locale: 'en-GB', site: 'site.en.json', posts: 'posts-en', base: '/en', articles: 'articles' },
+];
+
+const REQUIRED = ['heroTitle', 'heroHighlight', 'heroDescription', 'contactEmail', 'phoneDisplay', 'phoneLink', 'fields', 'products', 'steps', 'posts', 'faqs', 'ui'];
 
 const esc = (v = '') => String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const toDate = (d) => (d instanceof Date ? d : new Date(d));
-const fmtDate = (d) => {
-  const dt = toDate(d);
-  return Number.isNaN(dt.getTime()) ? '' : dt.toLocaleDateString('vi-VN', { timeZone: 'UTC' });
-};
 const isoDate = (d) => {
   const dt = toDate(d);
   return Number.isNaN(dt.getTime()) ? '' : dt.toISOString().slice(0, 10);
 };
+const fmtDate = (d, locale) => {
+  const dt = toDate(d);
+  return Number.isNaN(dt.getTime()) ? '' : dt.toLocaleDateString(locale, { timeZone: 'UTC' });
+};
 const safeColor = (c) => (/^#[0-9a-f]{3,8}$/i.test(c || '') ? c : '#e8590c');
 
-// ---- Load articles from content/posts/*.md (Pages CMS collection) ----
-const articles = [];
-let files = [];
-try { files = (await readdir(postsDir)).filter((f) => f.endsWith('.md')); } catch { /* no posts yet */ }
-for (const file of files) {
-  const { data, content: body } = matter(await readFile(path.join(postsDir, file), 'utf8'));
-  if (data.draft) continue;
-  if (!data.title) throw new Error(`Article ${file} is missing a title.`);
-  articles.push({
-    slug: file.replace(/\.md$/, ''),
-    title: String(data.title),
-    tag: data.tag || '',
-    color: safeColor(data.color),
-    cover: data.cover || '',
-    excerpt: data.excerpt || '',
-    date: data.date || '',
-    html: marked.parse(body),
-  });
+async function loadArticles(lang) {
+  const dir = path.join(root, 'content', lang.posts);
+  let files = [];
+  try { files = (await readdir(dir)).filter((f) => f.endsWith('.md')); } catch { /* none yet */ }
+  const list = [];
+  for (const file of files) {
+    const { data, content: body } = matter(await readFile(path.join(dir, file), 'utf8'));
+    if (data.draft) continue;
+    if (!data.title) throw new Error(`Article ${lang.posts}/${file} is missing a title.`);
+    list.push({
+      slug: file.replace(/\.md$/, ''),
+      title: String(data.title),
+      tag: data.tag || '',
+      color: safeColor(data.color),
+      cover: data.cover || '',
+      excerpt: data.excerpt || '',
+      date: data.date || '',
+      html: marked.parse(body),
+    });
+  }
+  list.sort((a, b) => isoDate(b.date).localeCompare(isoDate(a.date)));
+  return list;
 }
-articles.sort((a, b) => isoDate(b.date).localeCompare(isoDate(a.date)));
-const href = (a) => `/bai-viet/${encodeURIComponent(a.slug)}/`;
 
-// ---- Homepage cards: real articles first, teasers from site.json fill up to 3 ----
-const cards = articles.slice(0, 6).map((a) => ({
-  href: href(a), tag: a.tag, color: a.color, date: fmtDate(a.date), title: a.title, excerpt: a.excerpt, image: a.cover,
-}));
-for (const t of content.posts) { if (cards.length < 3) cards.push(t); }
-const homeContent = { ...content, posts: cards, articleCount: articles.length };
-
-await rm(output, { recursive: true, force: true });
-await mkdir(output, { recursive: true });
-await cp(source, output, { recursive: true });
-await writeFile(path.join(output, 'content.js'), `window.KSTC_CONTENT = ${JSON.stringify(homeContent, null, 2)};\n`, 'utf8');
-
-// ---- Static article pages ----
-const phoneLink = content.phoneLink || '';
-const shell = ({ title, description, body }) => `<!doctype html>
-<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+const shell = (lang, content, { title, description, body, alt }) => `<!doctype html>
+<html lang="${lang.code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)} · Kỹ Sư Thập Cẩm</title>
 <meta name="description" content="${esc(description)}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,28 +74,76 @@ h1{font-size:clamp(28px,4vw,42px);line-height:1.15;letter-spacing:-.02em;margin:
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:32px}
 .card{background:#fff;border-radius:20px;padding:22px;color:#141414;display:flex;flex-direction:column;gap:10px;box-shadow:0 6px 18px -10px rgba(0,0,0,.18)}
 .card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px}
+.lang{border:1.5px solid #141414;color:#141414;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:800}
 footer{padding:40px 0;color:#6a6a64;font-size:14px}
 </style></head><body>
-<header><div class="bar"><a class="brand" href="/">KỸ SƯ THẬP CẨM</a><nav style="display:flex;gap:20px;font-size:14px;font-weight:600"><a href="/#thiet-bi">Thiết bị</a><a href="/bai-viet/">Chia sẻ</a><a href="/#lien-he">Liên hệ</a></nav></div></header>
+<header><div class="bar"><a class="brand" href="${lang.base}/">KỸ SƯ THẬP CẨM</a>
+<nav style="display:flex;gap:20px;font-size:14px;font-weight:600;align-items:center"><a href="${lang.base}/#thiet-bi">${esc(content.ui.navDevices)}</a><a href="${lang.base}/${lang.articles}/">${esc(content.ui.navShare)}</a><a href="${lang.base}/#lien-he">${esc(content.ui.navCta.replace(/\s*↗/, ''))}</a><a class="lang" href="${alt.href}" hreflang="${alt.code}">${alt.label}</a></nav></div></header>
 <main class="wrap">${body}
-<div class="cta"><strong>Cần tư vấn thiết bị, cảm biến cho dây chuyền?</strong><br>
-<a href="tel:${esc(phoneLink)}">${esc(content.phoneDisplay)}</a> · <a href="mailto:${esc(content.contactEmail)}">${esc(content.contactEmail)}</a></div>
-</main><footer><div class="wrap"><a href="/">← Về trang chủ</a></div></footer></body></html>`;
+<div class="cta"><strong>${esc(content.ui.articleCta)}</strong><br>
+<a href="tel:${esc(content.phoneLink)}">${esc(content.phoneDisplay)}</a> · <a href="mailto:${esc(content.contactEmail)}">${esc(content.contactEmail)}</a></div>
+</main><footer><div class="wrap"><a href="${lang.base}/">${esc(content.ui.backHome)}</a></div></footer></body></html>`;
 
-for (const a of articles) {
-  const body = `<article style="padding-top:40px">
-<div class="meta"><span style="color:${a.color}">${esc(a.tag)}</span><span style="color:#8a8a84;font-weight:500">${esc(fmtDate(a.date))}</span></div>
+await rm(output, { recursive: true, force: true });
+await mkdir(output, { recursive: true });
+await cp(source, output, { recursive: true });
+const template = await readFile(path.join(source, 'index.html'), 'utf8');
+
+const summary = [];
+for (const lang of LANGS) {
+  const content = JSON.parse(await readFile(path.join(root, 'content', lang.site), 'utf8'));
+  for (const key of REQUIRED) {
+    if (!(key in content)) throw new Error(`${lang.site}: missing required field "${key}"`);
+  }
+  if (!Array.isArray(content.posts) || !Array.isArray(content.fields)) {
+    throw new Error(`${lang.site}: posts and fields must be arrays.`);
+  }
+  const other = LANGS.find((l) => l !== lang);
+  const alt = { code: other.code, label: other.label, href: `${other.base}/` };
+  const articles = await loadArticles(lang);
+  const href = (a) => `${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/`;
+
+  // Homepage cards: real articles first, teasers from the site file fill up to 3.
+  const cards = articles.slice(0, 6).map((a) => ({
+    href: href(a), tag: a.tag, color: a.color, date: fmtDate(a.date, lang.locale), title: a.title, excerpt: a.excerpt, image: a.cover,
+  }));
+  for (const t of content.posts) { if (cards.length < 3) cards.push(t); }
+  const homeContent = {
+    ...content, posts: cards, articleCount: articles.length,
+    articlesHref: `${lang.base}/${lang.articles}/`, altHref: alt.href, altLang: alt.code, altLabel: alt.label, lang: lang.code,
+  };
+
+  // Homepage (static <title>/<meta> so crawlers see them without running the page script)
+  const hreflang = LANGS.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${l.base}/">`).join('\n')
+    + `\n<link rel="alternate" hreflang="x-default" href="/">`;
+  const html = template
+    .replace('<html lang="vi">', `<html lang="${lang.code}">`)
+    .replace('{{ siteTitle }}', esc(content.siteTitle || 'Kỹ Sư Thập Cẩm'))
+    .replace('{{ metaDescription }}', esc(content.metaDescription || ''))
+    .replace('</head>', `${hreflang}\n</head>`);
+  const outDir = path.join(output, lang.base.replace(/^\//, ''));
+  await mkdir(outDir, { recursive: true });
+  await writeFile(path.join(outDir, 'index.html'), html, 'utf8');
+  await writeFile(path.join(outDir, 'content.js'), `window.KSTC_CONTENT = ${JSON.stringify(homeContent, null, 2)};\n`, 'utf8');
+
+  // Article pages + list page
+  for (const a of articles) {
+    const body = `<article style="padding-top:40px">
+<div class="meta"><span style="color:${a.color}">${esc(a.tag)}</span><span style="color:#8a8a84;font-weight:500">${esc(fmtDate(a.date, lang.locale))}</span></div>
 <h1>${esc(a.title)}</h1>${a.cover ? `<img class="cover" src="${esc(a.cover)}" alt="${esc(a.title)}">` : ''}
 <div class="prose">${a.html}</div></article>`;
-  const dir = path.join(output, 'bai-viet', a.slug);
-  await mkdir(dir, { recursive: true });
-  await writeFile(path.join(dir, 'index.html'), shell({ title: a.title, description: a.excerpt || a.title, body }), 'utf8');
-}
-const listBody = `<div style="padding-top:40px"><h1>Kinh nghiệm &amp; kiến thức</h1>
+    const dir = path.join(outDir, lang.articles, a.slug);
+    await mkdir(dir, { recursive: true });
+    await writeFile(path.join(dir, 'index.html'), shell(lang, content, { title: a.title, description: a.excerpt || a.title, body, alt }), 'utf8');
+  }
+  const listBody = `<div style="padding-top:40px"><h1>${esc(content.ui.blogTitle)}</h1>
 <div class="grid">${articles.length ? articles.map((a) => `<a class="card" href="${href(a)}">${a.cover ? `<img src="${esc(a.cover)}" alt="">` : ''}
-<div class="meta"><span style="color:${a.color}">${esc(a.tag)}</span><span style="color:#8a8a84;font-weight:500">${esc(fmtDate(a.date))}</span></div>
-<strong style="font-size:19px;line-height:1.35">${esc(a.title)}</strong><span style="color:#4a4a46;font-size:15px;line-height:1.6">${esc(a.excerpt)}</span></a>`).join('') : '<p>Bài viết đang được cập nhật.</p>'}</div></div>`;
-await mkdir(path.join(output, 'bai-viet'), { recursive: true });
-await writeFile(path.join(output, 'bai-viet', 'index.html'), shell({ title: 'Chia sẻ kỹ thuật', description: 'Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa.', body: listBody }), 'utf8');
+<div class="meta"><span style="color:${a.color}">${esc(a.tag)}</span><span style="color:#8a8a84;font-weight:500">${esc(fmtDate(a.date, lang.locale))}</span></div>
+<strong style="font-size:19px;line-height:1.35">${esc(a.title)}</strong><span style="color:#4a4a46;font-size:15px;line-height:1.6">${esc(a.excerpt)}</span></a>`).join('') : `<p>${esc(content.ui.listEmpty)}</p>`}</div></div>`;
+  await mkdir(path.join(outDir, lang.articles), { recursive: true });
+  await writeFile(path.join(outDir, lang.articles, 'index.html'), shell(lang, content, { title: content.ui.blogTitle, description: content.ui.listDesc, body: listBody, alt }), 'utf8');
 
-console.log(`Built static site to ${path.relative(root, output)} (${articles.length} articles, ${cards.length} homepage cards, ${content.fields.length} service categories).`);
+  summary.push(`${lang.code}: ${articles.length} articles, ${cards.length} homepage cards`);
+}
+
+console.log(`Built static site to ${path.relative(root, output)} (${summary.join(' | ')}).`);

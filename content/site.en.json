@@ -1,0 +1,241 @@
+{
+  "siteTitle": "Kỹ Sư Thập Cẩm · Automation equipment & sensors",
+  "metaDescription": "Supplier of automation equipment, sensors and industrial components for production lines in Vietnam.",
+  "heroTitle": "Equipment supply",
+  "heroHighlight": "for automated production lines.",
+  "heroDescription": "We supply industrial equipment, sensors and components for production lines, and help you choose by specification, installation environment and real operating needs.",
+  "phoneDisplay": "+84 394 469 461",
+  "phoneLink": "+84394469461",
+  "contactEmail": "kysuthapcam@gmail.com",
+  "fbUrl": "https://www.facebook.com/profile.php?id=61596332606004",
+  "showBlog": true,
+  "fields": [
+    {
+      "tag": "PLC · HMI · Sensor",
+      "color": "#e8590c",
+      "title": "Automation & control",
+      "desc": "Design, programming and upgrades of control systems for machines and production lines.",
+      "items": [
+        "PLC and HMI programming",
+        "Control cabinets & device integration",
+        "Upgrades to existing systems",
+        "Automation equipment supply"
+      ]
+    },
+    {
+      "tag": "ALERT",
+      "color": "#e8590c",
+      "title": "Monitoring & alerts",
+      "desc": "Centralized operating status that helps you catch abnormalities early.",
+      "items": [
+        "Equipment data collection",
+        "Dashboards tailored to your needs",
+        "Network alerts"
+      ]
+    },
+    {
+      "tag": "IoT",
+      "color": "#1f9d4d",
+      "title": "Industrial IoT",
+      "desc": "Connect sensors and machines to turn operating data into information that is easy to use.",
+      "items": [
+        "Sensors & gateways",
+        "Machine and platform connectivity",
+        "Flexible remote monitoring"
+      ]
+    },
+    {
+      "tag": "COMPONENTS",
+      "color": "#e8590c",
+      "title": "Industrial equipment & components",
+      "desc": "Equipment, sensors and components for operating and upgrading automated production lines.",
+      "items": [
+        "Sensors and measuring devices",
+        "Control and switching equipment",
+        "Replacement components"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "name": "Inverters (VFD)",
+      "href": "#lien-he",
+      "cta": "Request a quote"
+    },
+    {
+      "name": "PLC",
+      "href": "#lien-he",
+      "cta": "Request a quote"
+    },
+    {
+      "name": "HMI",
+      "href": "#lien-he",
+      "cta": "Request a quote"
+    },
+    {
+      "name": "Sensors",
+      "href": "#lien-he",
+      "cta": "Request a quote"
+    },
+    {
+      "name": "Servo",
+      "href": "#lien-he",
+      "cta": "Request a quote"
+    },
+    {
+      "name": "Other equipment",
+      "href": "#lien-he",
+      "cta": "Request a quote"
+    }
+  ],
+  "steps": [
+    {
+      "num": "01 / INTAKE",
+      "title": "Understand your line",
+      "desc": "We clarify the process stage, existing equipment, installation environment and operating requirements."
+    },
+    {
+      "num": "02 / DEFINE",
+      "title": "Lock in the specifications",
+      "desc": "We define the model, measuring range, power supply, connectivity standard, quantity and working conditions."
+    },
+    {
+      "num": "03 / PROPOSE",
+      "title": "Select the right equipment",
+      "desc": "We match your requirements against our range of equipment, sensors and components, then confirm the configuration and quote."
+    },
+    {
+      "num": "04 / CONFIRM",
+      "title": "Complete the order",
+      "desc": "We agree on configuration, quantity and delivery method before you place the order."
+    }
+  ],
+  "projects": [],
+  "projectSlots": [
+    {
+      "tag": "AUTOMATION"
+    },
+    {
+      "tag": "MONITORING"
+    },
+    {
+      "tag": "IoT / AGRITECH"
+    }
+  ],
+  "posts": [
+    {
+      "href": "#lien-he",
+      "tag": "PLC",
+      "color": "#e8590c",
+      "date": "Coming soon",
+      "title": "Choosing a PLC for a small machine: what to consider",
+      "excerpt": "I/O count, communication and room to expand before you pick a model."
+    },
+    {
+      "href": "#lien-he",
+      "tag": "INVERTER",
+      "color": "#e8590c",
+      "date": "Coming soon",
+      "title": "Common inverter faults on the factory floor",
+      "excerpt": "Typical symptoms, likely causes and where to start checking."
+    },
+    {
+      "href": "#lien-he",
+      "tag": "IoT",
+      "color": "#1f9d4d",
+      "date": "Coming soon",
+      "title": "Getting started with remote machine monitoring",
+      "excerpt": "The basic building blocks, from sensors and gateways to the dashboard."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What equipment does Kỹ Sư Thập Cẩm supply?",
+      "a": "Our reference range covers PLCs, HMIs, inverters, servos, sensors and industrial components. Send the model, specifications and quantity so we can confirm the selection, availability and a quote."
+    },
+    {
+      "q": "I am not sure which model to choose. Can you advise?",
+      "a": "Yes. Send the process stage, technical requirements, installation conditions and the equipment you currently use, and we will work out the required specifications together."
+    },
+    {
+      "q": "I only need a single sensor or component. Can I ask?",
+      "a": "Yes. Send the part number or a photo of the nameplate, the specifications and the quantity you need, and we will check what fits."
+    },
+    {
+      "q": "What should I prepare when asking about equipment?",
+      "a": "If available, prepare the model or part number, photos of the nameplate, wiring diagrams, operating specifications, installation environment and quantity."
+    },
+    {
+      "q": "Where are you located?",
+      "a": "Our contact point is in Ho Chi Minh City, Vietnam. Delivery and support coverage are confirmed for each request."
+    }
+  ],
+  "ui": {
+    "topbar": "Automation equipment · Sensors · Industrial components",
+    "city": "Ho Chi Minh City, Vietnam",
+    "tagline": "AUTOMATION · IoT · CONNECTED",
+    "navFields": "Solutions",
+    "navDevices": "Equipment",
+    "navHow": "How it works",
+    "navProjects": "Projects",
+    "navShare": "Insights",
+    "navFaq": "FAQ",
+    "navCta": "Send your request ↗",
+    "heroKicker": "Industrial equipment · Sensors · Components",
+    "heroCta1": "Send your request",
+    "heroCta2": "Explore solutions ↓",
+    "stats": [
+      {
+        "title": "PLC · HMI",
+        "sub": "Control & operator interfaces"
+      },
+      {
+        "title": "24/7 monitoring",
+        "sub": "Track equipment status around the clock"
+      },
+      {
+        "title": "IIoT · Data",
+        "sub": "Connect and visualize"
+      },
+      {
+        "title": "System integration",
+        "sub": "From the plant floor to the dashboard"
+      }
+    ],
+    "fieldsKicker": "Solutions & equipment",
+    "fieldsTitleA": "The right technology, in the right place.",
+    "fieldsTitleB": "Results you can see.",
+    "devicesKicker": "Automation equipment",
+    "devicesTitle": "Equipment and sensors for automated production lines",
+    "howKicker": "How it works",
+    "howTitleA": "The right equipment.",
+    "howTitleB": "Built around your needs.",
+    "howDesc": "From clarifying specifications to recommending equipment, our process helps you choose a configuration that fits each production line.",
+    "howCta": "Talk to an engineer ↗",
+    "projKicker": "Featured projects",
+    "projTitle": "Coming soon",
+    "projDesc": "Real-world application stories from production floors will be added as soon as there is something worth sharing.",
+    "projSlot": "Project coming soon",
+    "blogKicker": "Technical insights",
+    "blogTitle": "Experience & know-how",
+    "blogAll": "View all articles →",
+    "contactKicker": "Have a problem to solve?",
+    "contactTitle": "Start with a technical conversation.",
+    "contactDesc": "Send the equipment model, specifications or your production line requirements and we will discuss a suitable approach.",
+    "contactFb": "Message us on Facebook",
+    "mailSubject": "Automation equipment enquiry",
+    "faqKicker": "FAQ",
+    "faqTitle": "Before you start",
+    "faqDesc": "Not sure which solution fits? Tell us about your current setup first.",
+    "footerCopy": "© 2026 Kỹ Sư Thập Cẩm · Ho Chi Minh City, Vietnam",
+    "footPhone": "Phone",
+    "footEmail": "Email",
+    "footFb": "Facebook",
+    "footTop": "Back to top ↑",
+    "defaultCta": "Request a quote",
+    "articleCta": "Need help choosing equipment or sensors for your production line?",
+    "backHome": "← Back to home",
+    "listEmpty": "Articles are coming soon.",
+    "listDesc": "Practical know-how on automation equipment, sensors and industrial IoT."
+  }
+}

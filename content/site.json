@@ -9,41 +9,233 @@
   "fbUrl": "https://www.facebook.com/profile.php?id=61596332606004",
   "showBlog": true,
   "fields": [
-    {"tag":"PLC · HMI · Sensor","color":"#e8590c","title":"Tự động hóa & điều khiển","desc":"Thiết kế, lập trình và cải tiến hệ thống điều khiển cho máy móc, dây chuyền.","items":["Lập trình PLC, HMI","Tủ điện & tích hợp thiết bị","Nâng cấp hệ thống hiện hữu","Cung cấp thiết bị tự động hóa"]},
-    {"tag":"ALERT","color":"#e8590c","title":"Giám sát & cảnh báo","desc":"Hiển thị trạng thái vận hành tập trung, hỗ trợ phát hiện bất thường kịp thời.","items":["Thu thập dữ liệu thiết bị","Dashboard theo nhu cầu","Cảnh báo qua mạng"]},
-    {"tag":"IoT","color":"#1f9d4d","title":"IoT Công nghiệp","desc":"Kết nối cảm biến và máy móc để biến dữ liệu vận hành thành thông tin dễ dùng.","items":["Cảm biến & gateway","Kết nối máy và nền tảng","Theo dõi từ xa linh hoạt"]},
-    {"tag":"LINH KIỆN","color":"#e8590c","title":"Thiết bị & linh kiện công nghiệp","desc":"Thiết bị, cảm biến và linh kiện phục vụ vận hành, nâng cấp dây chuyền tự động hóa.","items":["Cảm biến và thiết bị đo","Thiết bị điều khiển và đóng cắt","Linh kiện thay thế"]}
+    {
+      "tag": "PLC · HMI · Sensor",
+      "color": "#e8590c",
+      "title": "Tự động hóa & điều khiển",
+      "desc": "Thiết kế, lập trình và cải tiến hệ thống điều khiển cho máy móc, dây chuyền.",
+      "items": [
+        "Lập trình PLC, HMI",
+        "Tủ điện & tích hợp thiết bị",
+        "Nâng cấp hệ thống hiện hữu",
+        "Cung cấp thiết bị tự động hóa"
+      ]
+    },
+    {
+      "tag": "ALERT",
+      "color": "#e8590c",
+      "title": "Giám sát & cảnh báo",
+      "desc": "Hiển thị trạng thái vận hành tập trung, hỗ trợ phát hiện bất thường kịp thời.",
+      "items": [
+        "Thu thập dữ liệu thiết bị",
+        "Dashboard theo nhu cầu",
+        "Cảnh báo qua mạng"
+      ]
+    },
+    {
+      "tag": "IoT",
+      "color": "#1f9d4d",
+      "title": "IoT Công nghiệp",
+      "desc": "Kết nối cảm biến và máy móc để biến dữ liệu vận hành thành thông tin dễ dùng.",
+      "items": [
+        "Cảm biến & gateway",
+        "Kết nối máy và nền tảng",
+        "Theo dõi từ xa linh hoạt"
+      ]
+    },
+    {
+      "tag": "LINH KIỆN",
+      "color": "#e8590c",
+      "title": "Thiết bị & linh kiện công nghiệp",
+      "desc": "Thiết bị, cảm biến và linh kiện phục vụ vận hành, nâng cấp dây chuyền tự động hóa.",
+      "items": [
+        "Cảm biến và thiết bị đo",
+        "Thiết bị điều khiển và đóng cắt",
+        "Linh kiện thay thế"
+      ]
+    }
   ],
   "products": [
-    {"name":"Biến tần","href":"#lien-he","cta":"Hỏi giá"},
-    {"name":"PLC","href":"#lien-he","cta":"Hỏi giá"},
-    {"name":"HMI","href":"#lien-he","cta":"Hỏi giá"},
-    {"name":"Cảm biến","href":"#lien-he","cta":"Hỏi giá"},
-    {"name":"Servo","href":"#lien-he","cta":"Hỏi giá"},
-    {"name":"Thiết bị khác","href":"#lien-he","cta":"Hỏi giá"}
+    {
+      "name": "Biến tần",
+      "href": "#lien-he",
+      "cta": "Hỏi giá"
+    },
+    {
+      "name": "PLC",
+      "href": "#lien-he",
+      "cta": "Hỏi giá"
+    },
+    {
+      "name": "HMI",
+      "href": "#lien-he",
+      "cta": "Hỏi giá"
+    },
+    {
+      "name": "Cảm biến",
+      "href": "#lien-he",
+      "cta": "Hỏi giá"
+    },
+    {
+      "name": "Servo",
+      "href": "#lien-he",
+      "cta": "Hỏi giá"
+    },
+    {
+      "name": "Thiết bị khác",
+      "href": "#lien-he",
+      "cta": "Hỏi giá"
+    }
   ],
   "steps": [
-    {"num":"01 / TIẾP NHẬN","title":"Tìm hiểu dây chuyền","desc":"Làm rõ công đoạn sử dụng, thiết bị hiện có, môi trường lắp đặt và yêu cầu vận hành."},
-    {"num":"02 / XÁC ĐỊNH","title":"Chốt thông số kỹ thuật","desc":"Xác định model, dải đo, nguồn cấp, chuẩn kết nối, số lượng và điều kiện làm việc."},
-    {"num":"03 / ĐỀ XUẤT","title":"Chọn thiết bị phù hợp","desc":"Đối chiếu yêu cầu với danh mục thiết bị, cảm biến và linh kiện; xác nhận cấu hình, báo giá."},
-    {"num":"04 / XÁC NHẬN","title":"Hoàn tất đơn hàng","desc":"Thống nhất cấu hình, số lượng và phương thức giao nhận trước khi đặt hàng."}
+    {
+      "num": "01 / TIẾP NHẬN",
+      "title": "Tìm hiểu dây chuyền",
+      "desc": "Làm rõ công đoạn sử dụng, thiết bị hiện có, môi trường lắp đặt và yêu cầu vận hành."
+    },
+    {
+      "num": "02 / XÁC ĐỊNH",
+      "title": "Chốt thông số kỹ thuật",
+      "desc": "Xác định model, dải đo, nguồn cấp, chuẩn kết nối, số lượng và điều kiện làm việc."
+    },
+    {
+      "num": "03 / ĐỀ XUẤT",
+      "title": "Chọn thiết bị phù hợp",
+      "desc": "Đối chiếu yêu cầu với danh mục thiết bị, cảm biến và linh kiện; xác nhận cấu hình, báo giá."
+    },
+    {
+      "num": "04 / XÁC NHẬN",
+      "title": "Hoàn tất đơn hàng",
+      "desc": "Thống nhất cấu hình, số lượng và phương thức giao nhận trước khi đặt hàng."
+    }
   ],
   "projects": [],
   "projectSlots": [
-    {"tag":"TỰ ĐỘNG HÓA"},
-    {"tag":"GIÁM SÁT"},
-    {"tag":"IoT / AGRITECH"}
+    {
+      "tag": "TỰ ĐỘNG HÓA"
+    },
+    {
+      "tag": "GIÁM SÁT"
+    },
+    {
+      "tag": "IoT / AGRITECH"
+    }
   ],
   "posts": [
-    {"href":"#lien-he","tag":"PLC","color":"#e8590c","date":"Sắp đăng","title":"Chọn PLC cho máy nhỏ: cần cân nhắc gì","excerpt":"Số I/O, truyền thông và khả năng mở rộng trước khi chọn model."},
-    {"href":"#lien-he","tag":"BIẾN TẦN","color":"#e8590c","date":"Sắp đăng","title":"Những lỗi biến tần thường gặp tại xưởng","excerpt":"Dấu hiệu, nguyên nhân thường gặp và hướng kiểm tra ban đầu."},
-    {"href":"#lien-he","tag":"IoT","color":"#1f9d4d","date":"Sắp đăng","title":"Bắt đầu giám sát máy từ xa","excerpt":"Các thành phần cơ bản từ cảm biến, gateway đến dashboard."}
+    {
+      "href": "#lien-he",
+      "tag": "PLC",
+      "color": "#e8590c",
+      "date": "Sắp đăng",
+      "title": "Chọn PLC cho máy nhỏ: cần cân nhắc gì",
+      "excerpt": "Số I/O, truyền thông và khả năng mở rộng trước khi chọn model."
+    },
+    {
+      "href": "#lien-he",
+      "tag": "BIẾN TẦN",
+      "color": "#e8590c",
+      "date": "Sắp đăng",
+      "title": "Những lỗi biến tần thường gặp tại xưởng",
+      "excerpt": "Dấu hiệu, nguyên nhân thường gặp và hướng kiểm tra ban đầu."
+    },
+    {
+      "href": "#lien-he",
+      "tag": "IoT",
+      "color": "#1f9d4d",
+      "date": "Sắp đăng",
+      "title": "Bắt đầu giám sát máy từ xa",
+      "excerpt": "Các thành phần cơ bản từ cảm biến, gateway đến dashboard."
+    }
   ],
   "faqs": [
-    {"q":"Kỹ Sư Thập Cẩm cung cấp những thiết bị nào?","a":"Danh mục tham khảo gồm PLC, HMI, biến tần, servo, cảm biến và linh kiện công nghiệp. Gửi model, thông số và số lượng để xác nhận lựa chọn, tình trạng cung cấp và báo giá."},
-    {"q":"Tôi chưa biết chọn model nào, có thể nhờ tư vấn không?","a":"Có. Hãy gửi thông tin công đoạn, yêu cầu kỹ thuật, điều kiện lắp đặt và thiết bị đang sử dụng để cùng xác định thông số cần thiết."},
-    {"q":"Tôi chỉ cần một cảm biến hoặc linh kiện, có thể hỏi không?","a":"Có. Gửi mã hàng hoặc ảnh nhãn thiết bị, thông số và số lượng cần dùng để kiểm tra phương án phù hợp."},
-    {"q":"Cần chuẩn bị gì để hỏi thiết bị?","a":"Nếu có, hãy chuẩn bị model/mã hàng, hình ảnh nhãn, sơ đồ kết nối, thông số vận hành, môi trường lắp đặt và số lượng."},
-    {"q":"Khu vực liên hệ ở đâu?","a":"Thông tin liên hệ tại TP. Hồ Chí Minh. Phạm vi giao nhận và hỗ trợ sẽ được xác nhận theo từng yêu cầu."}
-  ]
+    {
+      "q": "Kỹ Sư Thập Cẩm cung cấp những thiết bị nào?",
+      "a": "Danh mục tham khảo gồm PLC, HMI, biến tần, servo, cảm biến và linh kiện công nghiệp. Gửi model, thông số và số lượng để xác nhận lựa chọn, tình trạng cung cấp và báo giá."
+    },
+    {
+      "q": "Tôi chưa biết chọn model nào, có thể nhờ tư vấn không?",
+      "a": "Có. Hãy gửi thông tin công đoạn, yêu cầu kỹ thuật, điều kiện lắp đặt và thiết bị đang sử dụng để cùng xác định thông số cần thiết."
+    },
+    {
+      "q": "Tôi chỉ cần một cảm biến hoặc linh kiện, có thể hỏi không?",
+      "a": "Có. Gửi mã hàng hoặc ảnh nhãn thiết bị, thông số và số lượng cần dùng để kiểm tra phương án phù hợp."
+    },
+    {
+      "q": "Cần chuẩn bị gì để hỏi thiết bị?",
+      "a": "Nếu có, hãy chuẩn bị model/mã hàng, hình ảnh nhãn, sơ đồ kết nối, thông số vận hành, môi trường lắp đặt và số lượng."
+    },
+    {
+      "q": "Khu vực liên hệ ở đâu?",
+      "a": "Thông tin liên hệ tại TP. Hồ Chí Minh. Phạm vi giao nhận và hỗ trợ sẽ được xác nhận theo từng yêu cầu."
+    }
+  ],
+  "metaDescription": "Cung cấp thiết bị tự động hóa, cảm biến và linh kiện công nghiệp phục vụ dây chuyền sản xuất.",
+  "ui": {
+    "topbar": "Thiết bị tự động hóa · Cảm biến · Linh kiện công nghiệp",
+    "city": "TP. Hồ Chí Minh",
+    "tagline": "AUTOMATION · IoT · KẾT NỐI",
+    "navFields": "Lĩnh vực",
+    "navDevices": "Thiết bị",
+    "navHow": "Cách hoạt động",
+    "navProjects": "Dự án",
+    "navShare": "Chia sẻ",
+    "navFaq": "Hỏi đáp",
+    "navCta": "Gửi nhu cầu ↗",
+    "heroKicker": "Thiết bị công nghiệp · Cảm biến · Linh kiện",
+    "heroCta1": "Gửi nhu cầu của bạn",
+    "heroCta2": "Xem lĩnh vực ↓",
+    "stats": [
+      {
+        "title": "PLC · HMI",
+        "sub": "Điều khiển & giao diện vận hành"
+      },
+      {
+        "title": "Giám sát 24/7",
+        "sub": "Theo dõi trạng thái thiết bị"
+      },
+      {
+        "title": "IIoT · Dữ liệu",
+        "sub": "Kết nối và trực quan hóa"
+      },
+      {
+        "title": "Tích hợp hệ thống",
+        "sub": "Từ hiện trường đến dashboard"
+      }
+    ],
+    "fieldsKicker": "Giải pháp & thiết bị",
+    "fieldsTitleA": "Công nghệ đúng chỗ.",
+    "fieldsTitleB": "Hiệu quả thấy được.",
+    "devicesKicker": "Thiết bị tự động hóa",
+    "devicesTitle": "Cung cấp thiết bị & cảm biến cho dây chuyền tự động hóa",
+    "howKicker": "Cách hoạt động",
+    "howTitleA": "Chọn đúng thiết bị.",
+    "howTitleB": "Vận hành đúng nhu cầu.",
+    "howDesc": "Từ làm rõ thông số đến đề xuất thiết bị, quy trình giúp bạn chọn cấu hình phù hợp với từng dây chuyền.",
+    "howCta": "Trao đổi với kỹ sư ↗",
+    "projKicker": "Dự án tiêu biểu",
+    "projTitle": "Sẽ cập nhật",
+    "projDesc": "Nội dung ứng dụng thiết bị trong sản xuất sẽ được bổ sung khi có thông tin phù hợp để chia sẻ.",
+    "projSlot": "Dự án sắp cập nhật",
+    "blogKicker": "Góc chia sẻ kỹ thuật",
+    "blogTitle": "Kinh nghiệm & kiến thức",
+    "blogAll": "Xem tất cả bài viết →",
+    "contactKicker": "Có bài toán cần giải?",
+    "contactTitle": "Bắt đầu bằng một cuộc trao đổi kỹ thuật.",
+    "contactDesc": "Gửi model thiết bị, thông số hoặc yêu cầu của dây chuyền để trao đổi phương án phù hợp.",
+    "contactFb": "Nhắn Fanpage",
+    "mailSubject": "Trao đổi nhu cầu tự động hóa",
+    "faqKicker": "Hỏi đáp",
+    "faqTitle": "Trước khi bắt đầu",
+    "faqDesc": "Chưa chắc giải pháp nào phù hợp? Hãy trao đổi về hiện trạng trước.",
+    "footerCopy": "© 2026 Kỹ Sư Thập Cẩm · TP. Hồ Chí Minh",
+    "footPhone": "Điện thoại",
+    "footEmail": "Email",
+    "footFb": "Fanpage",
+    "footTop": "Lên đầu ↑",
+    "defaultCta": "Hỏi giá",
+    "articleCta": "Cần tư vấn thiết bị, cảm biến cho dây chuyền?",
+    "backHome": "← Về trang chủ",
+    "listEmpty": "Bài viết đang được cập nhật.",
+    "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa."
+  }
 }

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./content.js"></script>
-<script src="./support.js"></script>
+<script src="/support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<title>Kỹ Sư Thập Cẩm · Thiết bị &amp; cảm biến tự động hóa</title>
-<meta name="description" content="Cung cấp thiết bị tự động hóa, cảm biến và linh kiện công nghiệp phục vụ dây chuyền sản xuất.">
+<title>{{ siteTitle }}</title>
+<meta name="description" content="{{ metaDescription }}">
 <template id="__bundler_thumbnail" data-bg-color="#fafaf8"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="30" fill="none" stroke="#f26a1b" stroke-width="14" stroke-dasharray="10 10"></circle><circle cx="50" cy="50" r="28" fill="#f26a1b"></circle><circle cx="50" cy="50" r="11" fill="#fafaf8"></circle></svg></template>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -26,8 +26,8 @@ a:hover{color:#1f9d4d}
 
 <div style="background:#141414;color:#e9e9e4;font-size:13px">
 <div style="max-width:1200px;margin:0 auto;padding:9px 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-<span>Thiết bị tự động hóa · Cảm biến · Linh kiện công nghiệp</span>
-<span style="display:flex;gap:8px">TP. Hồ Chí Minh · <a href="tel:+84394469461" style="color:#ff8a45;font-weight:700" style-hover="color:#fff">{{ phoneDisplay }}</a></span>
+<span>{{ ui.topbar }}</span>
+<span style="display:flex;gap:8px">{{ ui.city }} · <a href="tel:{{ phoneLink }}" style="color:#ff8a45;font-weight:700" style-hover="color:#fff">{{ phoneDisplay }}</a></span>
 </div>
 </div>
 
@@ -37,28 +37,29 @@ a:hover{color:#1f9d4d}
 <span style="width:38px;height:38px;border-radius:11px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.12),inset 0 -2px 0 #eee;display:grid;place-items:center">
 <svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="none" stroke="#f26a1b" stroke-width="5" stroke-dasharray="3.6 3.6"></circle><circle cx="12" cy="12" r="6" fill="#f26a1b"></circle><circle cx="12" cy="12" r="2.6" fill="#fff"></circle></svg>
 </span>
-<span style="display:flex;flex-direction:column;line-height:1.15"><span style="font-weight:800;font-size:16px">KỸ SƯ THẬP CẨM</span><span style="font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6a6a64">AUTOMATION · IoT · KẾT NỐI</span></span>
+<span style="display:flex;flex-direction:column;line-height:1.15"><span style="font-weight:800;font-size:16px">KỸ SƯ THẬP CẨM</span><span style="font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6a6a64">{{ ui.tagline }}</span></span>
 </a>
 <nav style="display:flex;gap:24px;flex-wrap:wrap;font-size:14px;font-weight:600">
-<a href="#linh-vuc" style="color:#141414" style-hover="color:#e8590c">Lĩnh vực</a>
-<a href="#thiet-bi" style="color:#141414" style-hover="color:#e8590c">Thiết bị</a>
-<a href="#cach-hoat-dong" style="color:#141414" style-hover="color:#e8590c">Cách hoạt động</a>
-<a href="#du-an" style="color:#141414" style-hover="color:#e8590c">Dự án</a>
-<a href="#chia-se" style="color:#141414" style-hover="color:#e8590c">Chia sẻ</a>
-<a href="#hoi-dap" style="color:#141414" style-hover="color:#e8590c">Hỏi đáp</a>
+<a href="#linh-vuc" style="color:#141414" style-hover="color:#e8590c">{{ ui.navFields }}</a>
+<a href="#thiet-bi" style="color:#141414" style-hover="color:#e8590c">{{ ui.navDevices }}</a>
+<a href="#cach-hoat-dong" style="color:#141414" style-hover="color:#e8590c">{{ ui.navHow }}</a>
+<a href="#du-an" style="color:#141414" style-hover="color:#e8590c">{{ ui.navProjects }}</a>
+<a href="#chia-se" style="color:#141414" style-hover="color:#e8590c">{{ ui.navShare }}</a>
+<a href="#hoi-dap" style="color:#141414" style-hover="color:#e8590c">{{ ui.navFaq }}</a>
 </nav>
-<a href="#lien-he" style="background:#e8590c;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:700" style-hover="background:#c94a05;color:#fff">Gửi nhu cầu ↗</a>
+<a href="#lien-he" style="background:#e8590c;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:700" style-hover="background:#c94a05;color:#fff">{{ ui.navCta }}</a>
+<a href="{{ altHref }}" hreflang="{{ altLang }}" style="border:1.5px solid #141414;color:#141414;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:800" style-hover="background:#141414;color:#fff">{{ altLabel }}</a>
 </div>
 </header>
 
 <section id="top" style="max-width:1200px;margin:0 auto;padding:72px 24px 88px;display:flex;flex-wrap:wrap;align-items:center;gap:56px">
 <div style="flex:1 1 440px;min-width:0">
-<div style="display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;color:#1f9d4d;letter-spacing:0.12em;text-transform:uppercase"><span style="width:22px;height:2px;background:#e8590c"></span>Thiết bị công nghiệp · Cảm biến · Linh kiện</div>
+<div style="display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;color:#1f9d4d;letter-spacing:0.12em;text-transform:uppercase"><span style="width:22px;height:2px;background:#e8590c"></span>{{ ui.heroKicker }}</div>
 <h1 style="margin:20px 0 0;font-size:clamp(38px,5.4vw,64px);line-height:1.05;font-weight:800;letter-spacing:-0.03em">{{ heroTitle }} <span style="color:#e8590c">{{ heroHighlight }}</span></h1>
 <p style="margin:24px 0 0;font-size:18px;line-height:1.65;color:#4a4a46;max-width:540px;text-wrap:pretty">{{ heroDescription }}</p>
 <div style="margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
-<a href="#lien-he" style="background:#e8590c;color:#fff;padding:15px 28px;border-radius:14px;font-weight:700;font-size:15px;box-shadow:0 8px 20px -6px rgba(232,89,12,0.55)" style-hover="background:#c94a05;color:#fff">Gửi nhu cầu của bạn</a>
-<a href="#linh-vuc" style="background:#fff;color:#141414;padding:15px 28px;border-radius:14px;font-weight:700;font-size:15px;box-shadow:0 2px 10px rgba(0,0,0,0.1)" style-hover="color:#1f9d4d">Xem lĩnh vực ↓</a>
+<a href="#lien-he" style="background:#e8590c;color:#fff;padding:15px 28px;border-radius:14px;font-weight:700;font-size:15px;box-shadow:0 8px 20px -6px rgba(232,89,12,0.55)" style-hover="background:#c94a05;color:#fff">{{ ui.heroCta1 }}</a>
+<a href="#linh-vuc" style="background:#fff;color:#141414;padding:15px 28px;border-radius:14px;font-weight:700;font-size:15px;box-shadow:0 2px 10px rgba(0,0,0,0.1)" style-hover="color:#1f9d4d">{{ ui.heroCta2 }}</a>
 </div>
 
 </div>
@@ -89,18 +90,17 @@ a:hover{color:#1f9d4d}
 
 <div style="background:#fff;border-top:1px solid #ececE6;border-bottom:1px solid #ececE6">
 <div style="max-width:1200px;margin:0 auto;padding:26px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">PLC · HMI</span><span style="font-size:13px;color:#6a6a64">Điều khiển &amp; giao diện vận hành</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">Giám sát 24/7</span><span style="font-size:13px;color:#6a6a64">Theo dõi trạng thái thiết bị</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">IIoT · Dữ liệu</span><span style="font-size:13px;color:#6a6a64">Kết nối và trực quan hóa</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">Tích hợp hệ thống</span><span style="font-size:13px;color:#6a6a64">Từ hiện trường đến dashboard</span></div>
+<sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">{{ st.title }}</span><span style="font-size:13px;color:#6a6a64">{{ st.sub }}</span></div>
+</sc-for>
 </div>
 </div>
 
 <section id="linh-vuc" style="max-width:1200px;margin:0 auto;padding:96px 24px">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
 <div style="max-width:600px">
-<div style="font-size:12px;font-weight:800;color:#e8590c;letter-spacing:0.12em;text-transform:uppercase">Giải pháp &amp; thiết bị</div>
-<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">Công nghệ đúng chỗ.<br>Hiệu quả thấy được.</h2>
+<div style="font-size:12px;font-weight:800;color:#e8590c;letter-spacing:0.12em;text-transform:uppercase">{{ ui.fieldsKicker }}</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">{{ ui.fieldsTitleA }}<br>{{ ui.fieldsTitleB }}</h2>
 </div>
 
 </div>
@@ -122,8 +122,8 @@ a:hover{color:#1f9d4d}
 <div style="max-width:1200px;margin:0 auto;padding:96px 24px">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
 <div style="max-width:600px">
-<div style="font-size:12px;font-weight:800;color:#1f9d4d;letter-spacing:0.12em;text-transform:uppercase">Thiết bị tự động hóa</div>
-<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">Cung cấp thiết bị &amp; cảm biến cho dây chuyền tự động hóa</h2>
+<div style="font-size:12px;font-weight:800;color:#1f9d4d;letter-spacing:0.12em;text-transform:uppercase">{{ ui.devicesKicker }}</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">{{ ui.devicesTitle }}</h2>
 </div>
 
 </div>
@@ -146,10 +146,10 @@ a:hover{color:#1f9d4d}
 <section id="cach-hoat-dong" style="background:#141414;color:#fafaf8">
 <div style="max-width:1200px;margin:0 auto;padding:96px 24px;display:flex;flex-wrap:wrap;gap:56px">
 <div style="flex:1 1 340px;min-width:0">
-<div style="font-size:12px;font-weight:800;color:#ff8a45;letter-spacing:0.12em;text-transform:uppercase">Cách hoạt động</div>
-<h2 style="margin:14px 0 0;font-size:clamp(32px,4.4vw,52px);line-height:1.05;font-weight:800;letter-spacing:-0.03em">Chọn đúng thiết bị.<br>Vận hành đúng nhu cầu.</h2>
-<p style="margin:20px 0 0;font-size:16px;line-height:1.65;color:#c9c9c2;max-width:420px">Từ làm rõ thông số đến đề xuất thiết bị, quy trình giúp bạn chọn cấu hình phù hợp với từng dây chuyền.</p>
-<a href="#lien-he" style="margin-top:28px;display:inline-block;background:#ff8a45;color:#141414;padding:14px 24px;border-radius:14px;font-weight:700;font-size:15px" style-hover="background:#fff;color:#141414">Trao đổi với kỹ sư ↗</a>
+<div style="font-size:12px;font-weight:800;color:#ff8a45;letter-spacing:0.12em;text-transform:uppercase">{{ ui.howKicker }}</div>
+<h2 style="margin:14px 0 0;font-size:clamp(32px,4.4vw,52px);line-height:1.05;font-weight:800;letter-spacing:-0.03em">{{ ui.howTitleA }}<br>{{ ui.howTitleB }}</h2>
+<p style="margin:20px 0 0;font-size:16px;line-height:1.65;color:#c9c9c2;max-width:420px">{{ ui.howDesc }}</p>
+<a href="#lien-he" style="margin-top:28px;display:inline-block;background:#ff8a45;color:#141414;padding:14px 24px;border-radius:14px;font-weight:700;font-size:15px" style-hover="background:#fff;color:#141414">{{ ui.howCta }}</a>
 </div>
 <div style="flex:1.3 1 440px;min-width:0;border-top:1px solid #33332f">
 <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
@@ -165,10 +165,10 @@ a:hover{color:#1f9d4d}
 <section id="du-an" style="max-width:1200px;margin:0 auto;padding:96px 24px">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
 <div style="max-width:600px">
-<div style="font-size:12px;font-weight:800;color:#e8590c;letter-spacing:0.12em;text-transform:uppercase">Dự án tiêu biểu</div>
-<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">Sẽ cập nhật</h2>
+<div style="font-size:12px;font-weight:800;color:#e8590c;letter-spacing:0.12em;text-transform:uppercase">{{ ui.projKicker }}</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">{{ ui.projTitle }}</h2>
 </div>
-<p style="margin:0;max-width:400px;font-size:15px;line-height:1.65;color:#4a4a46">Nội dung ứng dụng thiết bị trong sản xuất sẽ được bổ sung khi có thông tin phù hợp để chia sẻ.</p>
+<p style="margin:0;max-width:400px;font-size:15px;line-height:1.65;color:#4a4a46">{{ ui.projDesc }}</p>
 </div>
 <div style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
 <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="0">
@@ -181,7 +181,7 @@ a:hover{color:#1f9d4d}
 <sc-for list="{{ projectSlots }}" as="sl" hint-placeholder-count="3">
 <div style="border:2px dashed #d8d6cf;border-radius:24px;padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px">
 <span style="font-size:12px;font-weight:800;letter-spacing:0.08em;color:#8a8a84">{{ sl.tag }}</span>
-<span style="font-size:18px;font-weight:700;color:#6a6a64">Dự án sắp cập nhật</span>
+<span style="font-size:18px;font-weight:700;color:#6a6a64">{{ ui.projSlot }}</span>
 </div>
 </sc-for>
 </div>
@@ -191,8 +191,8 @@ a:hover{color:#1f9d4d}
 <section id="chia-se" style="background:#fff;border-top:1px solid #ececE6;border-bottom:1px solid #ececE6">
 <div style="max-width:1200px;margin:0 auto;padding:96px 24px">
 <div style="max-width:600px">
-<div style="font-size:12px;font-weight:800;color:#1f9d4d;letter-spacing:0.12em;text-transform:uppercase">Góc chia sẻ kỹ thuật</div>
-<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">Kinh nghiệm &amp; kiến thức</h2>
+<div style="font-size:12px;font-weight:800;color:#1f9d4d;letter-spacing:0.12em;text-transform:uppercase">{{ ui.blogKicker }}</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">{{ ui.blogTitle }}</h2>
 </div>
 <div style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
 <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
@@ -204,6 +204,7 @@ a:hover{color:#1f9d4d}
 </a>
 </sc-for>
 </div>
+<sc-if value="{{ hasArticles }}" hint-placeholder-val="{{ false }}"><div style="margin-top:28px"><a href="{{ articlesHref }}" style="font-weight:700;font-size:15px">{{ ui.blogAll }}</a></div></sc-if>
 </div>
 </section>
 </sc-if>
@@ -213,23 +214,23 @@ a:hover{color:#1f9d4d}
 <section id="lien-he" style="max-width:1200px;margin:0 auto;padding:72px 24px">
 <div style="background:#157a3a;color:#fff;border-radius:32px;padding:clamp(32px,6vw,56px);display:flex;flex-wrap:wrap;gap:36px;align-items:center;justify-content:space-between">
 <div style="flex:1 1 380px;min-width:0">
-<div style="font-size:12px;font-weight:800;color:#c8f0d4;letter-spacing:0.12em;text-transform:uppercase">Có bài toán cần giải?</div>
-<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">Bắt đầu bằng một cuộc trao đổi kỹ thuật.</h2>
-<p style="margin:16px 0 0;font-size:16px;line-height:1.65;color:#e2f4e8;max-width:480px">Gửi model thiết bị, thông số hoặc yêu cầu của dây chuyền để trao đổi phương án phù hợp.</p>
+<div style="font-size:12px;font-weight:800;color:#c8f0d4;letter-spacing:0.12em;text-transform:uppercase">{{ ui.contactKicker }}</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">{{ ui.contactTitle }}</h2>
+<p style="margin:16px 0 0;font-size:16px;line-height:1.65;color:#e2f4e8;max-width:480px">{{ ui.contactDesc }}</p>
 </div>
 <div style="flex:0 1 300px;min-width:240px;display:flex;flex-direction:column;gap:10px">
-<a href="tel:+84394469461" style="background:#fff;color:#141414;padding:15px 20px;border-radius:14px;font-weight:700;font-size:15px;text-align:center" style-hover="color:#e8590c">☎ {{ phoneDisplay }}</a>
-<a href="{{ fbUrl }}" target="_blank" style="background:#ff8a45;color:#141414;padding:15px 20px;border-radius:14px;font-weight:700;font-size:15px;text-align:center" style-hover="background:#fff;color:#141414">Nhắn Fanpage</a>
-<a href="mailto:{{ email }}?subject=Trao%20%C4%91%E1%BB%95i%20nhu%20c%E1%BA%A7u%20t%E1%BB%B1%20%C4%91%E1%BB%99ng%20h%C3%B3a" style="border:1.5px solid rgba(255,255,255,0.55);color:#fff;padding:14px 20px;border-radius:14px;font-weight:700;font-size:15px;text-align:center" style-hover="background:rgba(255,255,255,0.12);color:#fff">✉ {{ email }}</a>
+<a href="tel:{{ phoneLink }}" style="background:#fff;color:#141414;padding:15px 20px;border-radius:14px;font-weight:700;font-size:15px;text-align:center" style-hover="color:#e8590c">☎ {{ phoneDisplay }}</a>
+<a href="{{ fbUrl }}" target="_blank" style="background:#ff8a45;color:#141414;padding:15px 20px;border-radius:14px;font-weight:700;font-size:15px;text-align:center" style-hover="background:#fff;color:#141414">{{ ui.contactFb }}</a>
+<a href="mailto:{{ email }}?subject={{ mailSubject }}" style="border:1.5px solid rgba(255,255,255,0.55);color:#fff;padding:14px 20px;border-radius:14px;font-weight:700;font-size:15px;text-align:center" style-hover="background:rgba(255,255,255,0.12);color:#fff">✉ {{ email }}</a>
 </div>
 </div>
 </section>
 
 <section id="hoi-dap" style="max-width:1200px;margin:0 auto;padding:24px 24px 96px;display:flex;flex-wrap:wrap;gap:48px">
 <div style="flex:1 1 280px;min-width:0">
-<div style="font-size:12px;font-weight:800;color:#e8590c;letter-spacing:0.12em;text-transform:uppercase">Hỏi đáp</div>
-<h2 style="margin:12px 0 0;font-size:clamp(30px,3.6vw,40px);line-height:1.1;font-weight:800;letter-spacing:-0.025em">Trước khi bắt đầu</h2>
-<p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:#4a4a46">Chưa chắc giải pháp nào phù hợp? Hãy trao đổi về hiện trạng trước.</p>
+<div style="font-size:12px;font-weight:800;color:#e8590c;letter-spacing:0.12em;text-transform:uppercase">{{ ui.faqKicker }}</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,3.6vw,40px);line-height:1.1;font-weight:800;letter-spacing:-0.025em">{{ ui.faqTitle }}</h2>
+<p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:#4a4a46">{{ ui.faqDesc }}</p>
 </div>
 <div style="flex:2 1 460px;min-width:0;border-top:1px solid #e2e0d9">
 <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="5">
@@ -244,8 +245,8 @@ a:hover{color:#1f9d4d}
 <footer style="background:#141414;color:#c9c9c2">
 <div style="max-width:1200px;margin:0 auto;padding:28px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px">
 <span style="font-weight:800;color:#fff">KỸ SƯ THẬP CẨM</span>
-<span>© 2026 Kỹ Sư Thập Cẩm · TP. Hồ Chí Minh</span>
-<div style="display:flex;gap:18px;flex-wrap:wrap"><a href="tel:+84394469461" style="color:#c9c9c2" style-hover="color:#ff8a45">Điện thoại</a><a href="mailto:{{ email }}" style="color:#c9c9c2" style-hover="color:#ff8a45">Email</a><a href="{{ fbUrl }}" target="_blank" style="color:#c9c9c2" style-hover="color:#ff8a45">Fanpage</a><a href="#top" style="color:#c9c9c2" style-hover="color:#ff8a45">Lên đầu ↑</a></div>
+<span>{{ ui.footerCopy }}</span>
+<div style="display:flex;gap:18px;flex-wrap:wrap"><a href="tel:{{ phoneLink }}" style="color:#c9c9c2" style-hover="color:#ff8a45">{{ ui.footPhone }}</a><a href="mailto:{{ email }}" style="color:#c9c9c2" style-hover="color:#ff8a45">{{ ui.footEmail }}</a><a href="{{ fbUrl }}" target="_blank" style="color:#c9c9c2" style-hover="color:#ff8a45">{{ ui.footFb }}</a><a href="#top" style="color:#c9c9c2" style-hover="color:#ff8a45">{{ ui.footTop }}</a></div>
 </div>
 </footer>
 </div>
@@ -257,7 +258,7 @@ class Component extends DCLogic {
     const data = window.KSTC_CONTENT || {};
     const fields = data.fields || [];
     const withImg = o => ({ ...o, hasImage: !!o.image, noImage: !o.image });
-    const products = (data.products || []).map(p => withImg({ ...p, href: p.href || '#lien-he', cta: p.cta || 'Hỏi giá' }));
+    const products = (data.products || []).map(p => withImg({ ...p, href: p.href || '#lien-he', cta: p.cta || (data.ui || {}).defaultCta || '' }));
     const steps = data.steps || [];
     const projects = (data.projects || []).map(withImg);
     const projectSlots = data.projectSlots || [];
@@ -270,6 +271,16 @@ class Component extends DCLogic {
     }));
     return {
       fields, products, steps, projects, projectSlots, posts, faqs,
+      ui: data.ui || {},
+      stats: (data.ui || {}).stats || [],
+      siteTitle: data.siteTitle || '',
+      metaDescription: data.metaDescription || '',
+      altHref: data.altHref || '/',
+      altLang: data.altLang || 'en',
+      altLabel: data.altLabel || 'EN',
+      hasArticles: (data.articleCount || 0) > 0,
+      articlesHref: data.articlesHref || '/bai-viet/',
+      mailSubject: encodeURIComponent((data.ui || {}).mailSubject || ''),
       showBlog: data.showBlog ?? true,
       fbUrl: data.fbUrl || this.props.fbUrl || 'https://www.facebook.com/',
       email: data.contactEmail || this.props.contactEmail || 'kysuthapcam@gmail.com',
