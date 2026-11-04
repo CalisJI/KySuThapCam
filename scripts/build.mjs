@@ -28,6 +28,18 @@ const fmtDate = (d, locale) => {
 };
 const safeColor = (c) => (/^#[0-9a-f]{3,8}$/i.test(c || '') ? c : '#e8590c');
 
+// The site must work whether it is served from the domain root or from a sub-path (e.g. when the host
+// publishes the repo root and the site lives under /dist/). So every root-absolute URL ("/media/x.jpg",
+// "/en/") is rewritten to a path relative to the page that contains it.
+const relPath = (p, prefix) => {
+  const r = prefix + p;
+  return r === '' ? './' : r;
+};
+const relativizeHtml = (html, prefix) =>
+  html.replace(/\b(href|src)="\/(?!\/)([^"]*)"/g, (_, attr, rest) => `${attr}="${relPath(rest, prefix)}"`);
+const relativizeJs = (js, prefix) =>
+  js.replace(/"(image|cover|href|altHref|articlesHref)": "\/(?!\/)([^"]*)"/g, (_, key, rest) => `"${key}": "${relPath(rest, prefix)}"`);
+
 async function loadArticles(lang) {
   const dir = path.join(root, 'content', lang.posts);
   let files = [];
@@ -123,8 +135,10 @@ for (const lang of LANGS) {
     .replace('</head>', `${hreflang}\n</head>`);
   const outDir = path.join(output, lang.base.replace(/^\//, ''));
   await mkdir(outDir, { recursive: true });
-  await writeFile(path.join(outDir, 'index.html'), html, 'utf8');
-  await writeFile(path.join(outDir, 'content.js'), `window.KSTC_CONTENT = ${JSON.stringify(homeContent, null, 2)};\n`, 'utf8');
+  const homePrefix = lang.base ? '../' : '';
+  await writeFile(path.join(outDir, 'index.html'), relativizeHtml(html, homePrefix), 'utf8');
+  await writeFile(path.join(outDir, 'content.js'), relativizeJs(`window.KSTC_CONTENT = ${JSON.stringify(homeContent, null, 2)};\n`, homePrefix), 'utf8');
+  const depth = (lang.base ? 1 : 0) + 1; // folder levels from site root to the articles list page
 
   // Article pages + list page
   for (const a of articles) {
@@ -134,14 +148,14 @@ for (const lang of LANGS) {
 <div class="prose">${a.html}</div></article>`;
     const dir = path.join(outDir, lang.articles, a.slug);
     await mkdir(dir, { recursive: true });
-    await writeFile(path.join(dir, 'index.html'), shell(lang, content, { title: a.title, description: a.excerpt || a.title, body, alt }), 'utf8');
+    await writeFile(path.join(dir, 'index.html'), relativizeHtml(shell(lang, content, { title: a.title, description: a.excerpt || a.title, body, alt }), '../'.repeat(depth + 1)), 'utf8');
   }
   const listBody = `<div style="padding-top:40px"><h1>${esc(content.ui.blogTitle)}</h1>
 <div class="grid">${articles.length ? articles.map((a) => `<a class="card" href="${href(a)}">${a.cover ? `<img src="${esc(a.cover)}" alt="">` : ''}
 <div class="meta"><span style="color:${a.color}">${esc(a.tag)}</span><span style="color:#8a8a84;font-weight:500">${esc(fmtDate(a.date, lang.locale))}</span></div>
 <strong style="font-size:19px;line-height:1.35">${esc(a.title)}</strong><span style="color:#4a4a46;font-size:15px;line-height:1.6">${esc(a.excerpt)}</span></a>`).join('') : `<p>${esc(content.ui.listEmpty)}</p>`}</div></div>`;
   await mkdir(path.join(outDir, lang.articles), { recursive: true });
-  await writeFile(path.join(outDir, lang.articles, 'index.html'), shell(lang, content, { title: content.ui.blogTitle, description: content.ui.listDesc, body: listBody, alt }), 'utf8');
+  await writeFile(path.join(outDir, lang.articles, 'index.html'), relativizeHtml(shell(lang, content, { title: content.ui.blogTitle, description: content.ui.listDesc, body: listBody, alt }), '../'.repeat(depth)), 'utf8');
 
   summary.push(`${lang.code}: ${articles.length} articles, ${cards.length} homepage cards`);
 }
