@@ -1,5 +1,5 @@
 ---
-title: "Chọn PLC cho máy nhỏ: cần cân nhắc gì"
+title: "Chọn PLC cho máy: cần cân nhắc gì"
 date: 2026-11-04
 tag: PLC
 color: "#e8590c"
