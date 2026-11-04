@@ -38,6 +38,9 @@ content:
   - name: fbUrl
     label: Đường dẫn Fanpage
     type: string
+  - name: analyticsToken
+    label: Mã đếm truy cập Cloudflare Web Analytics (token 32 ký tự; để trống = tắt)
+    type: string
   - name: showBlog
     label: Hiện phần chia sẻ bài viết
     type: boolean

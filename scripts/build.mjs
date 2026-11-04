@@ -37,7 +37,11 @@ const TRANSLATABLE = {
   projects: ['tag', 'title', 'desc'],
   faqs: ['q', 'a'],
 };
-const SHARED_SINGLE = ['phoneDisplay', 'phoneLink', 'contactEmail', 'fbUrl', 'showBlog', 'logo'];
+const SHARED_SINGLE = ['phoneDisplay', 'phoneLink', 'contactEmail', 'fbUrl', 'showBlog', 'logo', 'analyticsToken'];
+// Optional Cloudflare Web Analytics beacon (visitor counts). Set the token in the CMS; empty = no tracking script.
+const analyticsTag = (c) => (/^[a-f0-9]{32}$/i.test((c.analyticsToken || '').trim())
+  ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${c.analyticsToken.trim()}"}'></script>`
+  : '');
 const ICON_LINKS = `<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">`;
 const isEmpty = (v) => v === undefined || v === null || v === '' || (Array.isArray(v) && v.length === 0);
 const mapItems = (list, fn) => (Array.isArray(list) ? list.map(fn) : []);
@@ -127,6 +131,7 @@ const shell = (lang, content, { title, description, body, alt }) => `<!doctype h
 <title>${esc(title)} · Kỹ Sư Thập Cẩm</title>
 <meta name="description" content="${esc(description)}">
 ${ICON_LINKS}
+${analyticsTag(content)}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -200,7 +205,7 @@ for (const lang of LANGS) {
     .replace('<html lang="vi">', `<html lang="${lang.code}">`)
     .replace('{{ siteTitle }}', esc(content.siteTitle || 'Kỹ Sư Thập Cẩm'))
     .replace('{{ metaDescription }}', esc(content.metaDescription || ''))
-    .replace('</head>', `${hreflang}\n${ICON_LINKS}\n<style>${LANG_CSS}</style><script>${LANG_JS}</script>\n</head>`);
+    .replace('</head>', `${hreflang}\n${ICON_LINKS}\n${analyticsTag(content)}\n<style>${LANG_CSS}</style><script>${LANG_JS}</script>\n</head>`);
   const outDir = path.join(output, lang.base.replace(/^\//, ''));
   await mkdir(outDir, { recursive: true });
   const homePrefix = lang.base ? '../' : '';
