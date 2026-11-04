@@ -41,6 +41,12 @@ content:
   - name: analyticsToken
     label: Mã đếm truy cập Cloudflare Web Analytics (token 32 ký tự; để trống = tắt)
     type: string
+  - name: googleVerification
+    label: Mã xác minh Google Search Console (chỉ phần content="..." của thẻ meta; để trống nếu chưa dùng)
+    type: string
+  - name: siteUrl
+    label: Địa chỉ website chính thức (vd https://kysuthapcam.com)
+    type: string
   - name: showBlog
     label: Hiện phần chia sẻ bài viết
     type: boolean

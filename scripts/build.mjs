@@ -37,11 +37,55 @@ const TRANSLATABLE = {
   projects: ['tag', 'title', 'desc'],
   faqs: ['q', 'a'],
 };
-const SHARED_SINGLE = ['phoneDisplay', 'phoneLink', 'contactEmail', 'fbUrl', 'showBlog', 'logo', 'analyticsToken'];
+const SHARED_SINGLE = ['phoneDisplay', 'phoneLink', 'contactEmail', 'fbUrl', 'showBlog', 'logo', 'analyticsToken', 'googleVerification'];
 // Optional Cloudflare Web Analytics beacon (visitor counts). Set the token in the CMS; empty = no tracking script.
 const analyticsTag = (c) => (/^[a-f0-9]{32}$/i.test((c.analyticsToken || '').trim())
   ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${c.analyticsToken.trim()}"}'></script>`
   : '');
+const SITE_URL = String(baseContent.siteUrl || 'https://kysuthapcam.com').replace(/\/+$/, '');
+const absUrl = (u) => (/^https?:/i.test(u) ? u : SITE_URL + (String(u).startsWith('/') ? '' : '/') + encodeURI(String(u)));
+const jsonLd = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
+// Static SEO tags (canonical, Open Graph, hreflang, structured data) so crawlers need not run the page script.
+function seoHead({ lang, content, title, description, path: urlPath, image, type = 'website', alternates = false, ld = [] }) {
+  const url = SITE_URL + urlPath;
+  const tags = [
+    `<title>${esc(title)}</title>`,
+    `<meta name="description" content="${esc(description)}">`,
+    `<link rel="canonical" href="${url}">`,
+    content.googleVerification ? `<meta name="google-site-verification" content="${esc(content.googleVerification)}">` : '',
+    `<meta property="og:type" content="${type}">`,
+    `<meta property="og:site_name" content="Kỹ Sư Thập Cẩm">`,
+    `<meta property="og:title" content="${esc(title)}">`,
+    `<meta property="og:description" content="${esc(description)}">`,
+    `<meta property="og:url" content="${url}">`,
+    `<meta property="og:image" content="${esc(absUrl(image))}">`,
+    `<meta property="og:locale" content="${lang.locale.replace('-', '_')}">`,
+    `<meta name="twitter:card" content="summary_large_image">`,
+    `<meta name="twitter:title" content="${esc(title)}">`,
+    `<meta name="twitter:description" content="${esc(description)}">`,
+    `<meta name="twitter:image" content="${esc(absUrl(image))}">`,
+  ];
+  if (alternates) {
+    for (const l of LANGS) tags.push(`<link rel="alternate" hreflang="${l.code}" href="${SITE_URL}${l.base}/">`);
+    tags.push(`<link rel="alternate" hreflang="x-default" href="${SITE_URL}/">`);
+  }
+  for (const o of ld) tags.push(jsonLd(o));
+  return tags.filter(Boolean).join('\n');
+}
+const orgLd = (content, description) => ({
+  '@context': 'https://schema.org', '@type': 'Organization', name: 'Kỹ Sư Thập Cẩm', url: `${SITE_URL}/`,
+  logo: absUrl(content.logo), email: content.contactEmail, telephone: content.phoneLink, description,
+  address: { '@type': 'PostalAddress', addressLocality: 'Ho Chi Minh City', addressCountry: 'VN' },
+  sameAs: [content.fbUrl].filter(Boolean),
+});
+// Plain-HTML copy of the main content for crawlers and visitors without JavaScript.
+const noscriptHtml = (c) => `<noscript><div style="max-width:960px;margin:0 auto;padding:24px;font-family:sans-serif;line-height:1.6">
+<h1>${esc(c.heroTitle)} ${esc(c.heroHighlight)}</h1><p>${esc(c.heroDescription)}</p>
+<h2>${esc(c.ui.fieldsTitleA)} ${esc(c.ui.fieldsTitleB)}</h2><ul>${c.fields.map((f) => `<li><strong>${esc(f.title)}</strong>: ${esc(f.desc)} ${(f.items || []).map(esc).join(', ')}</li>`).join('')}</ul>
+<h2>${esc(c.ui.devicesTitle)}</h2><ul>${c.products.map((p) => `<li>${esc(p.name)}</li>`).join('')}</ul>
+<h2>${esc(c.ui.faqTitle)}</h2>${c.faqs.map((q) => `<h3>${esc(q.q)}</h3><p>${esc(q.a)}</p>`).join('')}
+<p>${esc(c.phoneDisplay)} · <a href="mailto:${esc(c.contactEmail)}">${esc(c.contactEmail)}</a></p></div></noscript>`;
+const sitemap = [];
 const ICON_LINKS = `<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">`;
 const isEmpty = (v) => v === undefined || v === null || v === '' || (Array.isArray(v) && v.length === 0);
 const mapItems = (list, fn) => (Array.isArray(list) ? list.map(fn) : []);
@@ -126,10 +170,9 @@ async function loadArticles(lang) {
 const langMenuHtml = (lang) => `<details class="lang-menu"><summary><img src="${flagUri(lang.code)}" width="22" height="15" alt=""> ${lang.label} <span>▾</span></summary><div class="lang-pop">${langList(lang).map((l) => `<a href="${l.href}" hreflang="${l.code}"><img src="${l.flag}" width="22" height="15" alt=""><span>${l.name}</span><b>${l.mark}</b></a>`).join('')}</div></details>`;
 const LANG_CSS = `.lang-menu{position:relative}.lang-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;border:1.5px solid #141414;color:#141414;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:800}.lang-menu summary::-webkit-details-marker{display:none}.lang-menu img{border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}.lang-pop{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border-radius:14px;box-shadow:0 12px 32px -8px rgba(0,0,0,.28);padding:6px;min-width:170px;z-index:50}.lang-pop a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:#141414;font-size:14px;font-weight:600}.lang-pop a:hover{background:#f3f1ec;color:#141414}.lang-pop b{margin-left:auto;color:#1f9d4d}`;
 const LANG_JS = `document.addEventListener('click',function(e){document.querySelectorAll('details.lang-menu[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});`;
-const shell = (lang, content, { title, description, body, alt }) => `<!doctype html>
+const shell = (lang, content, { title, description, body, alt, seo }) => `<!doctype html>
 <html lang="${lang.code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(title)} · Kỹ Sư Thập Cẩm</title>
-<meta name="description" content="${esc(description)}">
+${seo}
 ${ICON_LINKS}
 ${analyticsTag(content)}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -199,18 +242,22 @@ for (const lang of LANGS) {
   };
 
   // Homepage (static <title>/<meta> so crawlers see them without running the page script)
-  const hreflang = LANGS.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${l.base}/">`).join('\n')
-    + `\n<link rel="alternate" hreflang="x-default" href="/">`;
+  const homeTitle = content.siteTitle || 'Kỹ Sư Thập Cẩm';
+  const hreflang = seoHead({ lang, content, title: homeTitle, description: content.metaDescription || '', path: `${lang.base}/`, image: content.logo, alternates: true, ld: [orgLd(content, content.metaDescription || '')] });
   const html = template
     .replace('<html lang="vi">', `<html lang="${lang.code}">`)
-    .replace('{{ siteTitle }}', esc(content.siteTitle || 'Kỹ Sư Thập Cẩm'))
-    .replace('{{ metaDescription }}', esc(content.metaDescription || ''))
+    .replace('<title>{{ siteTitle }}</title>', '')
+    .replace('<meta name="description" content="{{ metaDescription }}">', '')
+    .replace('<body>', `<body>\n${noscriptHtml(content)}`)
     .replace('</head>', `${hreflang}\n${ICON_LINKS}\n${analyticsTag(content)}\n<style>${LANG_CSS}</style><script>${LANG_JS}</script>\n</head>`);
   const outDir = path.join(output, lang.base.replace(/^\//, ''));
   await mkdir(outDir, { recursive: true });
   const homePrefix = lang.base ? '../' : '';
   await writeFile(path.join(outDir, 'index.html'), relativizeHtml(html, homePrefix), 'utf8');
   await writeFile(path.join(outDir, 'content.js'), relativizeJs(`window.KSTC_CONTENT = ${JSON.stringify(homeContent, null, 2)};\n`, homePrefix), 'utf8');
+  sitemap.push({ loc: `${lang.base}/`, alternates: true });
+  if (articles.length) sitemap.push({ loc: `${lang.base}/${lang.articles}/` });
+  for (const a of articles) sitemap.push({ loc: `${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/`, lastmod: isoDate(a.date) });
   const depth = (lang.base ? 1 : 0) + 1; // folder levels from site root to the articles list page
 
   // Article pages + list page
@@ -221,7 +268,7 @@ for (const lang of LANGS) {
 <div class="prose">${a.html}</div></article>`;
     const dir = path.join(outDir, lang.articles, a.slug);
     await mkdir(dir, { recursive: true });
-    await writeFile(path.join(dir, 'index.html'), relativizeHtml(shell(lang, content, { title: a.title, description: a.excerpt || a.title, body, alt }), '../'.repeat(depth + 1)), 'utf8');
+    await writeFile(path.join(dir, 'index.html'), relativizeHtml(shell(lang, content, { title: a.title, description: a.excerpt || a.title, body, alt, seo: seoHead({ lang, content, title: `${a.title} · Kỹ Sư Thập Cẩm`, description: a.excerpt || a.title, path: `${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/`, image: a.cover || content.logo, type: 'article', ld: [{ '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.excerpt || a.title, image: [absUrl(a.cover || content.logo)], datePublished: isoDate(a.date) || undefined, inLanguage: lang.code, author: { '@type': 'Organization', name: 'Kỹ Sư Thập Cẩm' }, publisher: { '@type': 'Organization', name: 'Kỹ Sư Thập Cẩm', logo: { '@type': 'ImageObject', url: absUrl(content.logo) } }, mainEntityOfPage: `${SITE_URL}${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/` }] }) }), '../'.repeat(depth + 1)), 'utf8');
   }
   const listBody = `<div style="padding-top:40px"><h1>${esc(content.ui.blogTitle)}</h1>
 <div class="grid">${articles.length ? articles.map((a) => `<a class="card" href="${href(a)}">${a.cover ? `<img src="${esc(a.cover)}" alt="">` : ''}
@@ -229,10 +276,16 @@ for (const lang of LANGS) {
 <strong style="font-size:19px;line-height:1.35">${esc(a.title)}</strong><span style="color:#4a4a46;font-size:15px;line-height:1.6">${esc(a.excerpt)}</span></a>`).join('') : `<p>${esc(content.ui.listEmpty)}</p>`}</div></div>`;
   if (articles.length) {
   await mkdir(path.join(outDir, lang.articles), { recursive: true });
-  await writeFile(path.join(outDir, lang.articles, 'index.html'), relativizeHtml(shell(lang, content, { title: content.ui.blogTitle, description: content.ui.listDesc, body: listBody, alt }), '../'.repeat(depth)), 'utf8');
+  await writeFile(path.join(outDir, lang.articles, 'index.html'), relativizeHtml(shell(lang, content, { title: content.ui.blogTitle, description: content.ui.listDesc, body: listBody, alt, seo: seoHead({ lang, content, title: `${content.ui.blogTitle} · Kỹ Sư Thập Cẩm`, description: content.ui.listDesc, path: `${lang.base}/${lang.articles}/`, image: content.logo }) }), '../'.repeat(depth)), 'utf8');
   }
 
   summary.push(`${lang.code}: ${articles.length} articles, ${cards.length} homepage cards`);
 }
+
+const sm = sitemap.map((e) => `  <url>
+    <loc>${SITE_URL}${e.loc}</loc>${e.lastmod ? `\n    <lastmod>${e.lastmod}</lastmod>` : ''}${e.alternates ? LANGS.map((l) => `\n    <xhtml:link rel="alternate" hreflang="${l.code}" href="${SITE_URL}${l.base}/"/>`).join('') : ''}
+  </url>`).join('\n');
+await writeFile(path.join(output, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${sm}\n</urlset>\n`, 'utf8');
+await writeFile(path.join(output, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`, 'utf8');
 
 console.log(`Built static site to ${path.relative(root, output)} (${summary.join(' | ')}).`);
