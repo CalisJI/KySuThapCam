@@ -58,31 +58,37 @@
   "products": [
     {
       "name": "Biến tần",
+      "image": "/media/VFD1.jpg",
       "href": "#lien-he",
       "cta": "Hỏi giá"
     },
     {
       "name": "PLC",
+      "image": "/media/PLC.png",
       "href": "#lien-he",
       "cta": "Hỏi giá"
     },
     {
       "name": "HMI",
+      "image": "/media/HMI-Wecon-PI3070ie.jpg",
       "href": "#lien-he",
       "cta": "Hỏi giá"
     },
     {
       "name": "Cảm biến",
+      "image": "/media/images (1).jpg",
       "href": "#lien-he",
       "cta": "Hỏi giá"
     },
     {
       "name": "Servo",
+      "image": "/media/ac-servo-motor-kit-460-460.jpg",
       "href": "#lien-he",
       "cta": "Hỏi giá"
     },
     {
       "name": "Thiết bị khác",
+      "image": "/media/industrial-component.jpg",
       "href": "#lien-he",
       "cta": "Hỏi giá"
     }
@@ -109,7 +115,6 @@
       "desc": "Thống nhất cấu hình, số lượng và phương thức giao nhận trước khi đặt hàng."
     }
   ],
-  "projects": [],
   "projectSlots": [
     {
       "tag": "TỰ ĐỘNG HÓA"
@@ -168,74 +173,5 @@
       "q": "Khu vực liên hệ ở đâu?",
       "a": "Thông tin liên hệ tại TP. Hồ Chí Minh. Phạm vi giao nhận và hỗ trợ sẽ được xác nhận theo từng yêu cầu."
     }
-  ],
-  "metaDescription": "Cung cấp thiết bị tự động hóa, cảm biến và linh kiện công nghiệp phục vụ dây chuyền sản xuất.",
-  "ui": {
-    "topbar": "Thiết bị tự động hóa · Cảm biến · Linh kiện công nghiệp",
-    "city": "TP. Hồ Chí Minh",
-    "tagline": "AUTOMATION · IoT · KẾT NỐI",
-    "navFields": "Lĩnh vực",
-    "navDevices": "Thiết bị",
-    "navHow": "Cách hoạt động",
-    "navProjects": "Dự án",
-    "navShare": "Chia sẻ",
-    "navFaq": "Hỏi đáp",
-    "navCta": "Gửi nhu cầu ↗",
-    "heroKicker": "Thiết bị công nghiệp · Cảm biến · Linh kiện",
-    "heroCta1": "Gửi nhu cầu của bạn",
-    "heroCta2": "Xem lĩnh vực ↓",
-    "stats": [
-      {
-        "title": "PLC · HMI",
-        "sub": "Điều khiển & giao diện vận hành"
-      },
-      {
-        "title": "Giám sát 24/7",
-        "sub": "Theo dõi trạng thái thiết bị"
-      },
-      {
-        "title": "IIoT · Dữ liệu",
-        "sub": "Kết nối và trực quan hóa"
-      },
-      {
-        "title": "Tích hợp hệ thống",
-        "sub": "Từ hiện trường đến dashboard"
-      }
-    ],
-    "fieldsKicker": "Giải pháp & thiết bị",
-    "fieldsTitleA": "Công nghệ đúng chỗ.",
-    "fieldsTitleB": "Hiệu quả thấy được.",
-    "devicesKicker": "Thiết bị tự động hóa",
-    "devicesTitle": "Cung cấp thiết bị & cảm biến cho dây chuyền tự động hóa",
-    "howKicker": "Cách hoạt động",
-    "howTitleA": "Chọn đúng thiết bị.",
-    "howTitleB": "Vận hành đúng nhu cầu.",
-    "howDesc": "Từ làm rõ thông số đến đề xuất thiết bị, quy trình giúp bạn chọn cấu hình phù hợp với từng dây chuyền.",
-    "howCta": "Trao đổi với kỹ sư ↗",
-    "projKicker": "Dự án tiêu biểu",
-    "projTitle": "Sẽ cập nhật",
-    "projDesc": "Nội dung ứng dụng thiết bị trong sản xuất sẽ được bổ sung khi có thông tin phù hợp để chia sẻ.",
-    "projSlot": "Dự án sắp cập nhật",
-    "blogKicker": "Góc chia sẻ kỹ thuật",
-    "blogTitle": "Kinh nghiệm & kiến thức",
-    "blogAll": "Xem tất cả bài viết →",
-    "contactKicker": "Có bài toán cần giải?",
-    "contactTitle": "Bắt đầu bằng một cuộc trao đổi kỹ thuật.",
-    "contactDesc": "Gửi model thiết bị, thông số hoặc yêu cầu của dây chuyền để trao đổi phương án phù hợp.",
-    "contactFb": "Nhắn Fanpage",
-    "mailSubject": "Trao đổi nhu cầu tự động hóa",
-    "faqKicker": "Hỏi đáp",
-    "faqTitle": "Trước khi bắt đầu",
-    "faqDesc": "Chưa chắc giải pháp nào phù hợp? Hãy trao đổi về hiện trạng trước.",
-    "footerCopy": "© 2026 Kỹ Sư Thập Cẩm · TP. Hồ Chí Minh",
-    "footPhone": "Điện thoại",
-    "footEmail": "Email",
-    "footFb": "Fanpage",
-    "footTop": "Lên đầu ↑",
-    "defaultCta": "Hỏi giá",
-    "articleCta": "Cần tư vấn thiết bị, cảm biến cho dây chuyền?",
-    "backHome": "← Về trang chủ",
-    "listEmpty": "Bài viết đang được cập nhật.",
-    "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa."
-  }
+  ]
 }
