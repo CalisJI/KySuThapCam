@@ -3,7 +3,7 @@ title: "3D ultrasonic safety moves with a palletizing robot: beRobox PALTZ and S
 date: 2026-11-04
 tag: Robotics
 color: "#1f9d4d"
-cover: ""
+cover: /media/robot-3d-ultrasonic-safety.svg
 excerpt: "beRobox and Sonair introduce moving 3D protective zones for the PALTZ palletizer, enabling more selective human–robot interaction."
 draft: false
 ---
