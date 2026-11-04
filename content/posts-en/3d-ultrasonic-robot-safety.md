@@ -3,7 +3,7 @@ title: "3D ultrasonic safety moves with a palletizing robot: beRobox PALTZ and S
 date: 2026-11-04
 tag: Robotics
 color: "#1f9d4d"
-cover: /media/robot-3d-ultrasonic-safety.svg
+cover: https://cdn.prod.website-files.com/660c0a9ae7eeb8588c079803/67bda15bb22846465c0ef194_cl2.png
 excerpt: "beRobox and Sonair introduce moving 3D protective zones for the PALTZ palletizer, enabling more selective human–robot interaction."
 draft: false
 ---
@@ -42,3 +42,4 @@ This technology may be relevant to food and beverage, packaging, logistics, and 
 - [ADAR One product specifications — Sonair](https://www.sonair.com/products)
 
 *Edited and independently written by Kỹ Sư Thập Cẩm using the linked sources. Technical specifications and use cases are manufacturer claims, not independently verified deployments in Vietnam.*
+*Cover image: Sonair's photograph of an ADAR sensor on a mobile robot (not a photograph of the beRobox PALTZ cell discussed above), linked from Sonair's host. Image rights remain with the owner.*
