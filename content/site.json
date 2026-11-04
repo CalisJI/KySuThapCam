@@ -20,6 +20,15 @@
         "Tủ điện & tích hợp thiết bị",
         "Nâng cấp hệ thống hiện hữu",
         "Cung cấp thiết bị tự động hóa"
+      ],
+      "tagEn": "PLC · HMI · Sensor",
+      "titleEn": "Automation & control",
+      "descEn": "Design, programming and upgrades of control systems for machines and production lines.",
+      "itemsEn": [
+        "PLC and HMI programming",
+        "Control cabinets & device integration",
+        "Upgrades to existing systems",
+        "Automation equipment supply"
       ]
     },
     {
@@ -31,6 +40,14 @@
         "Thu thập dữ liệu thiết bị",
         "Dashboard theo nhu cầu",
         "Cảnh báo qua mạng"
+      ],
+      "tagEn": "ALERT",
+      "titleEn": "Monitoring & alerts",
+      "descEn": "Centralized operating status that helps you catch abnormalities early.",
+      "itemsEn": [
+        "Equipment data collection",
+        "Dashboards tailored to your needs",
+        "Network alerts"
       ]
     },
     {
@@ -42,6 +59,14 @@
         "Cảm biến & gateway",
         "Kết nối máy và nền tảng",
         "Theo dõi từ xa linh hoạt"
+      ],
+      "tagEn": "IoT",
+      "titleEn": "Industrial IoT",
+      "descEn": "Connect sensors and machines to turn operating data into information that is easy to use.",
+      "itemsEn": [
+        "Sensors & gateways",
+        "Machine and platform connectivity",
+        "Flexible remote monitoring"
       ]
     },
     {
@@ -53,6 +78,14 @@
         "Cảm biến và thiết bị đo",
         "Thiết bị điều khiển và đóng cắt",
         "Linh kiện thay thế"
+      ],
+      "tagEn": "COMPONENTS",
+      "titleEn": "Industrial equipment & components",
+      "descEn": "Equipment, sensors and components for operating and upgrading automated production lines.",
+      "itemsEn": [
+        "Sensors and measuring devices",
+        "Control and switching equipment",
+        "Replacement components"
       ]
     }
   ],
@@ -61,87 +94,122 @@
       "name": "Biến tần",
       "image": "/media/VFD1.jpg",
       "href": "#lien-he",
-      "cta": "Hỏi giá"
+      "cta": "Hỏi giá",
+      "nameEn": "Inverters (VFD)",
+      "ctaEn": "Request a quote"
     },
     {
       "name": "PLC",
       "image": "/media/PLC.png",
       "href": "#lien-he",
-      "cta": "Hỏi giá"
+      "cta": "Hỏi giá",
+      "nameEn": "PLC",
+      "ctaEn": "Request a quote"
     },
     {
       "name": "HMI",
       "image": "/media/HMI-Wecon-PI3070ie.jpg",
       "href": "#lien-he",
-      "cta": "Hỏi giá"
+      "cta": "Hỏi giá",
+      "nameEn": "HMI",
+      "ctaEn": "Request a quote"
     },
     {
       "name": "Cảm biến",
       "image": "/media/cam-bien.jpg",
       "href": "#lien-he",
-      "cta": "Hỏi giá"
+      "cta": "Hỏi giá",
+      "nameEn": "Sensors",
+      "ctaEn": "Request a quote"
     },
     {
       "name": "Servo",
       "image": "/media/ac-servo-motor-kit-460-460.jpg",
       "href": "#lien-he",
-      "cta": "Hỏi giá"
+      "cta": "Hỏi giá",
+      "nameEn": "Servo",
+      "ctaEn": "Request a quote"
     },
     {
       "name": "Thiết bị khác",
       "image": "/media/industrial-component.jpg",
       "href": "#lien-he",
-      "cta": "Hỏi giá"
+      "cta": "Hỏi giá",
+      "nameEn": "Other equipment",
+      "ctaEn": "Request a quote"
     },
     {
       "name": "IoT Gateway",
       "image": "/media/iot-din-imx8plus-gateway-with-four-io-modules.jpg",
       "href": "#lien-he",
-      "cta": "Hỏi giá"
+      "cta": "Hỏi giá",
+      "nameEn": "IoT Gateway"
     }
   ],
   "steps": [
     {
       "num": "01 / TIẾP NHẬN",
       "title": "Tìm hiểu dây chuyền",
-      "desc": "Làm rõ công đoạn sử dụng, thiết bị hiện có, môi trường lắp đặt và yêu cầu vận hành."
+      "desc": "Làm rõ công đoạn sử dụng, thiết bị hiện có, môi trường lắp đặt và yêu cầu vận hành.",
+      "numEn": "01 / INTAKE",
+      "titleEn": "Understand your line",
+      "descEn": "We clarify the process stage, existing equipment, installation environment and operating requirements."
     },
     {
       "num": "02 / XÁC ĐỊNH",
       "title": "Chốt thông số kỹ thuật",
-      "desc": "Xác định model, dải đo, nguồn cấp, chuẩn kết nối, số lượng và điều kiện làm việc."
+      "desc": "Xác định model, dải đo, nguồn cấp, chuẩn kết nối, số lượng và điều kiện làm việc.",
+      "numEn": "02 / DEFINE",
+      "titleEn": "Lock in the specifications",
+      "descEn": "We define the model, measuring range, power supply, connectivity standard, quantity and working conditions."
     },
     {
       "num": "03 / ĐỀ XUẤT",
       "title": "Chọn thiết bị phù hợp",
-      "desc": "Đối chiếu yêu cầu với danh mục thiết bị, cảm biến và linh kiện; xác nhận cấu hình, báo giá."
+      "desc": "Đối chiếu yêu cầu với danh mục thiết bị, cảm biến và linh kiện; xác nhận cấu hình, báo giá.",
+      "numEn": "03 / PROPOSE",
+      "titleEn": "Select the right equipment",
+      "descEn": "We match your requirements against our range of equipment, sensors and components, then confirm the configuration and quote."
     },
     {
       "num": "04 / XÁC NHẬN",
       "title": "Hoàn tất đơn hàng",
-      "desc": "Thống nhất cấu hình, số lượng và phương thức giao nhận trước khi đặt hàng."
+      "desc": "Thống nhất cấu hình, số lượng và phương thức giao nhận trước khi đặt hàng.",
+      "numEn": "04 / CONFIRM",
+      "titleEn": "Complete the order",
+      "descEn": "We agree on configuration, quantity and delivery method before you place the order."
     }
   ],
   "faqs": [
     {
       "q": "Kỹ Sư Thập Cẩm cung cấp những thiết bị nào?",
-      "a": "Danh mục tham khảo gồm PLC, HMI, biến tần, servo, cảm biến và linh kiện công nghiệp. Gửi model, thông số và số lượng để xác nhận lựa chọn, tình trạng cung cấp và báo giá."
+      "a": "Danh mục tham khảo gồm PLC, HMI, biến tần, servo, cảm biến và linh kiện công nghiệp. Gửi model, thông số và số lượng để xác nhận lựa chọn, tình trạng cung cấp và báo giá.",
+      "qEn": "What equipment does Kỹ Sư Thập Cẩm supply?",
+      "aEn": "Our reference range covers PLCs, HMIs, inverters, servos, sensors and industrial components. Send the model, specifications and quantity so we can confirm the selection, availability and a quote."
     },
     {
       "q": "Tôi chưa biết chọn model nào, có thể nhờ tư vấn không?",
-      "a": "Có. Hãy gửi thông tin công đoạn, yêu cầu kỹ thuật, điều kiện lắp đặt và thiết bị đang sử dụng để cùng xác định thông số cần thiết."
+      "a": "Có. Hãy gửi thông tin công đoạn, yêu cầu kỹ thuật, điều kiện lắp đặt và thiết bị đang sử dụng để cùng xác định thông số cần thiết.",
+      "qEn": "I am not sure which model to choose. Can you advise?",
+      "aEn": "Yes. Send the process stage, technical requirements, installation conditions and the equipment you currently use, and we will work out the required specifications together."
     },
     {
       "q": "Tôi chỉ cần một cảm biến hoặc linh kiện, có thể hỏi không?",
-      "a": "Có. Gửi mã hàng hoặc ảnh nhãn thiết bị, thông số và số lượng cần dùng để kiểm tra phương án phù hợp."
+      "a": "Có. Gửi mã hàng hoặc ảnh nhãn thiết bị, thông số và số lượng cần dùng để kiểm tra phương án phù hợp.",
+      "qEn": "I only need a single sensor or component. Can I ask?",
+      "aEn": "Yes. Send the part number or a photo of the nameplate, the specifications and the quantity you need, and we will check what fits."
     },
     {
       "q": "Cần chuẩn bị gì để hỏi thiết bị?",
-      "a": "Nếu có, hãy chuẩn bị model/mã hàng, hình ảnh nhãn, sơ đồ kết nối, thông số vận hành, môi trường lắp đặt và số lượng."
+      "a": "Nếu có, hãy chuẩn bị model/mã hàng, hình ảnh nhãn, sơ đồ kết nối, thông số vận hành, môi trường lắp đặt và số lượng.",
+      "qEn": "What should I prepare when asking about equipment?",
+      "aEn": "If available, prepare the model or part number, photos of the nameplate, wiring diagrams, operating specifications, installation environment and quantity."
     },
     {
       "q": "Khu vực liên hệ ở đâu?",
-      "a": "Thông tin liên hệ tại TP. Hồ Chí Minh. Phạm vi giao nhận và hỗ trợ sẽ được xác nhận theo từng yêu cầu."
+      "a": "Thông tin liên hệ tại TP. Hồ Chí Minh. Phạm vi giao nhận và hỗ trợ sẽ được xác nhận theo từng yêu cầu.",
+      "qEn": "Where are you located?",
+      "aEn": "Our contact point is in Ho Chi Minh City, Vietnam. Delivery and support coverage are confirmed for each request."
     }
   ],
   "ui": {
@@ -209,5 +277,6 @@
     "articleCta": "Cần tư vấn thiết bị, cảm biến cho dây chuyền?",
     "backHome": "← Về trang chủ",
     "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa."
-  }
+  },
+  "projects": []
 }

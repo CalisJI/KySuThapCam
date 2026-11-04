@@ -28,6 +28,48 @@ const REQUIRED = ['heroTitle', 'heroHighlight', 'heroDescription', 'contactEmail
 const UI_DEFAULTS = JSON.parse(await readFile(path.join(root, 'scripts', 'ui-defaults.json'), 'utf8'));
 const baseContent = JSON.parse(await readFile(path.join(root, 'content', LANGS[0].site), 'utf8'));
 
+// Translatable keys per list. A key K is translated by the optional sibling "KEn"; everything else
+// (color, image, href...) is shared between languages.
+const TRANSLATABLE = {
+  fields: ['tag', 'title', 'desc', 'items'],
+  products: ['name', 'cta'],
+  steps: ['num', 'title', 'desc'],
+  projects: ['tag', 'title', 'desc'],
+  faqs: ['q', 'a'],
+};
+const SHARED_SINGLE = ['phoneDisplay', 'phoneLink', 'contactEmail', 'fbUrl', 'showBlog'];
+const isEmpty = (v) => v === undefined || v === null || v === '' || (Array.isArray(v) && v.length === 0);
+const mapItems = (list, fn) => (Array.isArray(list) ? list.map(fn) : []);
+function stripTranslations(c) {
+  const out = { ...c };
+  for (const [list, keys] of Object.entries(TRANSLATABLE)) {
+    out[list] = mapItems(c[list], (item) => {
+      const o = { ...item };
+      for (const k of keys) delete o[`${k}En`];
+      return o;
+    });
+  }
+  return out;
+}
+// Build a non-base language: own singular texts + shared singles + lists derived from the base file.
+function localize(base, own) {
+  const out = { ...own };
+  for (const k of SHARED_SINGLE) if (k in base) out[k] = base[k];
+  for (const [list, keys] of Object.entries(TRANSLATABLE)) {
+    out[list] = mapItems(base[list], (item) => {
+      const o = { ...item };
+      for (const k of keys) {
+        const tr = item[`${k}En`];
+        if (!isEmpty(tr)) o[k] = tr;
+        else if (k === 'cta') o[k] = '';
+        delete o[`${k}En`];
+      }
+      return o;
+    });
+  }
+  return out;
+}
+
 const esc = (v = '') => String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const toDate = (d) => (d instanceof Date ? d : new Date(d));
 const isoDate = (d) => {
@@ -118,18 +160,15 @@ const template = await readFile(path.join(source, 'index.html'), 'utf8');
 
 const summary = [];
 for (const lang of LANGS) {
-  const content = JSON.parse(await readFile(path.join(root, 'content', lang.site), 'utf8'));
+  let content = JSON.parse(await readFile(path.join(root, 'content', lang.site), 'utf8'));
+  // Lists (services, equipment, steps, projects, FAQ) live ONLY in the first language's file, each item carrying
+  // optional "<field>En" translations, so adding an item once makes it appear in every language.
+  content = lang === LANGS[0] ? stripTranslations(content) : localize(baseContent, content);
   // A stale CMS form can save a file without newer fields; fall back to defaults instead of failing the build.
   const defaults = UI_DEFAULTS[lang.code] || {};
   content.metaDescription = content.metaDescription || defaults.metaDescription || '';
   content.ui = { ...(defaults.ui || {}), ...(content.ui || {}) };
   content.projects = content.projects || [];
-  // Images are language-independent: inherit them from the first language when a product/project has none.
-  if (lang !== LANGS[0]) {
-    for (const key of ['products', 'projects']) {
-      (content[key] || []).forEach((item, i) => { if (!item.image && baseContent[key]?.[i]?.image) item.image = baseContent[key][i].image; });
-    }
-  }
   for (const key of REQUIRED) {
     if (!(key in content)) throw new Error(`${lang.site}: missing required field "${key}"`);
   }
