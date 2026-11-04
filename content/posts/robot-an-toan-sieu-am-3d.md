@@ -5,6 +5,7 @@ tag: Robotics
 color: "#1f9d4d"
 cover: https://cdn.prod.website-files.com/660c0a9ae7eeb8588c079803/67bda15bb22846465c0ef194_cl2.png
 excerpt: "beRobox và Sonair giới thiệu vùng bảo vệ 3D di động cho robot xếp pallet PALTZ, giúp phối hợp an toàn với người vận hành."
+translation: 3d-ultrasonic-robot-safety
 draft: false
 ---
 

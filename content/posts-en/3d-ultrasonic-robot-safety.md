@@ -5,6 +5,7 @@ tag: Robotics
 color: "#1f9d4d"
 cover: https://cdn.prod.website-files.com/660c0a9ae7eeb8588c079803/67bda15bb22846465c0ef194_cl2.png
 excerpt: "beRobox and Sonair introduce moving 3D protective zones for the PALTZ palletizer, enabling more selective human–robot interaction."
+translation: robot-an-toan-sieu-am-3d
 draft: false
 ---
 

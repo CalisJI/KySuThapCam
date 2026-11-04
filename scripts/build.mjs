@@ -20,8 +20,8 @@ const FLAG_SVG = {
   en: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40"><rect width="60" height="40" fill="#012169"/><path d="M0,0 60,40M60,0 0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 60,40M60,0 0,40" stroke="#C8102E" stroke-width="3"/><path d="M30,0V40M0,20H60" stroke="#fff" stroke-width="12"/><path d="M30,0V40M0,20H60" stroke="#C8102E" stroke-width="7"/></svg>',
 };
 const flagUri = (code) => `data:image/svg+xml;utf8,${encodeURIComponent(FLAG_SVG[code] || '')}`;
-const langList = (current) => LANGS.map((l) => ({
-  code: l.code, label: l.label, name: l.name, href: `${l.base}/`, flag: flagUri(l.code), mark: l === current ? '✓' : '',
+const langList = (current, hrefs = {}) => LANGS.map((l) => ({
+  code: l.code, label: l.label, name: l.name, href: hrefs[l.code] || `${l.base}/`, flag: flagUri(l.code), mark: l === current ? '✓' : '',
 }));
 
 const REQUIRED = ['heroTitle', 'heroHighlight', 'heroDescription', 'contactEmail', 'phoneDisplay', 'phoneLink', 'fields', 'products', 'steps', 'faqs'];
@@ -129,6 +129,25 @@ const fmtDate = (d, locale) => {
   const dt = toDate(d);
   return Number.isNaN(dt.getTime()) ? '' : dt.toLocaleDateString(locale, { timeZone: 'UTC' });
 };
+// Display labels (tags) in one consistent style: first letter capitalised, rest lower-case; short Latin
+// acronyms (PLC, HMI) and mixed-case words (IoT) are kept. Each "a · b" / "a / b" segment is handled separately.
+function normTag(s) {
+  const text = String(s || '').trim();
+  if (!text) return '';
+  return text.split(/(\s+[·/|,]\s+|\s*,\s+)/).map((seg) => {
+    if (/^\s*[·/|,]\s*$/.test(seg) || !seg) return seg;
+    if (!/[a-z]/.test(seg) && (/[^\x00-\x7F]/.test(seg) || /[A-Za-z]\s+[A-Za-z]/.test(seg.trim()))) {
+      const low = seg.toLowerCase();
+      return low.charAt(0).toUpperCase() + low.slice(1);
+    }
+    const out = seg.replace(/[\p{L}\p{M}]+/gu, (w) => {
+      if (/^[A-Z]{2,4}$/.test(w)) return w;
+      if (/[a-z]/.test(w) && /[A-Z]/.test(w.slice(1))) return w;
+      return w.toLowerCase();
+    });
+    return out.charAt(0).toUpperCase() + out.slice(1);
+  }).join('');
+}
 const safeColor = (c) => (/^#[0-9a-f]{3,8}$/i.test(c || '') ? c : '#e8590c');
 
 // The site must work whether it is served from the domain root or from a sub-path (e.g. when the host
@@ -155,7 +174,8 @@ async function loadArticles(lang) {
     list.push({
       slug: file.replace(/\.md$/, ''),
       title: String(data.title),
-      tag: data.tag || '',
+      tag: normTag(data.tag),
+      translation: String(data.translation || '').split('/').pop().replace(/\.md$/, ''),
       color: safeColor(data.color),
       cover: data.cover || '',
       excerpt: data.excerpt || '',
@@ -167,11 +187,11 @@ async function loadArticles(lang) {
   return list;
 }
 
-const langMenuHtml = (lang) => `<details class="lang-menu"><summary><img src="${flagUri(lang.code)}" width="22" height="15" alt=""> ${lang.label} <span>▾</span></summary><div class="lang-pop">${langList(lang).map((l) => `<a href="${l.href}" hreflang="${l.code}"><img src="${l.flag}" width="22" height="15" alt=""><span>${l.name}</span><b>${l.mark}</b></a>`).join('')}</div></details>`;
+const langMenuHtml = (lang, hrefs) => `<details class="lang-menu"><summary><img src="${flagUri(lang.code)}" width="22" height="15" alt=""> ${lang.label} <span>▾</span></summary><div class="lang-pop">${langList(lang, hrefs).map((l) => `<a href="${l.href}" hreflang="${l.code}"><img src="${l.flag}" width="22" height="15" alt=""><span>${l.name}</span><b>${l.mark}</b></a>`).join('')}</div></details>`;
 const LANG_CSS = `.lang-menu{position:relative}.lang-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;border:1.5px solid #141414;color:#141414;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:800}.lang-menu summary::-webkit-details-marker{display:none}.lang-menu img{border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}.lang-pop{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border-radius:14px;box-shadow:0 12px 32px -8px rgba(0,0,0,.28);padding:6px;min-width:170px;z-index:50}.lang-pop a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:#141414;font-size:14px;font-weight:600}.lang-pop a:hover{background:#f3f1ec;color:#141414}.lang-pop b{margin-left:auto;color:#1f9d4d}`;
 const NEWS_JS = `(function(){var chips=[].slice.call(document.querySelectorAll('.chip')),cards=[].slice.call(document.querySelectorAll('#newsgrid .card')),more=document.getElementById('more'),limit=9,tag='';function ok(c){return !tag||c.getAttribute('data-tag')===tag}function apply(){var n=0;cards.forEach(function(c){var v=ok(c)&&n<limit;if(ok(c))n++;c.style.display=v?'':'none'});if(more)more.style.display=cards.filter(ok).length>limit?'':'none'}chips.forEach(function(b){b.onclick=function(){tag=b.getAttribute('data-tag');chips.forEach(function(x){x.className=x===b?'chip on':'chip'});limit=9;apply()}});if(more)more.onclick=function(){limit+=9;apply()};apply()})();`;
-const LANG_JS = `document.addEventListener('click',function(e){document.querySelectorAll('details.lang-menu[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});`;
-const shell = (lang, content, { title, description, body, alt, seo, wide }) => `<!doctype html>
+const LANG_JS = `document.addEventListener('click',function(e){document.querySelectorAll('details.lang-menu[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')});var a=e.target.closest&&e.target.closest('.lang-pop a');if(a){try{var h=a.getAttribute('href');if(location.hash&&h.indexOf('#')<0)a.setAttribute('href',h+location.hash);var m=document.documentElement.scrollHeight-innerHeight;sessionStorage.setItem('kstc-scroll',JSON.stringify({f:m>0?scrollY/m:0,t:Date.now()}))}catch(x){}}});window.addEventListener('load',function(){try{var s=JSON.parse(sessionStorage.getItem('kstc-scroll')||'null');sessionStorage.removeItem('kstc-scroll');if(!s||Date.now()-s.t>8000||location.hash)return;setTimeout(function(){var m=document.documentElement.scrollHeight-innerHeight;if(m>0)scrollTo(0,Math.round(s.f*m))},350)}catch(x){}});`;
+const shell = (lang, content, { title, description, body, alt, seo, wide, hrefs }) => `<!doctype html>
 <html lang="${lang.code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 ${seo}
 ${ICON_LINKS}
@@ -210,7 +230,7 @@ ${LANG_CSS}
 footer{padding:40px 0;color:#6a6a64;font-size:14px}
 </style></head><body>
 <header><div class="bar"><a class="brand" href="${lang.base}/"><img src="${esc(content.logo)}" alt="" width="34" height="34">KỸ SƯ THẬP CẨM</a>
-<nav style="display:flex;gap:20px;font-size:14px;font-weight:600;align-items:center"><a href="${lang.base}/#thiet-bi">${esc(content.ui.navDevices)}</a><a href="${lang.base}/${lang.articles}/">${esc(content.ui.navShare)}</a><a href="${lang.base}/#lien-he">${esc(content.ui.navCta.replace(/\s*↗/, ''))}</a>${langMenuHtml(lang)}</nav></div></header>
+<nav style="display:flex;gap:20px;font-size:14px;font-weight:600;align-items:center"><a href="${lang.base}/#thiet-bi">${esc(content.ui.navDevices)}</a><a href="${lang.base}/${lang.articles}/">${esc(content.ui.navShare)}</a><a href="${lang.base}/#lien-he">${esc(content.ui.navCta.replace(/\s*↗/, ''))}</a>${langMenuHtml(lang, hrefs)}</nav></div></header>
 <main class="wrap${wide ? ' wide' : ''}">${body}
 <div class="cta"><strong>${esc(content.ui.articleCta)}</strong><br>
 <a href="tel:${esc(content.phoneLink)}">${esc(content.phoneDisplay)}</a> · <a href="mailto:${esc(content.contactEmail)}">${esc(content.contactEmail)}</a></div>
@@ -221,6 +241,20 @@ await mkdir(output, { recursive: true });
 await cp(source, output, { recursive: true });
 const template = await readFile(path.join(source, 'index.html'), 'utf8');
 
+const ALL = {};
+for (const l of LANGS) ALL[l.code] = await loadArticles(l);
+// translation pairs, symmetric: declaring it on either side is enough
+const PAIR = {};
+for (const l of LANGS) {
+  for (const a of ALL[l.code]) {
+    if (!a.translation) continue;
+    const o = LANGS.find((x) => x !== l);
+    if (ALL[o.code].some((x) => x.slug === a.translation)) {
+      (PAIR[l.code] ||= {})[a.slug] = a.translation;
+      (PAIR[o.code] ||= {})[a.translation] = a.slug;
+    }
+  }
+}
 const summary = [];
 for (const lang of LANGS) {
   let content = JSON.parse(await readFile(path.join(root, 'content', lang.site), 'utf8'));
@@ -232,6 +266,7 @@ for (const lang of LANGS) {
   content.metaDescription = content.metaDescription || defaults.metaDescription || '';
   content.ui = { ...(defaults.ui || {}), ...(content.ui || {}) };
   content.projects = content.projects || [];
+  for (const key of ['fields', 'projects']) content[key] = (content[key] || []).map((it) => ({ ...it, tag: normTag(it.tag) }));
   content.logo = content.logo || '/media/logo.png';
   for (const key of REQUIRED) {
     if (!(key in content)) throw new Error(`${lang.site}: missing required field "${key}"`);
@@ -241,7 +276,9 @@ for (const lang of LANGS) {
   }
   const other = LANGS.find((l) => l !== lang);
   const alt = { code: other.code, label: other.label, href: `${other.base}/` };
-  const articles = await loadArticles(lang);
+  const articles = ALL[lang.code];
+  const artUrl = (l, slug) => `${l.base}/${l.articles}/${encodeURIComponent(slug)}/`;
+  const listHrefs = { [lang.code]: `${lang.base}/${lang.articles}/`, [other.code]: ALL[other.code].length ? `${other.base}/${other.articles}/` : `${other.base}/` };
   const href = (a) => `${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/`;
 
   // Homepage cards: real articles only (no placeholder cards).
@@ -281,7 +318,7 @@ for (const lang of LANGS) {
 <div class="prose">${a.html}</div></article>`;
     const dir = path.join(outDir, lang.articles, a.slug);
     await mkdir(dir, { recursive: true });
-    await writeFile(path.join(dir, 'index.html'), relativizeHtml(shell(lang, content, { title: a.title, description: a.excerpt || a.title, body, alt, seo: seoHead({ lang, content, title: `${a.title} · Kỹ Sư Thập Cẩm`, description: a.excerpt || a.title, path: `${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/`, image: a.cover || content.logo, type: 'article', ld: [{ '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.excerpt || a.title, image: [absUrl(a.cover || content.logo)], datePublished: isoDate(a.date) || undefined, inLanguage: lang.code, author: { '@type': 'Organization', name: 'Kỹ Sư Thập Cẩm' }, publisher: { '@type': 'Organization', name: 'Kỹ Sư Thập Cẩm', logo: { '@type': 'ImageObject', url: absUrl(content.logo) } }, mainEntityOfPage: `${SITE_URL}${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/` }] }) }), '../'.repeat(depth + 1)), 'utf8');
+    await writeFile(path.join(dir, 'index.html'), relativizeHtml(shell(lang, content, { title: a.title, description: a.excerpt || a.title, body, alt, hrefs: { [other.code]: PAIR[lang.code]?.[a.slug] ? artUrl(other, PAIR[lang.code][a.slug]) : listHrefs[other.code] }, seo: seoHead({ lang, content, title: `${a.title} · Kỹ Sư Thập Cẩm`, description: a.excerpt || a.title, path: `${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/`, image: a.cover || content.logo, type: 'article', ld: [{ '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.excerpt || a.title, image: [absUrl(a.cover || content.logo)], datePublished: isoDate(a.date) || undefined, inLanguage: lang.code, author: { '@type': 'Organization', name: 'Kỹ Sư Thập Cẩm' }, publisher: { '@type': 'Organization', name: 'Kỹ Sư Thập Cẩm', logo: { '@type': 'ImageObject', url: absUrl(content.logo) } }, mainEntityOfPage: `${SITE_URL}${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/` }] }) }), '../'.repeat(depth + 1)), 'utf8');
   }
   const thumb = (a) => (a.cover ? `<img class="thumb" src="${esc(a.cover)}" alt="" loading="lazy">` : `<div class="thumb ph"><img src="${esc(content.logo)}" alt=""></div>`);
   const metaLine = (a) => `<div class="meta"><span style="color:${a.color}">${esc(a.tag)}</span><span style="color:#8a8a84;font-weight:500">${esc(fmtDate(a.date, lang.locale))}</span></div>`;
@@ -296,7 +333,7 @@ ${rest.length ? `${tags.length > 1 ? `<div class="chips"><button class="chip on"
 <script>${NEWS_JS}</script>` : ''}</div>`;
   if (articles.length) {
   await mkdir(path.join(outDir, lang.articles), { recursive: true });
-  await writeFile(path.join(outDir, lang.articles, 'index.html'), relativizeHtml(shell(lang, content, { title: content.ui.blogTitle, description: content.ui.listDesc, body: listBody, alt, wide: true, seo: seoHead({ lang, content, title: `${content.ui.blogTitle} · Kỹ Sư Thập Cẩm`, description: content.ui.listDesc, path: `${lang.base}/${lang.articles}/`, image: content.logo }) }), '../'.repeat(depth)), 'utf8');
+  await writeFile(path.join(outDir, lang.articles, 'index.html'), relativizeHtml(shell(lang, content, { title: content.ui.blogTitle, description: content.ui.listDesc, body: listBody, alt, wide: true, hrefs: { [other.code]: listHrefs[other.code] }, seo: seoHead({ lang, content, title: `${content.ui.blogTitle} · Kỹ Sư Thập Cẩm`, description: content.ui.listDesc, path: `${lang.base}/${lang.articles}/`, image: content.logo }) }), '../'.repeat(depth)), 'utf8');
   }
 
   summary.push(`${lang.code}: ${articles.length} articles, ${cards.length} homepage cards`);

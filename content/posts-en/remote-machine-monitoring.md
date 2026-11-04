@@ -5,6 +5,7 @@ tag: IoT
 color: "#1f9d4d"
 cover: /media/article-hmi-monitoring.jpg
 excerpt: "From sensors and gateways to the dashboard: the basic building blocks for monitoring machines remotely without replacing older equipment."
+translation: giam-sat-may-tu-xa
 draft: false
 ---
 Many machines on the shop floor have run reliably for years but cannot tell you when they stopped, for how long, or that they are running hot. Remote monitoring does not require replacing the machine: you add sensors on the outside, bring the data to a small gateway and show it on a dashboard.

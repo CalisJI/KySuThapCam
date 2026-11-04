@@ -556,6 +556,14 @@ content:
   - name: excerpt
     label: Mô tả ngắn (hiện trên trang chủ)
     type: text
+  - name: translation
+    label: Bài tương ứng bản English (để nút đổi ngôn ngữ mở đúng bài này)
+    type: reference
+    options:
+      collection: articles-en
+      search: title
+      value: '{path}'
+      label: '{primary}'
   - name: draft
     label: Nháp (không hiển thị)
     type: boolean
@@ -600,6 +608,14 @@ content:
   - name: excerpt
     label: Mô tả ngắn (hiện trên trang chủ)
     type: text
+  - name: translation
+    label: Bài tương ứng bản Tiếng Việt (để nút đổi ngôn ngữ mở đúng bài này)
+    type: reference
+    options:
+      collection: articles
+      search: title
+      value: '{path}'
+      label: '{primary}'
   - name: draft
     label: Nháp (không hiển thị)
     type: boolean

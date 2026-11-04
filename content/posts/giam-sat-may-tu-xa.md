@@ -5,6 +5,7 @@ tag: IoT
 color: "#1f9d4d"
 cover: /media/article-hmi-monitoring.jpg
 excerpt: "Từ cảm biến, gateway đến dashboard: các thành phần cơ bản để theo dõi máy từ xa mà không cần thay máy cũ."
+translation: remote-machine-monitoring
 draft: false
 ---
 Nhiều máy trong xưởng đã chạy ổn nhiều năm nhưng không cho biết lúc nào nó dừng, dừng bao lâu hay đang nóng bất thường. Giám sát từ xa không đòi hỏi thay máy: bạn gắn thêm cảm biến bên ngoài, đưa dữ liệu về một gateway nhỏ rồi hiển thị lên dashboard.

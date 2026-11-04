@@ -5,6 +5,7 @@ tag: PLC
 color: "#e8590c"
 cover: /media/article-plc-cabinet.jpg
 excerpt: "I/O count, output type, communication and room to expand: what to settle before you pick a PLC model for a small machine."
+translation: chon-plc-cho-may-nho
 draft: false
 ---
 On a single machine the PLC is just a small box in the control cabinet. But the wrong model can mean rewiring, extra modules or even a different programming package a few months later. Here is what to settle before you order.

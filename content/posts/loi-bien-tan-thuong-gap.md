@@ -5,6 +5,7 @@ tag: BIẾN TẦN
 color: "#e8590c"
 cover: /media/article-inverter.jpg
 excerpt: "Quá dòng, quá áp, thấp áp, quá tải, quá nhiệt: dấu hiệu, nguyên nhân thường gặp và hướng kiểm tra ban đầu."
+translation: common-inverter-faults
 draft: false
 ---
 Biến tần dừng đột ngột giữa ca sản xuất là tình huống quen thuộc ở nhiều xưởng. Phần lớn lỗi có thể khoanh vùng nhanh nếu bạn hiểu mã lỗi báo về nhóm nguyên nhân nào. Bài viết này tóm tắt các nhóm lỗi phổ biến và hướng kiểm tra ban đầu.

@@ -5,6 +5,7 @@ tag: INVERTER
 color: "#e8590c"
 cover: /media/article-inverter.jpg
 excerpt: "Overcurrent, overvoltage, undervoltage, overload and overheating: typical symptoms, likely causes and where to start checking."
+translation: loi-bien-tan-thuong-gap
 draft: false
 ---
 An inverter (VFD) tripping in the middle of a shift is a familiar scene. Most faults can be narrowed down quickly once you know which group of causes a fault code points to. This article summarizes the common fault groups and where to start checking.
