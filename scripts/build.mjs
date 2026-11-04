@@ -169,8 +169,9 @@ async function loadArticles(lang) {
 
 const langMenuHtml = (lang) => `<details class="lang-menu"><summary><img src="${flagUri(lang.code)}" width="22" height="15" alt=""> ${lang.label} <span>▾</span></summary><div class="lang-pop">${langList(lang).map((l) => `<a href="${l.href}" hreflang="${l.code}"><img src="${l.flag}" width="22" height="15" alt=""><span>${l.name}</span><b>${l.mark}</b></a>`).join('')}</div></details>`;
 const LANG_CSS = `.lang-menu{position:relative}.lang-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;border:1.5px solid #141414;color:#141414;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:800}.lang-menu summary::-webkit-details-marker{display:none}.lang-menu img{border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}.lang-pop{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border-radius:14px;box-shadow:0 12px 32px -8px rgba(0,0,0,.28);padding:6px;min-width:170px;z-index:50}.lang-pop a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:#141414;font-size:14px;font-weight:600}.lang-pop a:hover{background:#f3f1ec;color:#141414}.lang-pop b{margin-left:auto;color:#1f9d4d}`;
+const NEWS_JS = `(function(){var chips=[].slice.call(document.querySelectorAll('.chip')),cards=[].slice.call(document.querySelectorAll('#newsgrid .card')),more=document.getElementById('more'),limit=9,tag='';function ok(c){return !tag||c.getAttribute('data-tag')===tag}function apply(){var n=0;cards.forEach(function(c){var v=ok(c)&&n<limit;if(ok(c))n++;c.style.display=v?'':'none'});if(more)more.style.display=cards.filter(ok).length>limit?'':'none'}chips.forEach(function(b){b.onclick=function(){tag=b.getAttribute('data-tag');chips.forEach(function(x){x.className=x===b?'chip on':'chip'});limit=9;apply()}});if(more)more.onclick=function(){limit+=9;apply()};apply()})();`;
 const LANG_JS = `document.addEventListener('click',function(e){document.querySelectorAll('details.lang-menu[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});`;
-const shell = (lang, content, { title, description, body, alt, seo }) => `<!doctype html>
+const shell = (lang, content, { title, description, body, alt, seo, wide }) => `<!doctype html>
 <html lang="${lang.code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 ${seo}
 ${ICON_LINKS}
@@ -194,11 +195,23 @@ h1{font-size:clamp(28px,4vw,42px);line-height:1.15;letter-spacing:-.02em;margin:
 .card{background:#fff;border-radius:20px;padding:22px;color:#141414;display:flex;flex-direction:column;gap:10px;box-shadow:0 6px 18px -10px rgba(0,0,0,.18)}
 .card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px}
 ${LANG_CSS}
+.wrap.wide{max-width:1200px}
+.news-kicker{font-size:12px;font-weight:800;color:#1f9d4d;letter-spacing:.12em;text-transform:uppercase}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.chip{font:inherit;font-size:13px;font-weight:700;border:1.5px solid #d8d6cf;background:#fff;color:#141414;border-radius:999px;padding:7px 14px;cursor:pointer}.chip.on{background:#141414;border-color:#141414;color:#fff}
+.feature{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:0;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 8px 24px -10px rgba(0,0,0,.18);margin-top:32px;color:#141414}
+.feature .thumb{width:100%;height:100%;min-height:260px;aspect-ratio:auto}.feature .txt{padding:32px;display:flex;flex-direction:column;gap:12px;justify-content:center}.feature h2{margin:0;font-size:clamp(22px,2.6vw,32px);line-height:1.25}
+@media(max-width:760px){.feature{grid-template-columns:1fr}.feature .thumb{min-height:0;aspect-ratio:16/9}}
+.card .thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block;background:#f3f1ec}
+.thumb.ph{display:grid;place-items:center;background:repeating-linear-gradient(135deg,#f6f4ef 0 12px,#efece5 12px 24px);border-radius:12px}.thumb.ph img{width:56px;height:56px;border-radius:14px;opacity:.85;object-fit:contain}
+.feature .thumb.ph{border-radius:0}
+.clamp2,.clamp3{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}.clamp2{-webkit-line-clamp:2}.clamp3{-webkit-line-clamp:3}
+.card{height:100%}.card .txt{display:flex;flex-direction:column;gap:10px;flex:1}
+.more{display:block;margin:32px auto 0;font:inherit;font-weight:700;font-size:15px;border:1.5px solid #141414;background:none;border-radius:999px;padding:11px 26px;cursor:pointer}
 footer{padding:40px 0;color:#6a6a64;font-size:14px}
 </style></head><body>
 <header><div class="bar"><a class="brand" href="${lang.base}/"><img src="${esc(content.logo)}" alt="" width="34" height="34">KỸ SƯ THẬP CẨM</a>
 <nav style="display:flex;gap:20px;font-size:14px;font-weight:600;align-items:center"><a href="${lang.base}/#thiet-bi">${esc(content.ui.navDevices)}</a><a href="${lang.base}/${lang.articles}/">${esc(content.ui.navShare)}</a><a href="${lang.base}/#lien-he">${esc(content.ui.navCta.replace(/\s*↗/, ''))}</a>${langMenuHtml(lang)}</nav></div></header>
-<main class="wrap">${body}
+<main class="wrap${wide ? ' wide' : ''}">${body}
 <div class="cta"><strong>${esc(content.ui.articleCta)}</strong><br>
 <a href="tel:${esc(content.phoneLink)}">${esc(content.phoneDisplay)}</a> · <a href="mailto:${esc(content.contactEmail)}">${esc(content.contactEmail)}</a></div>
 </main><script>${LANG_JS}</script><footer><div class="wrap"><a href="${lang.base}/">${esc(content.ui.backHome)}</a></div></footer></body></html>`;
@@ -232,7 +245,7 @@ for (const lang of LANGS) {
   const href = (a) => `${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/`;
 
   // Homepage cards: real articles only (no placeholder cards).
-  const cards = articles.slice(0, 6).map((a) => ({
+  const cards = articles.slice(0, 3).map((a) => ({
     href: href(a), tag: a.tag, color: a.color, date: fmtDate(a.date, lang.locale), title: a.title, excerpt: a.excerpt, image: a.cover,
   }));
   const homeContent = {
@@ -270,13 +283,20 @@ for (const lang of LANGS) {
     await mkdir(dir, { recursive: true });
     await writeFile(path.join(dir, 'index.html'), relativizeHtml(shell(lang, content, { title: a.title, description: a.excerpt || a.title, body, alt, seo: seoHead({ lang, content, title: `${a.title} · Kỹ Sư Thập Cẩm`, description: a.excerpt || a.title, path: `${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/`, image: a.cover || content.logo, type: 'article', ld: [{ '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.excerpt || a.title, image: [absUrl(a.cover || content.logo)], datePublished: isoDate(a.date) || undefined, inLanguage: lang.code, author: { '@type': 'Organization', name: 'Kỹ Sư Thập Cẩm' }, publisher: { '@type': 'Organization', name: 'Kỹ Sư Thập Cẩm', logo: { '@type': 'ImageObject', url: absUrl(content.logo) } }, mainEntityOfPage: `${SITE_URL}${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/` }] }) }), '../'.repeat(depth + 1)), 'utf8');
   }
-  const listBody = `<div style="padding-top:40px"><h1>${esc(content.ui.blogTitle)}</h1>
-<div class="grid">${articles.length ? articles.map((a) => `<a class="card" href="${href(a)}">${a.cover ? `<img src="${esc(a.cover)}" alt="">` : ''}
-<div class="meta"><span style="color:${a.color}">${esc(a.tag)}</span><span style="color:#8a8a84;font-weight:500">${esc(fmtDate(a.date, lang.locale))}</span></div>
-<strong style="font-size:19px;line-height:1.35">${esc(a.title)}</strong><span style="color:#4a4a46;font-size:15px;line-height:1.6">${esc(a.excerpt)}</span></a>`).join('') : `<p>${esc(content.ui.listEmpty)}</p>`}</div></div>`;
+  const thumb = (a) => (a.cover ? `<img class="thumb" src="${esc(a.cover)}" alt="" loading="lazy">` : `<div class="thumb ph"><img src="${esc(content.logo)}" alt=""></div>`);
+  const metaLine = (a) => `<div class="meta"><span style="color:${a.color}">${esc(a.tag)}</span><span style="color:#8a8a84;font-weight:500">${esc(fmtDate(a.date, lang.locale))}</span></div>`;
+  const newsCard = (a) => `<a class="card" data-tag="${esc(a.tag)}" href="${href(a)}">${thumb(a)}<div class="txt">${metaLine(a)}<strong class="clamp2" style="font-size:19px;line-height:1.35">${esc(a.title)}</strong><span class="clamp3" style="color:#4a4a46;font-size:15px;line-height:1.6">${esc(a.excerpt)}</span></div></a>`;
+  const [lead, ...rest] = articles;
+  const tags = [...new Set(rest.map((a) => a.tag).filter(Boolean))];
+  const listBody = !articles.length ? `<p>${esc(content.ui.listEmpty)}</p>` : `<div style="padding-top:40px"><div class="news-kicker">${esc(content.ui.blogKicker)}</div><h1>${esc(content.ui.blogTitle)}</h1>
+<a class="feature" href="${href(lead)}">${thumb(lead)}<div class="txt">${metaLine(lead)}<h2>${esc(lead.title)}</h2><span style="color:#4a4a46;font-size:16px;line-height:1.65">${esc(lead.excerpt)}</span><span style="color:#e8590c;font-weight:700">${esc(content.ui.readMore)} →</span></div></a>
+${rest.length ? `${tags.length > 1 ? `<div class="chips"><button class="chip on" data-tag="">${esc(content.ui.blogFilterAll)}</button>${tags.map((t) => `<button class="chip" data-tag="${esc(t)}">${esc(t)}</button>`).join('')}</div>` : ''}
+<div class="grid" id="newsgrid">${rest.map(newsCard).join('')}</div>
+<button class="more" id="more" style="display:none">${esc(content.ui.blogMore)}</button>
+<script>${NEWS_JS}</script>` : ''}</div>`;
   if (articles.length) {
   await mkdir(path.join(outDir, lang.articles), { recursive: true });
-  await writeFile(path.join(outDir, lang.articles, 'index.html'), relativizeHtml(shell(lang, content, { title: content.ui.blogTitle, description: content.ui.listDesc, body: listBody, alt, seo: seoHead({ lang, content, title: `${content.ui.blogTitle} · Kỹ Sư Thập Cẩm`, description: content.ui.listDesc, path: `${lang.base}/${lang.articles}/`, image: content.logo }) }), '../'.repeat(depth)), 'utf8');
+  await writeFile(path.join(outDir, lang.articles, 'index.html'), relativizeHtml(shell(lang, content, { title: content.ui.blogTitle, description: content.ui.listDesc, body: listBody, alt, wide: true, seo: seoHead({ lang, content, title: `${content.ui.blogTitle} · Kỹ Sư Thập Cẩm`, description: content.ui.listDesc, path: `${lang.base}/${lang.articles}/`, image: content.logo }) }), '../'.repeat(depth)), 'utf8');
   }
 
   summary.push(`${lang.code}: ${articles.length} articles, ${cards.length} homepage cards`);

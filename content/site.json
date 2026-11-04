@@ -223,7 +223,7 @@
     "navDevices": "Thiết bị",
     "navHow": "Cách hoạt động",
     "navProjects": "Dự án",
-    "navShare": "Chia sẻ",
+    "navShare": "Tin tức",
     "navFaq": "Hỏi đáp",
     "navCta": "Gửi nhu cầu ↗",
     "heroKicker": "Thiết bị công nghiệp · Cảm biến · Linh kiện",
@@ -279,6 +279,9 @@
     "defaultCta": "Hỏi giá",
     "articleCta": "Cần tư vấn thiết bị, cảm biến cho dây chuyền?",
     "backHome": "← Về trang chủ",
-    "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa."
+    "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa.",
+    "readMore": "Đọc bài viết",
+    "blogFilterAll": "Tất cả",
+    "blogMore": "Xem thêm bài viết"
   }
 }

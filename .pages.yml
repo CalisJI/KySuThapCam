@@ -199,7 +199,7 @@ content:
       label: 'Menu: Dự án'
       type: string
     - name: navShare
-      label: 'Menu: Chia sẻ'
+      label: 'Menu: Tin tức'
       type: string
     - name: navFaq
       label: 'Menu: Hỏi đáp'
@@ -326,6 +326,15 @@ content:
     - name: listDesc
       label: 'Trang danh sách: mô tả SEO'
       type: text
+    - name: readMore
+      label: 'Trang tin tức: chữ "đọc bài" ở bài nổi bật'
+      type: string
+    - name: blogFilterAll
+      label: 'Trang tin tức: nút lọc "Tất cả"'
+      type: string
+    - name: blogMore
+      label: 'Trang tin tức: nút xem thêm'
+      type: string
 - name: site-content-en
   label: 'Nội dung trang (English): tiêu đề, mô tả và chữ cố định'
   type: file
@@ -373,7 +382,7 @@ content:
       label: 'Menu: Dự án'
       type: string
     - name: navShare
-      label: 'Menu: Chia sẻ'
+      label: 'Menu: Tin tức'
       type: string
     - name: navFaq
       label: 'Menu: Hỏi đáp'
@@ -500,6 +509,15 @@ content:
     - name: listDesc
       label: 'Trang danh sách: mô tả SEO'
       type: text
+    - name: readMore
+      label: 'Trang tin tức: chữ "đọc bài" ở bài nổi bật'
+      type: string
+    - name: blogFilterAll
+      label: 'Trang tin tức: nút lọc "Tất cả"'
+      type: string
+    - name: blogMore
+      label: 'Trang tin tức: nút xem thêm'
+      type: string
 - name: articles
   label: Bài viết chia sẻ (Tiếng Việt)
   type: collection

@@ -9,7 +9,7 @@
       "navDevices": "Thiết bị",
       "navHow": "Cách hoạt động",
       "navProjects": "Dự án",
-      "navShare": "Chia sẻ",
+      "navShare": "Tin tức",
       "navFaq": "Hỏi đáp",
       "navCta": "Gửi nhu cầu ↗",
       "heroKicker": "Thiết bị công nghiệp · Cảm biến · Linh kiện",
@@ -65,7 +65,10 @@
       "defaultCta": "Hỏi giá",
       "articleCta": "Cần tư vấn thiết bị, cảm biến cho dây chuyền?",
       "backHome": "← Về trang chủ",
-      "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa."
+      "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa.",
+      "readMore": "Đọc bài viết",
+      "blogFilterAll": "Tất cả",
+      "blogMore": "Xem thêm bài viết"
     }
   },
   "en": {
@@ -78,7 +81,7 @@
       "navDevices": "Equipment",
       "navHow": "How it works",
       "navProjects": "Projects",
-      "navShare": "Insights",
+      "navShare": "News",
       "navFaq": "FAQ",
       "navCta": "Send your request ↗",
       "heroKicker": "Industrial equipment · Sensors · Components",
@@ -134,7 +137,10 @@
       "defaultCta": "Request a quote",
       "articleCta": "Need help choosing equipment or sensors for your production line?",
       "backHome": "← Back to home",
-      "listDesc": "Practical know-how on automation equipment, sensors and industrial IoT."
+      "listDesc": "Practical know-how on automation equipment, sensors and industrial IoT.",
+      "readMore": "Read the article",
+      "blogFilterAll": "All",
+      "blogMore": "Load more articles"
     }
   }
 }
