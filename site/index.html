@@ -48,7 +48,7 @@ a:hover{color:#1f9d4d}
 <a href="#hoi-dap" style="color:#141414" style-hover="color:#e8590c">{{ ui.navFaq }}</a>
 </nav>
 <a href="#lien-he" style="background:#e8590c;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:700" style-hover="background:#c94a05;color:#fff">{{ ui.navCta }}</a>
-<a href="{{ altHref }}" hreflang="{{ altLang }}" style="border:1.5px solid #141414;color:#141414;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:800" style-hover="background:#141414;color:#fff">{{ altLabel }}</a>
+<details class="lang-menu"><summary><img src="{{ curFlag }}" width="22" height="15" alt=""> {{ curLabel }} <span>▾</span></summary><div class="lang-pop"><sc-for list="{{ langs }}" as="lg" hint-placeholder-count="2"><a href="{{ lg.href }}" hreflang="{{ lg.code }}"><img src="{{ lg.flag }}" width="22" height="15" alt=""><span>{{ lg.name }}</span><b>{{ lg.mark }}</b></a></sc-for></div></details>
 </div>
 </header>
 
@@ -275,6 +275,9 @@ class Component extends DCLogic {
       stats: (data.ui || {}).stats || [],
       siteTitle: data.siteTitle || '',
       metaDescription: data.metaDescription || '',
+      langs: data.langs || [],
+      curFlag: data.curFlag || '',
+      curLabel: data.curLabel || '',
       altHref: data.altHref || '/',
       altLang: data.altLang || 'en',
       altLabel: data.altLabel || 'EN',

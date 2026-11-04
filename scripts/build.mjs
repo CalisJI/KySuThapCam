@@ -10,9 +10,19 @@ const output = path.join(root, 'dist');
 
 // One entry per language. Add a new entry (plus its content/site.<lang>.json and posts folder) to add a language.
 const LANGS = [
-  { code: 'vi', label: 'VI', locale: 'vi-VN', site: 'site.json', posts: 'posts', base: '', articles: 'bai-viet' },
-  { code: 'en', label: 'EN', locale: 'en-GB', site: 'site.en.json', posts: 'posts-en', base: '/en', articles: 'articles' },
+  { code: 'vi', label: 'VI', name: 'Tiếng Việt', locale: 'vi-VN', site: 'site.json', posts: 'posts', base: '', articles: 'bai-viet' },
+  { code: 'en', label: 'EN', name: 'English', locale: 'en-GB', site: 'site.en.json', posts: 'posts-en', base: '/en', articles: 'articles' },
 ];
+
+// Inline SVG flags (emoji flags do not render on Windows). Add one per language in LANGS.
+const FLAG_SVG = {
+  vi: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20"><rect width="30" height="20" fill="#da251d"/><polygon fill="#ff0" points="15,4 16.76,9.1 22.16,9.2 17.86,12.4 19.4,17.6 15,14.5 10.6,17.6 12.14,12.4 7.84,9.2 13.24,9.1"/></svg>',
+  en: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40"><rect width="60" height="40" fill="#012169"/><path d="M0,0 60,40M60,0 0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 60,40M60,0 0,40" stroke="#C8102E" stroke-width="3"/><path d="M30,0V40M0,20H60" stroke="#fff" stroke-width="12"/><path d="M30,0V40M0,20H60" stroke="#C8102E" stroke-width="7"/></svg>',
+};
+const flagUri = (code) => `data:image/svg+xml;utf8,${encodeURIComponent(FLAG_SVG[code] || '')}`;
+const langList = (current) => LANGS.map((l) => ({
+  code: l.code, label: l.label, name: l.name, href: `${l.base}/`, flag: flagUri(l.code), mark: l === current ? '✓' : '',
+}));
 
 const REQUIRED = ['heroTitle', 'heroHighlight', 'heroDescription', 'contactEmail', 'phoneDisplay', 'phoneLink', 'fields', 'products', 'steps', 'posts', 'faqs', 'ui'];
 
@@ -64,6 +74,9 @@ async function loadArticles(lang) {
   return list;
 }
 
+const langMenuHtml = (lang) => `<details class="lang-menu"><summary><img src="${flagUri(lang.code)}" width="22" height="15" alt=""> ${lang.label} <span>▾</span></summary><div class="lang-pop">${langList(lang).map((l) => `<a href="${l.href}" hreflang="${l.code}"><img src="${l.flag}" width="22" height="15" alt=""><span>${l.name}</span><b>${l.mark}</b></a>`).join('')}</div></details>`;
+const LANG_CSS = `.lang-menu{position:relative}.lang-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;border:1.5px solid #141414;color:#141414;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:800}.lang-menu summary::-webkit-details-marker{display:none}.lang-menu img{border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}.lang-pop{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border-radius:14px;box-shadow:0 12px 32px -8px rgba(0,0,0,.28);padding:6px;min-width:170px;z-index:50}.lang-pop a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:#141414;font-size:14px;font-weight:600}.lang-pop a:hover{background:#f3f1ec;color:#141414}.lang-pop b{margin-left:auto;color:#1f9d4d}`;
+const LANG_JS = `document.addEventListener('click',function(e){document.querySelectorAll('details.lang-menu[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});`;
 const shell = (lang, content, { title, description, body, alt }) => `<!doctype html>
 <html lang="${lang.code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)} · Kỹ Sư Thập Cẩm</title>
@@ -86,15 +99,15 @@ h1{font-size:clamp(28px,4vw,42px);line-height:1.15;letter-spacing:-.02em;margin:
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:32px}
 .card{background:#fff;border-radius:20px;padding:22px;color:#141414;display:flex;flex-direction:column;gap:10px;box-shadow:0 6px 18px -10px rgba(0,0,0,.18)}
 .card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px}
-.lang{border:1.5px solid #141414;color:#141414;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:800}
+${LANG_CSS}
 footer{padding:40px 0;color:#6a6a64;font-size:14px}
 </style></head><body>
 <header><div class="bar"><a class="brand" href="${lang.base}/">KỸ SƯ THẬP CẨM</a>
-<nav style="display:flex;gap:20px;font-size:14px;font-weight:600;align-items:center"><a href="${lang.base}/#thiet-bi">${esc(content.ui.navDevices)}</a><a href="${lang.base}/${lang.articles}/">${esc(content.ui.navShare)}</a><a href="${lang.base}/#lien-he">${esc(content.ui.navCta.replace(/\s*↗/, ''))}</a><a class="lang" href="${alt.href}" hreflang="${alt.code}">${alt.label}</a></nav></div></header>
+<nav style="display:flex;gap:20px;font-size:14px;font-weight:600;align-items:center"><a href="${lang.base}/#thiet-bi">${esc(content.ui.navDevices)}</a><a href="${lang.base}/${lang.articles}/">${esc(content.ui.navShare)}</a><a href="${lang.base}/#lien-he">${esc(content.ui.navCta.replace(/\s*↗/, ''))}</a>${langMenuHtml(lang)}</nav></div></header>
 <main class="wrap">${body}
 <div class="cta"><strong>${esc(content.ui.articleCta)}</strong><br>
 <a href="tel:${esc(content.phoneLink)}">${esc(content.phoneDisplay)}</a> · <a href="mailto:${esc(content.contactEmail)}">${esc(content.contactEmail)}</a></div>
-</main><footer><div class="wrap"><a href="${lang.base}/">${esc(content.ui.backHome)}</a></div></footer></body></html>`;
+</main><script>${LANG_JS}</script><footer><div class="wrap"><a href="${lang.base}/">${esc(content.ui.backHome)}</a></div></footer></body></html>`;
 
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
@@ -123,6 +136,7 @@ for (const lang of LANGS) {
   const homeContent = {
     ...content, posts: cards, articleCount: articles.length,
     articlesHref: `${lang.base}/${lang.articles}/`, altHref: alt.href, altLang: alt.code, altLabel: alt.label, lang: lang.code,
+    langs: langList(lang), curFlag: flagUri(lang.code), curLabel: lang.label,
   };
 
   // Homepage (static <title>/<meta> so crawlers see them without running the page script)
@@ -132,7 +146,7 @@ for (const lang of LANGS) {
     .replace('<html lang="vi">', `<html lang="${lang.code}">`)
     .replace('{{ siteTitle }}', esc(content.siteTitle || 'Kỹ Sư Thập Cẩm'))
     .replace('{{ metaDescription }}', esc(content.metaDescription || ''))
-    .replace('</head>', `${hreflang}\n</head>`);
+    .replace('</head>', `${hreflang}\n<style>${LANG_CSS}</style><script>${LANG_JS}</script>\n</head>`);
   const outDir = path.join(output, lang.base.replace(/^\//, ''));
   await mkdir(outDir, { recursive: true });
   const homePrefix = lang.base ? '../' : '';
