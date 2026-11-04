@@ -1,0 +1,144 @@
+{
+  "vi": {
+    "metaDescription": "Cung cấp thiết bị tự động hóa, cảm biến và linh kiện công nghiệp phục vụ dây chuyền sản xuất.",
+    "ui": {
+      "topbar": "Thiết bị tự động hóa · Cảm biến · Linh kiện công nghiệp",
+      "city": "TP. Hồ Chí Minh",
+      "tagline": "AUTOMATION · IoT · KẾT NỐI",
+      "navFields": "Lĩnh vực",
+      "navDevices": "Thiết bị",
+      "navHow": "Cách hoạt động",
+      "navProjects": "Dự án",
+      "navShare": "Chia sẻ",
+      "navFaq": "Hỏi đáp",
+      "navCta": "Gửi nhu cầu ↗",
+      "heroKicker": "Thiết bị công nghiệp · Cảm biến · Linh kiện",
+      "heroCta1": "Gửi nhu cầu của bạn",
+      "heroCta2": "Xem lĩnh vực ↓",
+      "stats": [
+        {
+          "title": "PLC · HMI",
+          "sub": "Điều khiển & giao diện vận hành"
+        },
+        {
+          "title": "Giám sát 24/7",
+          "sub": "Theo dõi trạng thái thiết bị"
+        },
+        {
+          "title": "IIoT · Dữ liệu",
+          "sub": "Kết nối và trực quan hóa"
+        },
+        {
+          "title": "Tích hợp hệ thống",
+          "sub": "Từ hiện trường đến dashboard"
+        }
+      ],
+      "fieldsKicker": "Giải pháp & thiết bị",
+      "fieldsTitleA": "Công nghệ đúng chỗ.",
+      "fieldsTitleB": "Hiệu quả thấy được.",
+      "devicesKicker": "Thiết bị tự động hóa",
+      "devicesTitle": "Cung cấp thiết bị & cảm biến cho dây chuyền tự động hóa",
+      "howKicker": "Cách hoạt động",
+      "howTitleA": "Chọn đúng thiết bị.",
+      "howTitleB": "Vận hành đúng nhu cầu.",
+      "howDesc": "Từ làm rõ thông số đến đề xuất thiết bị, quy trình giúp bạn chọn cấu hình phù hợp với từng dây chuyền.",
+      "howCta": "Trao đổi với kỹ sư ↗",
+      "projKicker": "Dự án tiêu biểu",
+      "projTitle": "Sẽ cập nhật",
+      "projDesc": "Nội dung ứng dụng thiết bị trong sản xuất sẽ được bổ sung khi có thông tin phù hợp để chia sẻ.",
+      "projSlot": "Dự án sắp cập nhật",
+      "blogKicker": "Góc chia sẻ kỹ thuật",
+      "blogTitle": "Kinh nghiệm & kiến thức",
+      "blogAll": "Xem tất cả bài viết →",
+      "contactKicker": "Có bài toán cần giải?",
+      "contactTitle": "Bắt đầu bằng một cuộc trao đổi kỹ thuật.",
+      "contactDesc": "Gửi model thiết bị, thông số hoặc yêu cầu của dây chuyền để trao đổi phương án phù hợp.",
+      "contactFb": "Nhắn Fanpage",
+      "mailSubject": "Trao đổi nhu cầu tự động hóa",
+      "faqKicker": "Hỏi đáp",
+      "faqTitle": "Trước khi bắt đầu",
+      "faqDesc": "Chưa chắc giải pháp nào phù hợp? Hãy trao đổi về hiện trạng trước.",
+      "footerCopy": "© 2026 Kỹ Sư Thập Cẩm · TP. Hồ Chí Minh",
+      "footPhone": "Điện thoại",
+      "footEmail": "Email",
+      "footFb": "Fanpage",
+      "footTop": "Lên đầu ↑",
+      "defaultCta": "Hỏi giá",
+      "articleCta": "Cần tư vấn thiết bị, cảm biến cho dây chuyền?",
+      "backHome": "← Về trang chủ",
+      "listEmpty": "Bài viết đang được cập nhật.",
+      "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa."
+    }
+  },
+  "en": {
+    "metaDescription": "Supplier of automation equipment, sensors and industrial components for production lines in Vietnam.",
+    "ui": {
+      "topbar": "Automation equipment · Sensors · Industrial components",
+      "city": "Ho Chi Minh City, Vietnam",
+      "tagline": "AUTOMATION · IoT · CONNECTED",
+      "navFields": "Solutions",
+      "navDevices": "Equipment",
+      "navHow": "How it works",
+      "navProjects": "Projects",
+      "navShare": "Insights",
+      "navFaq": "FAQ",
+      "navCta": "Send your request ↗",
+      "heroKicker": "Industrial equipment · Sensors · Components",
+      "heroCta1": "Send your request",
+      "heroCta2": "Explore solutions ↓",
+      "stats": [
+        {
+          "title": "PLC · HMI",
+          "sub": "Control & operator interfaces"
+        },
+        {
+          "title": "24/7 monitoring",
+          "sub": "Track equipment status around the clock"
+        },
+        {
+          "title": "IIoT · Data",
+          "sub": "Connect and visualize"
+        },
+        {
+          "title": "System integration",
+          "sub": "From the plant floor to the dashboard"
+        }
+      ],
+      "fieldsKicker": "Solutions & equipment",
+      "fieldsTitleA": "The right technology, in the right place.",
+      "fieldsTitleB": "Results you can see.",
+      "devicesKicker": "Automation equipment",
+      "devicesTitle": "Equipment and sensors for automated production lines",
+      "howKicker": "How it works",
+      "howTitleA": "The right equipment.",
+      "howTitleB": "Built around your needs.",
+      "howDesc": "From clarifying specifications to recommending equipment, our process helps you choose a configuration that fits each production line.",
+      "howCta": "Talk to an engineer ↗",
+      "projKicker": "Featured projects",
+      "projTitle": "Coming soon",
+      "projDesc": "Real-world application stories from production floors will be added as soon as there is something worth sharing.",
+      "projSlot": "Project coming soon",
+      "blogKicker": "Technical insights",
+      "blogTitle": "Experience & know-how",
+      "blogAll": "View all articles →",
+      "contactKicker": "Have a problem to solve?",
+      "contactTitle": "Start with a technical conversation.",
+      "contactDesc": "Send the equipment model, specifications or your production line requirements and we will discuss a suitable approach.",
+      "contactFb": "Message us on Facebook",
+      "mailSubject": "Automation equipment enquiry",
+      "faqKicker": "FAQ",
+      "faqTitle": "Before you start",
+      "faqDesc": "Not sure which solution fits? Tell us about your current setup first.",
+      "footerCopy": "© 2026 Kỹ Sư Thập Cẩm · Ho Chi Minh City, Vietnam",
+      "footPhone": "Phone",
+      "footEmail": "Email",
+      "footFb": "Facebook",
+      "footTop": "Back to top ↑",
+      "defaultCta": "Request a quote",
+      "articleCta": "Need help choosing equipment or sensors for your production line?",
+      "backHome": "← Back to home",
+      "listEmpty": "Articles are coming soon.",
+      "listDesc": "Practical know-how on automation equipment, sensors and industrial IoT."
+    }
+  }
+}

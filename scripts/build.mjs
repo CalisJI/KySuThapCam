@@ -24,7 +24,9 @@ const langList = (current) => LANGS.map((l) => ({
   code: l.code, label: l.label, name: l.name, href: `${l.base}/`, flag: flagUri(l.code), mark: l === current ? '✓' : '',
 }));
 
-const REQUIRED = ['heroTitle', 'heroHighlight', 'heroDescription', 'contactEmail', 'phoneDisplay', 'phoneLink', 'fields', 'products', 'steps', 'posts', 'faqs', 'ui'];
+const REQUIRED = ['heroTitle', 'heroHighlight', 'heroDescription', 'contactEmail', 'phoneDisplay', 'phoneLink', 'fields', 'products', 'steps', 'posts', 'faqs'];
+const UI_DEFAULTS = JSON.parse(await readFile(path.join(root, 'scripts', 'ui-defaults.json'), 'utf8'));
+const baseContent = JSON.parse(await readFile(path.join(root, 'content', LANGS[0].site), 'utf8'));
 
 const esc = (v = '') => String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const toDate = (d) => (d instanceof Date ? d : new Date(d));
@@ -117,6 +119,17 @@ const template = await readFile(path.join(source, 'index.html'), 'utf8');
 const summary = [];
 for (const lang of LANGS) {
   const content = JSON.parse(await readFile(path.join(root, 'content', lang.site), 'utf8'));
+  // A stale CMS form can save a file without newer fields; fall back to defaults instead of failing the build.
+  const defaults = UI_DEFAULTS[lang.code] || {};
+  content.metaDescription = content.metaDescription || defaults.metaDescription || '';
+  content.ui = { ...(defaults.ui || {}), ...(content.ui || {}) };
+  content.projects = content.projects || [];
+  // Images are language-independent: inherit them from the first language when a product/project has none.
+  if (lang !== LANGS[0]) {
+    for (const key of ['products', 'projects']) {
+      (content[key] || []).forEach((item, i) => { if (!item.image && baseContent[key]?.[i]?.image) item.image = baseContent[key][i].image; });
+    }
+  }
   for (const key of REQUIRED) {
     if (!(key in content)) throw new Error(`${lang.site}: missing required field "${key}"`);
   }
