@@ -3,7 +3,7 @@ title: "Rockwell CompactLogix 5390: 43% smaller PLC supporting up to 128 motion 
 date: 2026-11-04
 tag: Automation
 color: "#e8590c"
-cover: /media/compactlogix-5390-news.svg
+cover: https://rockwellautomation.scene7.com/is/image/rockwellautomation/5039-MKTGsolo_right_screw_L9100TS_noNFC.2400.png
 excerpt: "The CompactLogix 5390 brings PointMax I/O, EtherNet/IP, OPC UA and integrated safety and security features to connected machine control."
 draft: false
 ---
@@ -37,4 +37,5 @@ Engineers should verify the **exact CPU model, supported axes and nodes, license
 
 - [Control.com — Rockwell Packs More Motion and Safety Into CompactLogix 5390 PLC (October 29, 2026)](https://control.com/news/rockwell-packs-more-motion-and-safety-into-compactlogix-5390-plc/)
 
-*Edited and summarized by Kỹ Sư Thập Cẩm from the cited report. The cover is an original editorial illustration, not an official product photograph.*
+*Edited and summarized by Kỹ Sư Thập Cẩm from the cited report.*
+*Cover photograph: CompactLogix 5390 product image from Rockwell Automation, linked to the manufacturer's image host. Image rights remain with Rockwell Automation.*
