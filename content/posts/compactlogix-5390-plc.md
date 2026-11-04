@@ -3,7 +3,7 @@ title: "Rockwell CompactLogix 5390: PLC nhỏ hơn 43%, hỗ trợ tới 128 tr�
 date: 2026-11-04
 tag: Automation
 color: "#e8590c"
-cover: /media/compactlogix-5390-news.svg
+cover: https://rockwellautomation.scene7.com/is/image/rockwellautomation/5039-MKTGsolo_right_screw_L9100TS_noNFC.2400.png
 excerpt: "Rockwell giới thiệu CompactLogix 5390 với PointMax I/O, EtherNet/IP, OPC UA và các tính năng an toàn, bảo mật cho nhà máy kết nối."
 draft: false
 ---
@@ -37,4 +37,5 @@ Trước khi chọn thiết bị, kỹ sư vẫn cần kiểm tra **mã CPU cụ
 
 - [Control.com — Rockwell Packs More Motion and Safety Into CompactLogix 5390 PLC (29/10/2026)](https://control.com/news/rockwell-packs-more-motion-and-safety-into-compactlogix-5390-plc/)
 
-*Bài viết được Kỹ Sư Thập Cẩm biên tập và diễn giải dựa trên nguồn đã dẫn. Ảnh bìa là hình minh họa do trang tự thiết kế, không phải ảnh sản phẩm chính thức.*
+*Bài viết được Kỹ Sư Thập Cẩm biên tập và diễn giải dựa trên nguồn đã dẫn.*
+*Ảnh bìa: ảnh sản phẩm CompactLogix 5390 do Rockwell Automation công bố, hiển thị trực tiếp từ máy chủ hãng. Bản quyền ảnh thuộc Rockwell Automation.*
