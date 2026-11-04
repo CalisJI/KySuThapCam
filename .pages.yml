@@ -1,0 +1,143 @@
+media:
+  input: site/media
+  output: /media
+
+content:
+  - name: site-content
+    label: Nội dung trang
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: siteTitle
+        label: Tiêu đề trang
+        type: string
+      - name: heroTitle
+        label: Tiêu đề chính
+        type: string
+      - name: heroHighlight
+        label: Dòng nhấn mạnh
+        type: string
+      - name: heroDescription
+        label: Mô tả đầu trang
+        type: text
+      - name: phoneDisplay
+        label: Số điện thoại hiển thị
+        type: string
+      - name: phoneLink
+        label: Số điện thoại liên kết
+        type: string
+      - name: contactEmail
+        label: Email liên hệ
+        type: string
+      - name: fbUrl
+        label: Đường dẫn Fanpage
+        type: string
+      - name: showBlog
+        label: Hiện phần chia sẻ bài viết
+        type: boolean
+      - name: fields
+        label: Lĩnh vực dịch vụ
+        type: object
+        list: true
+        fields:
+          - name: tag
+            label: Nhãn
+            type: string
+          - name: color
+            label: Màu nhấn (mã hex)
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: desc
+            label: Mô tả
+            type: text
+          - name: items
+            label: Các hạng mục
+            type: string
+            list: true
+      - name: products
+        label: Thiết bị
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Tên thiết bị
+            type: string
+          - name: href
+            label: Liên kết / nút hỏi giá
+            type: string
+          - name: cta
+            label: Chữ trên nút
+            type: string
+      - name: steps
+        label: Quy trình kết nối
+        type: object
+        list: true
+        fields:
+          - name: num
+            label: Số thứ tự / nhãn
+            type: string
+          - name: title
+            label: Tiêu đề bước
+            type: string
+          - name: desc
+            label: Mô tả bước
+            type: text
+      - name: projects
+        label: Dự án tiêu biểu
+        type: object
+        list: true
+        fields:
+          - name: tag
+            label: Nhãn
+            type: string
+          - name: title
+            label: Tên dự án
+            type: string
+          - name: desc
+            label: Mô tả
+            type: text
+      - name: projectSlots
+        label: Nhãn ô dự án sắp cập nhật
+        type: object
+        list: true
+        fields:
+          - name: tag
+            label: Nhãn
+            type: string
+      - name: posts
+        label: Bài viết trên trang chủ
+        type: object
+        list: true
+        fields:
+          - name: href
+            label: Liên kết bài viết
+            type: string
+          - name: tag
+            label: Chủ đề
+            type: string
+          - name: color
+            label: Màu nhấn (mã hex)
+            type: string
+          - name: date
+            label: Ngày / trạng thái
+            type: string
+          - name: title
+            label: Tiêu đề bài viết
+            type: string
+          - name: excerpt
+            label: Mô tả ngắn
+            type: text
+      - name: faqs
+        label: Hỏi đáp
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Câu hỏi
+            type: string
+          - name: a
+            label: Trả lời
+            type: text

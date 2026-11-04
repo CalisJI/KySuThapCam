@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./content.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Kỹ Sư Thập Cẩm · Kết nối giải pháp tự động hóa &amp; IoT</title>
+<meta name="description" content="Kỹ Sư Thập Cẩm kết nối khách hàng với các đơn vị cung cấp giải pháp tự động hóa, giám sát và IoT công nghiệp phù hợp tại TP. Hồ Chí Minh.">
+<template id="__bundler_thumbnail" data-bg-color="#fafaf8"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="30" fill="none" stroke="#f26a1b" stroke-width="14" stroke-dasharray="10 10"></circle><circle cx="50" cy="50" r="28" fill="#f26a1b"></circle><circle cx="50" cy="50" r="11" fill="#fafaf8"></circle></svg></template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#fafaf8;font-family:'Be Vietnam Pro',Helvetica,Arial,sans-serif;color:#141414}
+a{color:#e8590c;text-decoration:none}
+a:hover{color:#1f9d4d}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#fafaf8;color:#141414;font-family:'Be Vietnam Pro',Helvetica,Arial,sans-serif;overflow-x:hidden">
+
+<div style="background:#141414;color:#e9e9e4;font-size:13px">
+<div style="max-width:1200px;margin:0 auto;padding:9px 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+<span>Kết nối giải pháp tự động hóa &amp; IoT công nghiệp</span>
+<span style="display:flex;gap:8px">TP. Hồ Chí Minh · <a href="tel:+84394469461" style="color:#ff8a45;font-weight:700" style-hover="color:#fff">{{ phoneDisplay }}</a></span>
+</div>
+</div>
+
+<header style="position:sticky;top:0;z-index:20;background:rgba(250,250,248,0.92);backdrop-filter:blur(10px);border-bottom:1px solid #ececE6">
+<div style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+<a href="#top" style="display:flex;align-items:center;gap:10px;color:#141414">
+<span style="width:38px;height:38px;border-radius:11px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.12),inset 0 -2px 0 #eee;display:grid;place-items:center">
+<svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="none" stroke="#f26a1b" stroke-width="5" stroke-dasharray="3.6 3.6"></circle><circle cx="12" cy="12" r="6" fill="#f26a1b"></circle><circle cx="12" cy="12" r="2.6" fill="#fff"></circle></svg>
+</span>
+<span style="display:flex;flex-direction:column;line-height:1.15"><span style="font-weight:800;font-size:16px">KỸ SƯ THẬP CẨM</span><span style="font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6a6a64">AUTOMATION · IoT · KẾT NỐI</span></span>
+</a>
+<nav style="display:flex;gap:24px;flex-wrap:wrap;font-size:14px;font-weight:600">
+<a href="#linh-vuc" style="color:#141414" style-hover="color:#e8590c">Lĩnh vực</a>
+<a href="#thiet-bi" style="color:#141414" style-hover="color:#e8590c">Thiết bị</a>
+<a href="#cach-hoat-dong" style="color:#141414" style-hover="color:#e8590c">Cách hoạt động</a>
+<a href="#du-an" style="color:#141414" style-hover="color:#e8590c">Dự án</a>
+<a href="#hoi-dap" style="color:#141414" style-hover="color:#e8590c">Hỏi đáp</a>
+</nav>
+<a href="#lien-he" style="background:#e8590c;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:700" style-hover="background:#c94a05;color:#fff">Gửi nhu cầu ↗</a>
+</div>
+</header>
+
+<section id="top" style="max-width:1200px;margin:0 auto;padding:72px 24px 88px;display:flex;flex-wrap:wrap;align-items:center;gap:56px">
+<div style="flex:1 1 440px;min-width:0">
+<div style="display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;color:#1f9d4d;letter-spacing:0.12em;text-transform:uppercase"><span style="width:22px;height:2px;background:#e8590c"></span>Đúng nhu cầu · Đúng đơn vị</div>
+<h1 style="margin:20px 0 0;font-size:clamp(38px,5.4vw,64px);line-height:1.05;font-weight:800;letter-spacing:-0.03em">{{ heroTitle }} <span style="color:#e8590c">{{ heroHighlight }}</span></h1>
+<p style="margin:24px 0 0;font-size:18px;line-height:1.65;color:#4a4a46;max-width:540px;text-wrap:pretty">{{ heroDescription }}</p>
+<div style="margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+<a href="#lien-he" style="background:#e8590c;color:#fff;padding:15px 28px;border-radius:14px;font-weight:700;font-size:15px;box-shadow:0 8px 20px -6px rgba(232,89,12,0.55)" style-hover="background:#c94a05;color:#fff">Gửi nhu cầu của bạn</a>
+<a href="#linh-vuc" style="background:#fff;color:#141414;padding:15px 28px;border-radius:14px;font-weight:700;font-size:15px;box-shadow:0 2px 10px rgba(0,0,0,0.1)" style-hover="color:#1f9d4d">Xem lĩnh vực ↓</a>
+</div>
+<div style="margin-top:32px;display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:#4a4a46">
+<span style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#1f9d4d"></span>Trung lập, không gắn một thương hiệu</span>
+<span style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#e8590c"></span>Người làm kỹ thuật trao đổi trực tiếp</span>
+</div>
+</div>
+
+<div style="flex:1 1 420px;min-width:0;display:flex;justify-content:center">
+<div style="position:relative;width:min(540px,100%);aspect-ratio:1/1;container-type:inline-size">
+<svg viewBox="0 0 560 560" style="position:absolute;inset:0;width:100%;height:100%">
+<circle cx="280" cy="280" r="272" fill="none" stroke="#f4a06b" stroke-width="1.5"></circle>
+<circle cx="280" cy="280" r="228" fill="none" stroke="#f26a1b" stroke-width="2" stroke-dasharray="260 40 120 40 300 80"></circle>
+<circle cx="280" cy="280" r="206" fill="none" stroke="#7fcf9c" stroke-width="1.5" stroke-dasharray="140 30 220 30"></circle>
+<circle cx="280" cy="280" r="150" fill="none" stroke="#f26a1b" stroke-width="2" stroke-dasharray="90 150 90 150"></circle>
+<circle cx="280" cy="280" r="250" fill="none" stroke="#2fb05c" stroke-width="1.5" stroke-dasharray="1 9" stroke-linecap="round"></circle>
+<circle cx="92" cy="156" r="7" fill="#2fb05c"></circle><circle cx="470" cy="108" r="6" fill="#f26a1b"></circle><circle cx="508" cy="198" r="6" fill="#f26a1b"></circle>
+<circle cx="160" cy="470" r="6" fill="#f26a1b"></circle><circle cx="440" cy="436" r="7" fill="#2fb05c"></circle><circle cx="388" cy="486" r="6" fill="#f26a1b"></circle>
+</svg>
+<div style="position:absolute;left:29%;right:29%;top:50%;transform:translateY(-50%);text-align:center;font-weight:800;font-size:clamp(14px,6.6cqw,38px);line-height:1.08;letter-spacing:-0.02em">KỸ SƯ<br>THẬP CẨM</div>
+<a href="#linh-vuc" style="position:absolute;left:38%;top:3%;width:24%;aspect-ratio:1/1;border-radius:22%;background:#fff;box-shadow:0 10px 24px -6px rgba(0,0,0,0.2),inset 0 -3px 0 #ececec;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6%;color:#141414;font-weight:700;font-size:clamp(9px,2.4cqw,13px)" style-hover="transform:translateY(-4px)">
+<svg width="46%" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="none" stroke="#f26a1b" stroke-width="9" stroke-dasharray="7.3 7.3"></circle><circle cx="24" cy="24" r="14" fill="none" stroke="#f26a1b" stroke-width="7"></circle><circle cx="24" cy="24" r="6" fill="#fff"></circle></svg>MECHANIC</a>
+<a href="#linh-vuc" style="position:absolute;left:4%;top:38%;width:24%;aspect-ratio:1/1;border-radius:22%;background:#fff;box-shadow:0 10px 24px -6px rgba(0,0,0,0.2),inset 0 -3px 0 #ececec;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6%;color:#141414;font-weight:700;font-size:clamp(9px,2.4cqw,13px)" style-hover="transform:translateY(-4px)">
+<svg width="52%" viewBox="0 0 48 48"><rect x="4" y="9" width="36" height="26" rx="5" fill="#f26a1b"></rect><path d="M9 15 L22 25 L35 15" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="38" cy="36" r="8" fill="#f26a1b" stroke="#fff" stroke-width="2.5"></circle><circle cx="38" cy="36" r="2.5" fill="#fff"></circle></svg>ALERT</a>
+<a href="#linh-vuc" style="position:absolute;right:4%;top:38%;width:24%;aspect-ratio:1/1;border-radius:22%;background:#fff;box-shadow:0 10px 24px -6px rgba(0,0,0,0.2),inset 0 -3px 0 #ececec;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6%;color:#141414;font-weight:700;font-size:clamp(9px,2.4cqw,13px)" style-hover="transform:translateY(-4px)">
+<svg width="52%" viewBox="0 0 48 48"><rect x="12" y="38" width="26" height="6" rx="3" fill="#f26a1b"></rect><path d="M22 38 L22 26 L32 10 L42 14" fill="none" stroke="#f26a1b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="22" cy="28" r="5" fill="#2fb05c"></circle><circle cx="32" cy="10" r="4.5" fill="#2fb05c"></circle><circle cx="42" cy="14" r="3.5" fill="#2fb05c"></circle><path d="M6 20 L14 24" stroke="#9a9a9a" stroke-width="3" stroke-linecap="round"></path></svg>ROBOT</a>
+<a href="#linh-vuc" style="position:absolute;left:38%;bottom:3%;width:24%;aspect-ratio:1/1;border-radius:22%;background:#fff;box-shadow:0 10px 24px -6px rgba(0,0,0,0.2),inset 0 -3px 0 #ececec;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6%;color:#1f9d4d;font-weight:700;font-size:clamp(9px,2.4cqw,13px)" style-hover="transform:translateY(-4px)">
+<svg width="52%" viewBox="0 0 48 48"><g stroke="#2fb05c" stroke-width="2" stroke-linecap="round"><path d="M16 14V6M24 14V4M32 14V6M16 34v8M24 34v10M32 34v8M14 18H6M14 24H4M14 30H6M34 18h8M34 24h10M34 30h8"></path></g><rect x="13" y="13" width="22" height="22" rx="5" fill="#2fb05c"></rect><text x="24" y="28" text-anchor="middle" font-size="9" font-weight="800" fill="#fff" font-family="Be Vietnam Pro,sans-serif">IoT</text></svg>IoT</a>
+</div>
+</div>
+</section>
+
+<div style="background:#fff;border-top:1px solid #ececE6;border-bottom:1px solid #ececE6">
+<div style="max-width:1200px;margin:0 auto;padding:26px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">PLC · HMI</span><span style="font-size:13px;color:#6a6a64">Điều khiển &amp; giao diện vận hành</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">Giám sát 24/7</span><span style="font-size:13px;color:#6a6a64">Theo dõi trạng thái thiết bị</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">IIoT · Dữ liệu</span><span style="font-size:13px;color:#6a6a64">Kết nối và trực quan hóa</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">Tích hợp hệ thống</span><span style="font-size:13px;color:#6a6a64">Từ hiện trường đến dashboard</span></div>
+</div>
+</div>
+
+<section id="linh-vuc" style="max-width:1200px;margin:0 auto;padding:96px 24px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+<div style="max-width:600px">
+<div style="font-size:12px;font-weight:800;color:#e8590c;letter-spacing:0.12em;text-transform:uppercase">Lĩnh vực kết nối</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">Công nghệ đúng chỗ.<br>Hiệu quả thấy được.</h2>
+</div>
+<p style="margin:0;max-width:400px;font-size:15px;line-height:1.65;color:#4a4a46">Chọn đúng bài toán trước khi chọn thiết bị. Mỗi nhu cầu được làm rõ để giới thiệu đến đơn vị có năng lực phù hợp.</p>
+</div>
+<div style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px">
+<sc-for list="{{ fields }}" as="s" hint-placeholder-count="4">
+<div style="background:#fff;border-radius:24px;padding:28px;box-shadow:0 8px 24px -10px rgba(0,0,0,0.16),inset 0 -3px 0 #ececE6;display:flex;flex-direction:column;gap:12px">
+<span style="font-size:12px;font-weight:800;letter-spacing:0.08em;color:{{ s.color }}">{{ s.tag }}</span>
+<h3 style="margin:0;font-size:21px;line-height:1.3;font-weight:800;letter-spacing:-0.01em">{{ s.title }}</h3>
+<p style="margin:0;font-size:15px;line-height:1.6;color:#4a4a46">{{ s.desc }}</p>
+<div style="margin-top:6px;display:flex;flex-direction:column;gap:8px;padding-top:14px;border-top:1px solid #ececE6">
+<sc-for list="{{ s.items }}" as="it" hint-placeholder-count="3"><span style="font-size:14px;color:#2e2e2b;display:flex;gap:8px"><span style="color:{{ s.color }};font-weight:800">↗</span>{{ it }}</span></sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="thiet-bi" style="background:#fff;border-top:1px solid #ececE6;border-bottom:1px solid #ececE6">
+<div style="max-width:1200px;margin:0 auto;padding:96px 24px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+<div style="max-width:600px">
+<div style="font-size:12px;font-weight:800;color:#1f9d4d;letter-spacing:0.12em;text-transform:uppercase">Thiết bị tự động hóa</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">Tìm thiết bị qua nhà cung cấp phù hợp</h2>
+</div>
+<p style="margin:0;max-width:400px;font-size:15px;line-height:1.65;color:#4a4a46">Biến tần, PLC, HMI, cảm biến và nhiều thiết bị khác. Gửi model hoặc thông số, chúng tôi gợi ý nguồn cung đáng tin cậy.</p>
+</div>
+<div style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+<sc-for list="{{ products }}" as="p" hint-placeholder-count="6">
+<a href="{{ p.href }}" style="background:#fafaf8;border-radius:22px;padding:22px;color:#141414;box-shadow:0 6px 18px -10px rgba(0,0,0,0.18),inset 0 -3px 0 #ececE6;display:flex;flex-direction:column;gap:14px" style-hover="transform:translateY(-3px);color:#141414">
+<div style="aspect-ratio:4/3;border-radius:14px;background:repeating-linear-gradient(135deg,#f3f1ec 0 10px,#ebe8e1 10px 20px);display:grid;place-items:center;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#8a8a84">ảnh {{ p.name }}</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+<span style="font-size:18px;font-weight:800">{{ p.name }}</span>
+<span style="font-size:13px;font-weight:700;color:#e8590c">{{ p.cta }} →</span>
+</div>
+</a>
+</sc-for>
+</div>
+<p style="margin:28px 0 0;font-size:13px;line-height:1.6;color:#6a6a64;max-width:760px">Một số liên kết thiết bị trên trang là liên kết tiếp thị liên kết (affiliate). Kỹ Sư Thập Cẩm có thể nhận hoa hồng từ đơn vị cung cấp khi bạn mua qua các liên kết này.</p>
+</div>
+</section>
+
+<section id="cach-hoat-dong" style="background:#141414;color:#fafaf8">
+<div style="max-width:1200px;margin:0 auto;padding:96px 24px;display:flex;flex-wrap:wrap;gap:56px">
+<div style="flex:1 1 340px;min-width:0">
+<div style="font-size:12px;font-weight:800;color:#ff8a45;letter-spacing:0.12em;text-transform:uppercase">Cách hoạt động</div>
+<h2 style="margin:14px 0 0;font-size:clamp(32px,4.4vw,52px);line-height:1.05;font-weight:800;letter-spacing:-0.03em">Rõ từng bước.<br>Chắc từng kết nối.</h2>
+<p style="margin:20px 0 0;font-size:16px;line-height:1.65;color:#c9c9c2;max-width:420px">Bạn chỉ cần mô tả bài toán. Việc tìm và đối chiếu đơn vị phù hợp do chúng tôi đảm nhận.</p>
+<a href="#lien-he" style="margin-top:28px;display:inline-block;background:#ff8a45;color:#141414;padding:14px 24px;border-radius:14px;font-weight:700;font-size:15px" style-hover="background:#fff;color:#141414">Trao đổi với kỹ sư ↗</a>
+</div>
+<div style="flex:1.3 1 440px;min-width:0;border-top:1px solid #33332f">
+<sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:24px 0;border-bottom:1px solid #33332f">
+<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#ff8a45;padding-top:4px">{{ st.num }}</span>
+<div style="display:flex;flex-direction:column;gap:6px"><h3 style="margin:0;font-size:18px;font-weight:700">{{ st.title }}</h3><p style="margin:0;font-size:15px;line-height:1.6;color:#b9b9b2">{{ st.desc }}</p></div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="du-an" style="max-width:1200px;margin:0 auto;padding:96px 24px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+<div style="max-width:600px">
+<div style="font-size:12px;font-weight:800;color:#e8590c;letter-spacing:0.12em;text-transform:uppercase">Dự án tiêu biểu</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">Sẽ cập nhật</h2>
+</div>
+<p style="margin:0;max-width:400px;font-size:15px;line-height:1.65;color:#4a4a46">Các dự án tiêu biểu đã kết nối và triển khai cùng đơn vị đối tác sẽ được giới thiệu tại đây.</p>
+</div>
+<div style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+<sc-for list="{{ projects }}" as="pr" hint-placeholder-count="0">
+<div style="background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 8px 24px -10px rgba(0,0,0,0.18),inset 0 -3px 0 #ececE6;display:flex;flex-direction:column">
+<div style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,#f6f4ef 0 12px,#efece5 12px 24px);display:grid;place-items:center;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#8a8a84">ảnh dự án</div>
+<div style="padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;font-weight:800;letter-spacing:0.06em;color:#1f9d4d">{{ pr.tag }}</span><h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:800">{{ pr.title }}</h3><p style="margin:0;font-size:15px;line-height:1.6;color:#4a4a46">{{ pr.desc }}</p></div>
+</div>
+</sc-for>
+<sc-for list="{{ projectSlots }}" as="sl" hint-placeholder-count="3">
+<div style="border:2px dashed #d8d6cf;border-radius:24px;padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px">
+<span style="font-size:12px;font-weight:800;letter-spacing:0.08em;color:#8a8a84">{{ sl.tag }}</span>
+<span style="font-size:18px;font-weight:700;color:#6a6a64">Dự án sắp cập nhật</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<sc-if value="{{ showBlog }}" hint-placeholder-val="{{ true }}">
+<section id="chia-se" style="background:#fff;border-top:1px solid #ececE6;border-bottom:1px solid #ececE6">
+<div style="max-width:1200px;margin:0 auto;padding:96px 24px">
+<div style="max-width:600px">
+<div style="font-size:12px;font-weight:800;color:#1f9d4d;letter-spacing:0.12em;text-transform:uppercase">Góc chia sẻ kỹ thuật</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">Kinh nghiệm &amp; kiến thức</h2>
+</div>
+<div style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+<sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
+<a href="{{ p.href }}" style="background:#fafaf8;border-radius:22px;padding:26px;color:#141414;box-shadow:0 6px 18px -10px rgba(0,0,0,0.18),inset 0 -3px 0 #ececE6;display:flex;flex-direction:column;gap:10px" style-hover="transform:translateY(-3px);color:#141414">
+<div style="display:flex;gap:10px;font-size:12px;font-weight:800;letter-spacing:0.06em"><span style="color:{{ p.color }}">{{ p.tag }}</span><span style="color:#8a8a84;font-weight:500">{{ p.date }}</span></div>
+<h3 style="margin:0;font-size:19px;line-height:1.35;font-weight:700">{{ p.title }}</h3>
+<p style="margin:0;font-size:15px;line-height:1.6;color:#4a4a46">{{ p.excerpt }}</p>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+</sc-if>
+
+<section id="doi-tac" style="max-width:1200px;margin:0 auto;padding:72px 24px 0">
+<div style="background:#fff;border-radius:28px;padding:clamp(28px,5vw,44px);box-shadow:0 10px 28px -12px rgba(0,0,0,0.18),inset 0 -3px 0 #ececE6;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;border-left:0">
+<div style="flex:1 1 360px;min-width:0">
+<div style="font-size:12px;font-weight:800;color:#1f9d4d;letter-spacing:0.12em;text-transform:uppercase">Dành cho đơn vị cung cấp</div>
+<h2 style="margin:10px 0 0;font-size:clamp(24px,3vw,32px);line-height:1.2;font-weight:800;letter-spacing:-0.02em">Bạn cung cấp giải pháp hoặc thiết bị tự động hóa?</h2>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#4a4a46">Trở thành đối tác để được giới thiệu đến khách hàng có nhu cầu phù hợp.</p>
+</div>
+<a href="mailto:{{ email }}?subject=H%E1%BB%A3p%20t%C3%A1c%20%C4%91%E1%BB%91i%20t%C3%A1c" style="background:#1f9d4d;color:#fff;padding:14px 24px;border-radius:14px;font-weight:700;font-size:15px" style-hover="background:#157a3a;color:#fff">Đăng ký hợp tác</a>
+</div>
+</section>
+
+<section id="lien-he" style="max-width:1200px;margin:0 auto;padding:72px 24px">
+<div style="background:#157a3a;color:#fff;border-radius:32px;padding:clamp(32px,6vw,56px);display:flex;flex-wrap:wrap;gap:36px;align-items:center;justify-content:space-between">
+<div style="flex:1 1 380px;min-width:0">
+<div style="font-size:12px;font-weight:800;color:#c8f0d4;letter-spacing:0.12em;text-transform:uppercase">Có bài toán cần giải?</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.025em">Bắt đầu bằng một cuộc trao đổi kỹ thuật.</h2>
+<p style="margin:16px 0 0;font-size:16px;line-height:1.65;color:#e2f4e8;max-width:480px">Mô tả hệ thống và điều bạn muốn cải thiện. Chúng tôi cùng bạn xác định bước tiếp theo và đơn vị phù hợp.</p>
+</div>
+<div style="flex:0 1 300px;min-width:240px;display:flex;flex-direction:column;gap:10px">
+<a href="tel:+84394469461" style="background:#fff;color:#141414;padding:15px 20px;border-radius:14px;font-weight:700;font-size:15px;text-align:center" style-hover="color:#e8590c">☎ {{ phoneDisplay }}</a>
+<a href="{{ fbUrl }}" target="_blank" style="background:#ff8a45;color:#141414;padding:15px 20px;border-radius:14px;font-weight:700;font-size:15px;text-align:center" style-hover="background:#fff;color:#141414">Nhắn Fanpage</a>
+<a href="mailto:{{ email }}?subject=Trao%20%C4%91%E1%BB%95i%20nhu%20c%E1%BA%A7u%20t%E1%BB%B1%20%C4%91%E1%BB%99ng%20h%C3%B3a" style="border:1.5px solid rgba(255,255,255,0.55);color:#fff;padding:14px 20px;border-radius:14px;font-weight:700;font-size:15px;text-align:center" style-hover="background:rgba(255,255,255,0.12);color:#fff">✉ {{ email }}</a>
+</div>
+</div>
+</section>
+
+<section id="hoi-dap" style="max-width:1200px;margin:0 auto;padding:24px 24px 96px;display:flex;flex-wrap:wrap;gap:48px">
+<div style="flex:1 1 280px;min-width:0">
+<div style="font-size:12px;font-weight:800;color:#e8590c;letter-spacing:0.12em;text-transform:uppercase">Hỏi đáp</div>
+<h2 style="margin:12px 0 0;font-size:clamp(30px,3.6vw,40px);line-height:1.1;font-weight:800;letter-spacing:-0.025em">Trước khi bắt đầu</h2>
+<p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:#4a4a46">Chưa chắc giải pháp nào phù hợp? Hãy trao đổi về hiện trạng trước.</p>
+</div>
+<div style="flex:2 1 460px;min-width:0;border-top:1px solid #e2e0d9">
+<sc-for list="{{ faqs }}" as="q" hint-placeholder-count="5">
+<div style="border-bottom:1px solid #e2e0d9">
+<button onClick="{{ q.toggle }}" style="width:100%;background:none;border:0;padding:20px 0;font:inherit;font-size:16px;font-weight:700;color:#141414;text-align:left;display:flex;justify-content:space-between;gap:20px;cursor:pointer"><span>{{ q.q }}</span><span style="color:#e8590c;font-size:22px;line-height:1">{{ q.sign }}</span></button>
+<sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0 32px 20px 0;font-size:15px;line-height:1.65;color:#4a4a46">{{ q.a }}</p></sc-if>
+</div>
+</sc-for>
+</div>
+</section>
+
+<footer style="background:#141414;color:#c9c9c2">
+<div style="max-width:1200px;margin:0 auto;padding:28px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px">
+<span style="font-weight:800;color:#fff">KỸ SƯ THẬP CẨM</span>
+<span>© 2026 Kỹ Sư Thập Cẩm · TP. Hồ Chí Minh</span>
+<div style="display:flex;gap:18px;flex-wrap:wrap"><a href="tel:+84394469461" style="color:#c9c9c2" style-hover="color:#ff8a45">Điện thoại</a><a href="mailto:{{ email }}" style="color:#c9c9c2" style-hover="color:#ff8a45">Email</a><a href="{{ fbUrl }}" target="_blank" style="color:#c9c9c2" style-hover="color:#ff8a45">Fanpage</a><a href="#top" style="color:#c9c9c2" style-hover="color:#ff8a45">Lên đầu ↑</a></div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;fbUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.facebook.com/profile.php?id=61596332606004&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Liên hệ&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;kysuthapcam@gmail.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Liên hệ&quot;},&quot;showBlog&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Phần mở rộng&quot;},&quot;affiliateLinks&quot;:{&quot;editor&quot;:null,&quot;default&quot;:{},&quot;tsType&quot;:&quot;Record&lt;string,string&gt;&quot;}}">
+class Component extends DCLogic {
+  state = { open: -1 };
+  renderVals() {
+    const data = window.KSTC_CONTENT || {};
+    const fields = data.fields || [];
+    const products = (data.products || []).map(p => ({ ...p, href: p.href || '#lien-he', cta: p.cta || 'Hỏi giá' }));
+    const steps = data.steps || [];
+    const projects = data.projects || [];
+    const projectSlots = data.projectSlots || [];
+    const posts = data.posts || [];
+    const faqs = (data.faqs || []).map((f, i) => ({
+      ...f,
+      open: this.state.open === i,
+      sign: this.state.open === i ? '−' : '+',
+      toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i }))
+    }));
+    return {
+      fields, products, steps, projects, projectSlots, posts, faqs,
+      showBlog: data.showBlog ?? true,
+      fbUrl: data.fbUrl || this.props.fbUrl || 'https://www.facebook.com/',
+      email: data.contactEmail || this.props.contactEmail || 'kysuthapcam@gmail.com',
+      heroTitle: data.heroTitle || 'Cần giải pháp tự động hóa?',
+      heroHighlight: data.heroHighlight || 'Chúng tôi kết nối bạn với đúng đơn vị.',
+      heroDescription: data.heroDescription || '',
+      phoneDisplay: data.phoneDisplay || '+84 394 469 461',
+      phoneLink: data.phoneLink || '+84394469461'
+    };
+  }
+}
+</script>
+</body>
+</html>
