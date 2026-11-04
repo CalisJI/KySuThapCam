@@ -3,6 +3,7 @@ title: "Bắt đầu giám sát máy từ xa"
 date: 2026-11-02
 tag: IoT
 color: "#1f9d4d"
+cover: /media/article-hmi-monitoring.jpg
 excerpt: "Từ cảm biến, gateway đến dashboard: các thành phần cơ bản để theo dõi máy từ xa mà không cần thay máy cũ."
 draft: false
 ---
@@ -61,3 +62,5 @@ Chọn **một máy** hay gây dừng hoặc là nút thắt của dây chuyền
 Gửi cho chúng tôi loại máy, thiết bị điều khiển hiện có và thông số cần theo dõi, chúng tôi sẽ cùng bạn chọn cảm biến, gateway phù hợp.
 
 *Tham khảo thêm: hướng dẫn retrofit IoT cho máy cũ của CrimsonEdge Systems và các tài liệu về MQTT, Modbus. Nội dung được biên soạn lại theo kinh nghiệm thực tế.*
+
+*Ảnh bìa: [PLC displej](https://commons.wikimedia.org/wiki/File:PLC_displej.jpg) của Quist161, giấy phép [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), đã cắt khung, nguồn Wikimedia Commons.*

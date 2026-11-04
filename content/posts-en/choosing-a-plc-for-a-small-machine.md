@@ -3,6 +3,7 @@ title: "Choosing a PLC for a small machine: what to consider"
 date: 2026-11-04
 tag: PLC
 color: "#e8590c"
+cover: /media/article-plc-cabinet.jpg
 excerpt: "I/O count, output type, communication and room to expand: what to settle before you pick a PLC model for a small machine."
 draft: false
 ---
@@ -67,3 +68,5 @@ Check that the PLC has **RS-485 (Modbus RTU)** and/or **Ethernet (Modbus TCP or 
 Send us the machine's signal list, load types, the devices to connect and the quantity, and we will work out a suitable PLC configuration with you.
 
 *Further reading: PLC selection guides from Industrial Monitor Direct, Moreval and manufacturer datasheets. This article is an original write-up based on field experience.*
+
+*Cover image: [BMA Automation Allen Bradley PLC 3](https://commons.wikimedia.org/wiki/File:BMA_Automation_Allen_Bradley_PLC_3.JPG) by Elmschrat Coaching-Blog, licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), cropped; via Wikimedia Commons.*

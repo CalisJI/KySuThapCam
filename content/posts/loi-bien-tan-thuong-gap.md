@@ -3,6 +3,7 @@ title: "Những lỗi biến tần thường gặp tại xưởng"
 date: 2026-11-03
 tag: BIẾN TẦN
 color: "#e8590c"
+cover: /media/article-inverter.jpg
 excerpt: "Quá dòng, quá áp, thấp áp, quá tải, quá nhiệt: dấu hiệu, nguyên nhân thường gặp và hướng kiểm tra ban đầu."
 draft: false
 ---
@@ -72,3 +73,5 @@ Biến tần dừng đột ngột giữa ca sản xuất là tình huống quen 
 Gửi model biến tần hiện tại, thông số motor (công suất, dòng, điện áp) và mô tả tải. Chúng tôi sẽ cùng bạn xác định phương án phù hợp.
 
 *Tham khảo thêm: tài liệu kỹ thuật về lỗi biến tần của Maxivolt, Hợp Kỹ Automation và sổ tay của các hãng. Nội dung được biên soạn lại, không thay thế hướng dẫn chính thức của nhà sản xuất.*
+
+*Ảnh bìa: [Siemens VFD](https://commons.wikimedia.org/wiki/File:Siemens_VFD.jpg) của Sarah Adrita, giấy phép [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), đã cắt khung, nguồn Wikimedia Commons.*

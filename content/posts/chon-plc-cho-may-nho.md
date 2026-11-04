@@ -3,6 +3,7 @@ title: "Chọn PLC cho máy: cần cân nhắc gì"
 date: 2026-11-04
 tag: PLC
 color: "#e8590c"
+cover: /media/article-plc-cabinet.jpg
 excerpt: Số I/O, kiểu ngõ ra, truyền thông và khả năng mở rộng — những điều cần
   chốt trước khi chọn model PLC cho máy nhỏ.
 draft: false
@@ -68,3 +69,5 @@ Kiểm tra PLC có sẵn cổng **RS-485 (Modbus RTU)**, **Ethernet (Modbus TCP 
 Gửi cho chúng tôi danh sách tín hiệu của máy, loại tải, thiết bị cần kết nối và số lượng, chúng tôi sẽ cùng bạn xác định cấu hình PLC phù hợp.
 
 *Tham khảo thêm: hướng dẫn chọn PLC của Industrial Monitor Direct, Moreval và các tài liệu kỹ thuật của hãng. Nội dung trên được biên soạn lại theo kinh nghiệm thực tế.*
+
+*Ảnh bìa: [BMA Automation Allen Bradley PLC 3](https://commons.wikimedia.org/wiki/File:BMA_Automation_Allen_Bradley_PLC_3.JPG) của Elmschrat Coaching-Blog, giấy phép [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), đã cắt khung, nguồn Wikimedia Commons.*

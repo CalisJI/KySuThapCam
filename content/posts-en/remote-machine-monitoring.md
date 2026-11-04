@@ -3,6 +3,7 @@ title: "Getting started with remote machine monitoring"
 date: 2026-11-02
 tag: IoT
 color: "#1f9d4d"
+cover: /media/article-hmi-monitoring.jpg
 excerpt: "From sensors and gateways to the dashboard: the basic building blocks for monitoring machines remotely without replacing older equipment."
 draft: false
 ---
@@ -61,3 +62,5 @@ Pick **one machine** that often stops or is a bottleneck, add current and temper
 Send us the machine type, the existing controllers and the parameters you want to track, and we will help you choose suitable sensors and a gateway.
 
 *Further reading: the retrofit guide for legacy machines from CrimsonEdge Systems and public documentation on MQTT and Modbus. This is an original write-up based on field experience.*
+
+*Cover image: [PLC displej](https://commons.wikimedia.org/wiki/File:PLC_displej.jpg) by Quist161, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), cropped; via Wikimedia Commons.*

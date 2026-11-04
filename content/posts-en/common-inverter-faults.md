@@ -3,6 +3,7 @@ title: "Common inverter faults on the factory floor"
 date: 2026-11-03
 tag: INVERTER
 color: "#e8590c"
+cover: /media/article-inverter.jpg
 excerpt: "Overcurrent, overvoltage, undervoltage, overload and overheating: typical symptoms, likely causes and where to start checking."
 draft: false
 ---
@@ -72,3 +73,5 @@ An inverter (VFD) tripping in the middle of a shift is a familiar scene. Most fa
 Send us the current drive model, the motor data (power, current, voltage) and a description of the load, and we will work out a suitable option with you.
 
 *Further reading: inverter fault guides from Maxivolt and Hợp Kỹ Automation, and manufacturer manuals. This is an original write-up and does not replace the manufacturer's official instructions.*
+
+*Cover image: [Siemens VFD](https://commons.wikimedia.org/wiki/File:Siemens_VFD.jpg) by Sarah Adrita, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), cropped; via Wikimedia Commons.*
