@@ -108,37 +108,6 @@ content:
           - name: desc
             label: Mô tả
             type: text
-      - name: projectSlots
-        label: Nhãn ô dự án sắp cập nhật
-        type: object
-        list: true
-        fields:
-          - name: tag
-            label: Nhãn
-            type: string
-      - name: posts
-        label: Ô "Sắp đăng" trên trang chủ (hiện khi chưa đủ 3 bài thật)
-        type: object
-        list: true
-        fields:
-          - name: href
-            label: Liên kết bài viết
-            type: string
-          - name: tag
-            label: Chủ đề
-            type: string
-          - name: color
-            label: Màu nhấn (mã hex)
-            type: string
-          - name: date
-            label: Ngày / trạng thái
-            type: string
-          - name: title
-            label: Tiêu đề bài viết
-            type: string
-          - name: excerpt
-            label: Mô tả ngắn
-            type: text
       - name: faqs
         label: Hỏi đáp
         type: object
@@ -243,9 +212,6 @@ content:
           - name: projDesc
             label: "Dự án: mô tả"
             type: text
-          - name: projSlot
-            label: "Dự án: chữ trong ô sắp cập nhật"
-            type: string
           - name: blogKicker
             label: "Chia sẻ: dòng nhỏ"
             type: string
@@ -302,9 +268,6 @@ content:
             type: text
           - name: backHome
             label: "Trang bài viết: nút về trang chủ"
-            type: string
-          - name: listEmpty
-            label: "Trang danh sách: khi chưa có bài"
             type: string
           - name: listDesc
             label: "Trang danh sách: mô tả SEO"
@@ -414,37 +377,6 @@ content:
           - name: desc
             label: Mô tả
             type: text
-      - name: projectSlots
-        label: Nhãn ô dự án sắp cập nhật
-        type: object
-        list: true
-        fields:
-          - name: tag
-            label: Nhãn
-            type: string
-      - name: posts
-        label: Ô "Sắp đăng" trên trang chủ (hiện khi chưa đủ 3 bài thật)
-        type: object
-        list: true
-        fields:
-          - name: href
-            label: Liên kết bài viết
-            type: string
-          - name: tag
-            label: Chủ đề
-            type: string
-          - name: color
-            label: Màu nhấn (mã hex)
-            type: string
-          - name: date
-            label: Ngày / trạng thái
-            type: string
-          - name: title
-            label: Tiêu đề bài viết
-            type: string
-          - name: excerpt
-            label: Mô tả ngắn
-            type: text
       - name: faqs
         label: Hỏi đáp
         type: object
@@ -549,9 +481,6 @@ content:
           - name: projDesc
             label: "Dự án: mô tả"
             type: text
-          - name: projSlot
-            label: "Dự án: chữ trong ô sắp cập nhật"
-            type: string
           - name: blogKicker
             label: "Chia sẻ: dòng nhỏ"
             type: string
@@ -608,9 +537,6 @@ content:
             type: text
           - name: backHome
             label: "Trang bài viết: nút về trang chủ"
-            type: string
-          - name: listEmpty
-            label: "Trang danh sách: khi chưa có bài"
             type: string
           - name: listDesc
             label: "Trang danh sách: mô tả SEO"

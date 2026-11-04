@@ -111,43 +111,6 @@
     }
   ],
   "projects": [],
-  "projectSlots": [
-    {
-      "tag": "AUTOMATION"
-    },
-    {
-      "tag": "MONITORING"
-    },
-    {
-      "tag": "IoT / AGRITECH"
-    }
-  ],
-  "posts": [
-    {
-      "href": "#lien-he",
-      "tag": "PLC",
-      "color": "#e8590c",
-      "date": "Coming soon",
-      "title": "Choosing a PLC for a small machine: what to consider",
-      "excerpt": "I/O count, communication and room to expand before you pick a model."
-    },
-    {
-      "href": "#lien-he",
-      "tag": "INVERTER",
-      "color": "#e8590c",
-      "date": "Coming soon",
-      "title": "Common inverter faults on the factory floor",
-      "excerpt": "Typical symptoms, likely causes and where to start checking."
-    },
-    {
-      "href": "#lien-he",
-      "tag": "IoT",
-      "color": "#1f9d4d",
-      "date": "Coming soon",
-      "title": "Getting started with remote machine monitoring",
-      "excerpt": "The basic building blocks, from sensors and gateways to the dashboard."
-    }
-  ],
   "faqs": [
     {
       "q": "What equipment does Kỹ Sư Thập Cẩm supply?",
@@ -213,9 +176,8 @@
     "howDesc": "From clarifying specifications to recommending equipment, our process helps you choose a configuration that fits each production line.",
     "howCta": "Talk to an engineer ↗",
     "projKicker": "Featured projects",
-    "projTitle": "Coming soon",
-    "projDesc": "Real-world application stories from production floors will be added as soon as there is something worth sharing.",
-    "projSlot": "Project coming soon",
+    "projTitle": "Real-world applications",
+    "projDesc": "A selection of equipment and sensor applications on production lines.",
     "blogKicker": "Technical insights",
     "blogTitle": "Experience & know-how",
     "blogAll": "View all articles →",
@@ -235,7 +197,6 @@
     "defaultCta": "Request a quote",
     "articleCta": "Need help choosing equipment or sensors for your production line?",
     "backHome": "← Back to home",
-    "listEmpty": "Articles are coming soon.",
     "listDesc": "Practical know-how on automation equipment, sensors and industrial IoT."
   }
 }

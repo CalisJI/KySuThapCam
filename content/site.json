@@ -122,43 +122,6 @@
       "desc": "Thống nhất cấu hình, số lượng và phương thức giao nhận trước khi đặt hàng."
     }
   ],
-  "projectSlots": [
-    {
-      "tag": "TỰ ĐỘNG HÓA"
-    },
-    {
-      "tag": "GIÁM SÁT"
-    },
-    {
-      "tag": "IoT / AGRITECH"
-    }
-  ],
-  "posts": [
-    {
-      "href": "#lien-he",
-      "tag": "PLC",
-      "color": "#e8590c",
-      "date": "Sắp đăng",
-      "title": "Chọn PLC cho máy nhỏ: cần cân nhắc gì",
-      "excerpt": "Số I/O, truyền thông và khả năng mở rộng trước khi chọn model."
-    },
-    {
-      "href": "#lien-he",
-      "tag": "BIẾN TẦN",
-      "color": "#e8590c",
-      "date": "Sắp đăng",
-      "title": "Những lỗi biến tần thường gặp tại xưởng",
-      "excerpt": "Dấu hiệu, nguyên nhân thường gặp và hướng kiểm tra ban đầu."
-    },
-    {
-      "href": "#lien-he",
-      "tag": "IoT",
-      "color": "#1f9d4d",
-      "date": "Sắp đăng",
-      "title": "Bắt đầu giám sát máy từ xa",
-      "excerpt": "Các thành phần cơ bản từ cảm biến, gateway đến dashboard."
-    }
-  ],
   "faqs": [
     {
       "q": "Kỹ Sư Thập Cẩm cung cấp những thiết bị nào?",
@@ -224,9 +187,8 @@
     "howDesc": "Từ làm rõ thông số đến đề xuất thiết bị, quy trình giúp bạn chọn cấu hình phù hợp với từng dây chuyền.",
     "howCta": "Trao đổi với kỹ sư ↗",
     "projKicker": "Dự án tiêu biểu",
-    "projTitle": "Sẽ cập nhật",
-    "projDesc": "Nội dung ứng dụng thiết bị trong sản xuất sẽ được bổ sung khi có thông tin phù hợp để chia sẻ.",
-    "projSlot": "Dự án sắp cập nhật",
+    "projTitle": "Ứng dụng thực tế",
+    "projDesc": "Một số ứng dụng thiết bị và cảm biến trong dây chuyền sản xuất.",
     "blogKicker": "Góc chia sẻ kỹ thuật",
     "blogTitle": "Kinh nghiệm & kiến thức",
     "blogAll": "Xem tất cả bài viết →",
@@ -246,7 +208,6 @@
     "defaultCta": "Hỏi giá",
     "articleCta": "Cần tư vấn thiết bị, cảm biến cho dây chuyền?",
     "backHome": "← Về trang chủ",
-    "listEmpty": "Bài viết đang được cập nhật.",
     "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa."
   }
 }

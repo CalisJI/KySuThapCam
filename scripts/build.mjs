@@ -24,7 +24,7 @@ const langList = (current) => LANGS.map((l) => ({
   code: l.code, label: l.label, name: l.name, href: `${l.base}/`, flag: flagUri(l.code), mark: l === current ? '✓' : '',
 }));
 
-const REQUIRED = ['heroTitle', 'heroHighlight', 'heroDescription', 'contactEmail', 'phoneDisplay', 'phoneLink', 'fields', 'products', 'steps', 'posts', 'faqs'];
+const REQUIRED = ['heroTitle', 'heroHighlight', 'heroDescription', 'contactEmail', 'phoneDisplay', 'phoneLink', 'fields', 'products', 'steps', 'faqs'];
 const UI_DEFAULTS = JSON.parse(await readFile(path.join(root, 'scripts', 'ui-defaults.json'), 'utf8'));
 const baseContent = JSON.parse(await readFile(path.join(root, 'content', LANGS[0].site), 'utf8'));
 
@@ -133,19 +133,18 @@ for (const lang of LANGS) {
   for (const key of REQUIRED) {
     if (!(key in content)) throw new Error(`${lang.site}: missing required field "${key}"`);
   }
-  if (!Array.isArray(content.posts) || !Array.isArray(content.fields)) {
-    throw new Error(`${lang.site}: posts and fields must be arrays.`);
+  if (!Array.isArray(content.fields)) {
+    throw new Error(`${lang.site}: fields must be an array.`);
   }
   const other = LANGS.find((l) => l !== lang);
   const alt = { code: other.code, label: other.label, href: `${other.base}/` };
   const articles = await loadArticles(lang);
   const href = (a) => `${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/`;
 
-  // Homepage cards: real articles first, teasers from the site file fill up to 3.
+  // Homepage cards: real articles only (no placeholder cards).
   const cards = articles.slice(0, 6).map((a) => ({
     href: href(a), tag: a.tag, color: a.color, date: fmtDate(a.date, lang.locale), title: a.title, excerpt: a.excerpt, image: a.cover,
   }));
-  for (const t of content.posts) { if (cards.length < 3) cards.push(t); }
   const homeContent = {
     ...content, posts: cards, articleCount: articles.length,
     articlesHref: `${lang.base}/${lang.articles}/`, altHref: alt.href, altLang: alt.code, altLabel: alt.label, lang: lang.code,
@@ -181,8 +180,10 @@ for (const lang of LANGS) {
 <div class="grid">${articles.length ? articles.map((a) => `<a class="card" href="${href(a)}">${a.cover ? `<img src="${esc(a.cover)}" alt="">` : ''}
 <div class="meta"><span style="color:${a.color}">${esc(a.tag)}</span><span style="color:#8a8a84;font-weight:500">${esc(fmtDate(a.date, lang.locale))}</span></div>
 <strong style="font-size:19px;line-height:1.35">${esc(a.title)}</strong><span style="color:#4a4a46;font-size:15px;line-height:1.6">${esc(a.excerpt)}</span></a>`).join('') : `<p>${esc(content.ui.listEmpty)}</p>`}</div></div>`;
+  if (articles.length) {
   await mkdir(path.join(outDir, lang.articles), { recursive: true });
   await writeFile(path.join(outDir, lang.articles, 'index.html'), relativizeHtml(shell(lang, content, { title: content.ui.blogTitle, description: content.ui.listDesc, body: listBody, alt }), '../'.repeat(depth)), 'utf8');
+  }
 
   summary.push(`${lang.code}: ${articles.length} articles, ${cards.length} homepage cards`);
 }

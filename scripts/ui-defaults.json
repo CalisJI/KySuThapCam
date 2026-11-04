@@ -44,9 +44,8 @@
       "howDesc": "Từ làm rõ thông số đến đề xuất thiết bị, quy trình giúp bạn chọn cấu hình phù hợp với từng dây chuyền.",
       "howCta": "Trao đổi với kỹ sư ↗",
       "projKicker": "Dự án tiêu biểu",
-      "projTitle": "Sẽ cập nhật",
-      "projDesc": "Nội dung ứng dụng thiết bị trong sản xuất sẽ được bổ sung khi có thông tin phù hợp để chia sẻ.",
-      "projSlot": "Dự án sắp cập nhật",
+      "projTitle": "Ứng dụng thực tế",
+      "projDesc": "Một số ứng dụng thiết bị và cảm biến trong dây chuyền sản xuất.",
       "blogKicker": "Góc chia sẻ kỹ thuật",
       "blogTitle": "Kinh nghiệm & kiến thức",
       "blogAll": "Xem tất cả bài viết →",
@@ -66,7 +65,6 @@
       "defaultCta": "Hỏi giá",
       "articleCta": "Cần tư vấn thiết bị, cảm biến cho dây chuyền?",
       "backHome": "← Về trang chủ",
-      "listEmpty": "Bài viết đang được cập nhật.",
       "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa."
     }
   },
@@ -115,9 +113,8 @@
       "howDesc": "From clarifying specifications to recommending equipment, our process helps you choose a configuration that fits each production line.",
       "howCta": "Talk to an engineer ↗",
       "projKicker": "Featured projects",
-      "projTitle": "Coming soon",
-      "projDesc": "Real-world application stories from production floors will be added as soon as there is something worth sharing.",
-      "projSlot": "Project coming soon",
+      "projTitle": "Real-world applications",
+      "projDesc": "A selection of equipment and sensor applications on production lines.",
       "blogKicker": "Technical insights",
       "blogTitle": "Experience & know-how",
       "blogAll": "View all articles →",
@@ -137,7 +134,6 @@
       "defaultCta": "Request a quote",
       "articleCta": "Need help choosing equipment or sensors for your production line?",
       "backHome": "← Back to home",
-      "listEmpty": "Articles are coming soon.",
       "listDesc": "Practical know-how on automation equipment, sensors and industrial IoT."
     }
   }

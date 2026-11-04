@@ -43,8 +43,8 @@ a:hover{color:#1f9d4d}
 <a href="#linh-vuc" style="color:#141414" style-hover="color:#e8590c">{{ ui.navFields }}</a>
 <a href="#thiet-bi" style="color:#141414" style-hover="color:#e8590c">{{ ui.navDevices }}</a>
 <a href="#cach-hoat-dong" style="color:#141414" style-hover="color:#e8590c">{{ ui.navHow }}</a>
-<a href="#du-an" style="color:#141414" style-hover="color:#e8590c">{{ ui.navProjects }}</a>
-<a href="#chia-se" style="color:#141414" style-hover="color:#e8590c">{{ ui.navShare }}</a>
+<sc-if value="{{ hasProjects }}" hint-placeholder-val="{{ false }}"><a href="#du-an" style="color:#141414" style-hover="color:#e8590c">{{ ui.navProjects }}</a></sc-if>
+<sc-if value="{{ hasBlog }}" hint-placeholder-val="{{ false }}"><a href="#chia-se" style="color:#141414" style-hover="color:#e8590c">{{ ui.navShare }}</a></sc-if>
 <a href="#hoi-dap" style="color:#141414" style-hover="color:#e8590c">{{ ui.navFaq }}</a>
 </nav>
 <a href="#lien-he" style="background:#e8590c;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:700" style-hover="background:#c94a05;color:#fff">{{ ui.navCta }}</a>
@@ -162,6 +162,7 @@ a:hover{color:#1f9d4d}
 </div>
 </section>
 
+<sc-if value="{{ hasProjects }}" hint-placeholder-val="{{ false }}">
 <section id="du-an" style="max-width:1200px;margin:0 auto;padding:96px 24px">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
 <div style="max-width:600px">
@@ -178,16 +179,11 @@ a:hover{color:#1f9d4d}
 <div style="padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;font-weight:800;letter-spacing:0.06em;color:#1f9d4d">{{ pr.tag }}</span><h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:800">{{ pr.title }}</h3><p style="margin:0;font-size:15px;line-height:1.6;color:#4a4a46">{{ pr.desc }}</p></div>
 </div>
 </sc-for>
-<sc-for list="{{ projectSlots }}" as="sl" hint-placeholder-count="3">
-<div style="border:2px dashed #d8d6cf;border-radius:24px;padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px">
-<span style="font-size:12px;font-weight:800;letter-spacing:0.08em;color:#8a8a84">{{ sl.tag }}</span>
-<span style="font-size:18px;font-weight:700;color:#6a6a64">{{ ui.projSlot }}</span>
-</div>
-</sc-for>
 </div>
 </section>
+</sc-if>
 
-<sc-if value="{{ showBlog }}" hint-placeholder-val="{{ true }}">
+<sc-if value="{{ hasBlog }}" hint-placeholder-val="{{ false }}">
 <section id="chia-se" style="background:#fff;border-top:1px solid #ececE6;border-bottom:1px solid #ececE6">
 <div style="max-width:1200px;margin:0 auto;padding:96px 24px">
 <div style="max-width:600px">
@@ -261,7 +257,6 @@ class Component extends DCLogic {
     const products = (data.products || []).map(p => withImg({ ...p, href: p.href || '#lien-he', cta: p.cta || (data.ui || {}).defaultCta || '' }));
     const steps = data.steps || [];
     const projects = (data.projects || []).map(withImg);
-    const projectSlots = data.projectSlots || [];
     const posts = (data.posts || []).map(withImg);
     const faqs = (data.faqs || []).map((f, i) => ({
       ...f,
@@ -270,7 +265,7 @@ class Component extends DCLogic {
       toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i }))
     }));
     return {
-      fields, products, steps, projects, projectSlots, posts, faqs,
+      fields, products, steps, projects, posts, faqs,
       ui: data.ui || {},
       stats: (data.ui || {}).stats || [],
       siteTitle: data.siteTitle || '',
@@ -282,6 +277,8 @@ class Component extends DCLogic {
       altLang: data.altLang || 'en',
       altLabel: data.altLabel || 'EN',
       hasArticles: (data.articleCount || 0) > 0,
+      hasBlog: (data.showBlog ?? true) && (data.articleCount || 0) > 0,
+      hasProjects: projects.length > 0,
       articlesHref: data.articlesHref || '/bai-viet/',
       mailSubject: encodeURIComponent((data.ui || {}).mailSubject || ''),
       showBlog: data.showBlog ?? true,
