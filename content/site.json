@@ -277,11 +277,12 @@
     "footFb": "Fanpage",
     "footTop": "Lên đầu ↑",
     "defaultCta": "Hỏi giá",
-    "articleCta": "Cần tư vấn thiết bị, cảm biến cho dây chuyền?",
+    "articleCta": "Cần tư vấn giải pháp hoặc thiết bị cho dây chuyền?",
     "backHome": "← Về trang chủ",
     "listDesc": "Kinh nghiệm và kiến thức về thiết bị, cảm biến, tự động hóa.",
     "readMore": "Đọc bài viết",
     "blogFilterAll": "Tất cả",
-    "blogMore": "Xem thêm bài viết"
+    "blogMore": "Xem thêm bài viết",
+    "articleCtaDesc": "Gửi hiện trạng, thông số hoặc yêu cầu của bạn. Kỹ sư sẽ trao đổi và đề xuất phương án phù hợp."
   }
 }

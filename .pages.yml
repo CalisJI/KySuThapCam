@@ -318,7 +318,10 @@ content:
       label: Chữ nút mặc định trên thiết bị
       type: string
     - name: articleCta
-      label: 'Trang bài viết: lời kêu gọi cuối bài'
+      label: 'Cuối bài viết: tiêu đề khung tư vấn'
+      type: text
+    - name: articleCtaDesc
+      label: 'Cuối bài viết: mô tả khung tư vấn'
       type: text
     - name: backHome
       label: 'Trang bài viết: nút về trang chủ'
@@ -501,7 +504,10 @@ content:
       label: Chữ nút mặc định trên thiết bị
       type: string
     - name: articleCta
-      label: 'Trang bài viết: lời kêu gọi cuối bài'
+      label: 'Cuối bài viết: tiêu đề khung tư vấn'
+      type: text
+    - name: articleCtaDesc
+      label: 'Cuối bài viết: mô tả khung tư vấn'
       type: text
     - name: backHome
       label: 'Trang bài viết: nút về trang chủ'

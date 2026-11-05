@@ -209,7 +209,7 @@ h1{font-size:clamp(28px,4vw,42px);line-height:1.15;letter-spacing:-.02em;margin:
 .prose{font-size:17px;line-height:1.75;color:#2e2e2b;margin-top:28px}.prose h2{font-size:26px;margin:36px 0 8px}.prose h3{font-size:21px;margin:28px 0 6px}
 .prose img{max-width:100%;height:auto;border-radius:12px}.prose table{border-collapse:collapse;width:100%}.prose td,.prose th{border:1px solid #ddd;padding:8px}
 .prose pre{background:#141414;color:#eee;padding:16px;border-radius:12px;overflow:auto}.prose code{font-family:ui-monospace,Menlo,monospace}
-.cta{margin:48px 0;background:#141414;color:#fff;border-radius:22px;padding:28px}.cta a{color:#ff8a45;font-weight:700}
+.cta{margin:56px 0 0;background:#157a3a;color:#fff;border-radius:28px;padding:clamp(26px,5vw,40px);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}.cta .cta-txt{flex:1 1 320px;min-width:0}.cta .cta-k{font-size:12px;font-weight:800;color:#c8f0d4;letter-spacing:.12em;text-transform:uppercase}.cta h2{margin:10px 0 0;font-size:clamp(22px,3vw,30px);line-height:1.2;letter-spacing:-.02em}.cta p{margin:12px 0 0;color:#e2f4e8;font-size:15px;line-height:1.65}.cta .cta-btns{flex:0 1 280px;min-width:230px;display:flex;flex-direction:column;gap:10px}.cta .cta-btns a{display:block;text-align:center;padding:13px 18px;border-radius:14px;font-weight:700;font-size:15px}.cta .b1{background:#fff;color:#141414}.cta .b1:hover{color:#e8590c}.cta .b2{background:#ff8a45;color:#141414}.cta .b2:hover{background:#fff;color:#141414}.cta .b3{border:1.5px solid rgba(255,255,255,.55);color:#fff}.cta .b3:hover{background:rgba(255,255,255,.12);color:#fff}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:32px}
 .card{background:#fff;border-radius:20px;padding:22px;color:#141414;display:flex;flex-direction:column;gap:10px;box-shadow:0 6px 18px -10px rgba(0,0,0,.18)}
 .card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px}
@@ -239,8 +239,8 @@ ${LANG_CSS}
 <nav class="hd-nav"><a href="${lang.base}/#linh-vuc">${esc(content.ui.navFields)}</a><a href="${lang.base}/#thiet-bi">${esc(content.ui.navDevices)}</a><a href="${lang.base}/#cach-hoat-dong">${esc(content.ui.navHow)}</a>${content.projects.length ? `<a href="${lang.base}/#du-an">${esc(content.ui.navProjects)}</a>` : ''}<a href="${lang.base}/${lang.articles}/">${esc(content.ui.navShare)}</a><a href="${lang.base}/#hoi-dap">${esc(content.ui.navFaq)}</a></nav>
 <a class="hd-cta" href="${lang.base}/#lien-he">${esc(content.ui.navCta)}</a>${langMenuHtml(lang, hrefs)}</div></header>
 <main class="wrap${wide ? ' wide' : ''}">${body}
-<div class="cta"><strong>${esc(content.ui.articleCta)}</strong><br>
-<a href="tel:${esc(content.phoneLink)}">${esc(content.phoneDisplay)}</a> · <a href="mailto:${esc(content.contactEmail)}">${esc(content.contactEmail)}</a></div>
+<section class="cta"><div class="cta-txt"><div class="cta-k">${esc(content.ui.contactKicker)}</div><h2>${esc(content.ui.articleCta)}</h2><p>${esc(content.ui.articleCtaDesc)}</p></div>
+<div class="cta-btns"><a class="b1" href="tel:${esc(content.phoneLink)}">☎ ${esc(content.phoneDisplay)}</a><a class="b2" href="${esc(content.fbUrl)}" target="_blank" rel="noopener">${esc(content.ui.contactFb)}</a><a class="b3" href="mailto:${esc(content.contactEmail)}?subject=${encodeURIComponent(content.ui.mailSubject || '')}">✉ ${esc(content.contactEmail)}</a></div></section>
 <a class="back" href="${lang.base}/">${esc(content.ui.backHome)}</a>
 </main><script>${LANG_JS}</script>
 <footer class="ft"><div><strong>KỸ SƯ THẬP CẨM</strong><span>${esc(content.ui.footerCopy)}</span><nav><a href="tel:${esc(content.phoneLink)}">${esc(content.ui.footPhone)}</a><a href="mailto:${esc(content.contactEmail)}">${esc(content.ui.footEmail)}</a><a href="${esc(content.fbUrl)}" target="_blank" rel="noopener">${esc(content.ui.footFb)}</a><a href="#top">${esc(content.ui.footTop)}</a></nav></div></footer></body></html>`;

@@ -66,11 +66,12 @@
     "footFb": "Facebook",
     "footTop": "Back to top ↑",
     "defaultCta": "Request a quote",
-    "articleCta": "Need help choosing equipment or sensors for your production line?",
+    "articleCta": "Need advice on a solution or equipment for your production line?",
     "backHome": "← Back to home",
     "listDesc": "Practical know-how on automation equipment, sensors and industrial IoT.",
     "readMore": "Read the article",
     "blogFilterAll": "All",
-    "blogMore": "Load more articles"
+    "blogMore": "Load more articles",
+    "articleCtaDesc": "Send us your current setup, specifications or requirements. Our engineers will discuss it with you and propose a suitable approach."
   }
 }
