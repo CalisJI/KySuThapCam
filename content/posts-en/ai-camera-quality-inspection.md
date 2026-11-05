@@ -3,7 +3,7 @@ title: "AI camera inspection: retrofit one quality-control station"
 date: 2026-11-05
 tag: "Machine Vision"
 color: "#e8590c"
-cover: "https://en.ids-imaging.com/files/images/support/knowledgebase/technical-articles/sustainable-ai-acceleration/ids_nxt_ai_image_to_information.jpg"
+cover: "/media/camera-ai-inspection-diagram.svg"
 excerpt: "IDS NXT inspection examples and a practical camera-to-PLC retrofit architecture."
 translation: camera-ai-kiem-tra-san-pham
 draft: false
