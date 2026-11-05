@@ -3,7 +3,7 @@ title: "Thêm module đóng nắp tự động sau máy chiết rót bán tự �
 date: 2026-11-05
 tag: "Automation"
 color: "#e8590c"
-cover: ""
+cover: "https://www.cm3engineering.com/wp-content/uploads/2026/03/Foto-macchina-realizzata-926x1024.jpg"
 excerpt: "Case CM3 Engineering: băng tải và cơ cấu khí nén tự đóng nắp twist-off, thay vì đầu tư lại cả dây chuyền."
 translation: compact-automatic-capping-module
 draft: false
@@ -28,3 +28,5 @@ Khảo sát tốc độ đầu ra máy chiết, các kích thước chai, dung s
 **Nguồn:** [CM3 Engineering — Automatic capping with conveyor belt for twist-off caps](https://www.cm3engineering.com/en/automatic-capping-with-conveyor-belt-for-twist-off-caps/).
 
 *Video và hình ảnh thuộc tác giả hoặc chủ sở hữu nguồn; Kỹ Sư Thập Cẩm không sao chép hoặc lưu trữ lại file video của họ.*
+
+*Ảnh bìa do CM3 Engineering công bố trong case study gốc: https://www.cm3engineering.com/en/automatic-capping-with-conveyor-belt-for-twist-off-caps/*
