@@ -24,20 +24,20 @@ a:hover{color:#1f9d4d}
 </helmet>
 <div style="min-height:100vh;background:#fafaf8;color:#141414;font-family:'Be Vietnam Pro',Helvetica,Arial,sans-serif;overflow-x:hidden">
 
-<div style="background:#141414;color:#e9e9e4;font-size:13px">
+<div class="hd-top" style="background:#141414;color:#e9e9e4;font-size:13px">
 <div style="max-width:1200px;margin:0 auto;padding:9px 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-<span>{{ ui.topbar }}</span>
+<span class="hd-top-txt">{{ ui.topbar }}</span>
 <span style="display:flex;gap:8px">{{ ui.city }} · <a href="tel:{{ phoneLink }}" style="color:#ff8a45;font-weight:700" style-hover="color:#fff">{{ phoneDisplay }}</a></span>
 </div>
 </div>
 
-<header style="position:sticky;top:0;z-index:20;background:rgba(250,250,248,0.92);backdrop-filter:blur(10px);border-bottom:1px solid #ececE6">
+<header class="hd" style="position:sticky;top:0;z-index:20;background:rgba(250,250,248,0.92);backdrop-filter:blur(10px);border-bottom:1px solid #ececE6">
 <div style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
-<a href="#top" style="display:flex;align-items:center;gap:10px;color:#141414">
+<a class="hd-logo" href="#top" style="display:flex;align-items:center;gap:10px;color:#141414">
 <img src="{{ logo }}" alt="Kỹ Sư Thập Cẩm" width="40" height="40" style="width:40px;height:40px;border-radius:11px;box-shadow:0 2px 8px rgba(0,0,0,0.14);display:block">
-<span style="display:flex;flex-direction:column;line-height:1.15"><span style="font-weight:800;font-size:16px">KỸ SƯ THẬP CẨM</span><span style="font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6a6a64">{{ ui.tagline }}</span></span>
+<span style="display:flex;flex-direction:column;line-height:1.15"><span style="font-weight:800;font-size:16px">KỸ SƯ THẬP CẨM</span><span class="hd-tag" style="font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6a6a64">{{ ui.tagline }}</span></span>
 </a>
-<nav style="display:flex;gap:24px;flex-wrap:wrap;font-size:14px;font-weight:600">
+<nav class="hd-nav" style="display:flex;gap:24px;flex-wrap:wrap;font-size:14px;font-weight:600">
 <a href="#linh-vuc" style="color:#141414" style-hover="color:#e8590c">{{ ui.navFields }}</a>
 <a href="#thiet-bi" style="color:#141414" style-hover="color:#e8590c">{{ ui.navDevices }}</a>
 <a href="#cach-hoat-dong" style="color:#141414" style-hover="color:#e8590c">{{ ui.navHow }}</a>
@@ -45,8 +45,9 @@ a:hover{color:#1f9d4d}
 <sc-if value="{{ hasBlog }}" hint-placeholder-val="{{ false }}"><a href="{{ articlesHref }}" style="color:#141414" style-hover="color:#e8590c">{{ ui.navShare }}</a></sc-if>
 <a href="#hoi-dap" style="color:#141414" style-hover="color:#e8590c">{{ ui.navFaq }}</a>
 </nav>
-<a href="#lien-he" style="background:#e8590c;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:700" style-hover="background:#c94a05;color:#fff">{{ ui.navCta }}</a>
+<a class="hd-cta" href="#lien-he" style="background:#e8590c;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:700" style-hover="background:#c94a05;color:#fff">{{ ui.navCta }}</a>
 <details class="lang-menu"><summary><img src="{{ curFlag }}" width="22" height="15" alt=""> {{ curLabel }} <span>▾</span></summary><div class="lang-pop"><sc-for list="{{ langs }}" as="lg" hint-placeholder-count="2"><a href="{{ lg.href }}" hreflang="{{ lg.code }}"><img src="{{ lg.flag }}" width="22" height="15" alt=""><span>{{ lg.name }}</span><b>{{ lg.mark }}</b></a></sc-for></div></details>
+<button class="burger" type="button" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
 </div>
 </header>
 
