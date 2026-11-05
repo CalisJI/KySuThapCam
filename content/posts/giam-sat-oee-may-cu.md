@@ -3,7 +3,7 @@ title: "Giám sát OEE cho máy cũ: bắt đầu từ dữ liệu chạy và d�
 date: 2026-11-05
 tag: "IIoT"
 color: "#1f9d4d"
-cover: ""
+cover: "/media/article-hmi-monitoring.jpg"
 excerpt: "Demo Zapsi MES và ý tưởng nâng cấp giám sát máy đang vận hành, từ trạng thái máy đến phân tích downtime và OEE."
 translation: oee-monitoring-existing-machines
 draft: false
@@ -30,3 +30,5 @@ Xác thực thời gian dừng với nhật ký vận hành; phân biệt máy d
 **Nguồn:** [Zapsi — MES System demonstration](https://arcelormittal.zapsi.eu/en/info). Đây là bài phân tích độc lập, không phải dự án do Kỹ Sư Thập Cẩm thực hiện.
 
 *Video và hình ảnh thuộc tác giả hoặc chủ sở hữu nguồn; Kỹ Sư Thập Cẩm không sao chép hoặc lưu trữ lại file video của họ.*
+
+*Ảnh bìa sử dụng ảnh minh họa HMI có sẵn của Kỹ Sư Thập Cẩm, không phải ảnh giao diện Zapsi.*
