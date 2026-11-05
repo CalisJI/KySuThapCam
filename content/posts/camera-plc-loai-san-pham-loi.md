@@ -3,7 +3,7 @@ title: "Camera phát hiện NG rồi PLC loại đúng sản phẩm như thế n
 date: 2026-11-05
 tag: "Industrial Automation"
 color: "#1f9d4d"
-cover: "https://www.mitsubishielectric.co.jp/fa/solutions/competencies/ccpu/app/img/sys_conf10.jpg"
+cover: "https://img.vision-systems.com/files/base/ebm/vsd/image/2020/04/epic_machine_vision_syrup_bottle_inspection_system.5e9dd709e3b29.png?auto=format%2Ccompress&fit=fill&width=800"
 excerpt: "Trigger, result ID, encoder, queue và reject verification: phần khó nhất của trạm vision không nằm ở thuật toán."
 translation: vision-camera-plc-reject-tracking
 draft: false
@@ -62,3 +62,5 @@ Nếu băng tải có nhiều lane, sản phẩm sát nhau, sản phẩm trượ
 **Ảnh bìa:** Hình kiểm tra OK/NG của camera In-Sight 2800 từ [Cognex](https://www.cognex.com/products/machine-vision/2d-machine-vision-systems/in-sight-2800/applications); hình minh họa trạm kiểm tra, không phải hệ thống tracking PLC trong case study.
 
 *Ảnh bìa từ Mitsubishi Electric minh họa một hệ giám sát máy, không phải hệ vision reject được mô tả trong bài.*
+
+*Ảnh bìa là ảnh dây chuyền camera kiểm tra chai thực tế do Vision Systems Design đăng trong case của EPIC Vision Systems: https://www.vision-systems.com/factory/article/14174407/cognex-in-sight-bottle-inspection-vision-system*
