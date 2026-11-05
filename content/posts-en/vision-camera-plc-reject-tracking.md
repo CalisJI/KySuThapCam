@@ -3,7 +3,7 @@ title: "How a PLC rejects the correct product after a vision NG result"
 date: 2026-11-05
 tag: "Industrial Automation"
 color: "#1f9d4d"
-cover: ""
+cover: "https://www.cognex.com/library/media/products/in-sight-2800/bottle-seal-check.jpg?h=393&hash=B6E0D9C76071155F10F1D69EBF983012&la=en&sc_lang=en&w=700"
 excerpt: "Trigger timing, result IDs, encoder counts, reject queues and verification in an industrial vision station."
 translation: camera-plc-loai-san-pham-loi
 draft: false
@@ -52,3 +52,5 @@ Multi-lane lines or products that can overtake one another need more sophisticat
 **Sources:** [Cognex In-Sight case study](https://www.vision-systems.com/factory/article/14174407/cognex-in-sight-bottle-inspection-vision-system) · [addaScan reject tracking guide](https://addascan.co.za/resources/machine-vision-basics/where-a-station-sits-and-how-it-rejects/).
 
 *Independent technical analysis; demos and media belong to their cited sources.*
+
+**Cover image:** In-Sight 2800 OK/NG visual inspection example from [Cognex](https://www.cognex.com/products/machine-vision/2d-machine-vision-systems/in-sight-2800/applications); it illustrates inspection, not the particular PLC tracking installation in the article.
