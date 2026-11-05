@@ -3,7 +3,7 @@ title: "OEE monitoring for existing machines: start with runtime and downtime"
 date: 2026-11-05
 tag: "IIoT"
 color: "#1f9d4d"
-cover: ""
+cover: "/media/article-hmi-monitoring.jpg"
 excerpt: "Explore Zapsi MES and a practical retrofit approach to machine status, downtime and OEE."
 translation: giam-sat-oee-may-cu
 draft: false
@@ -30,3 +30,5 @@ Validate downtime against operator logs, distinguish planned stops from breakdow
 **Source:** [Zapsi — MES System demonstration](https://arcelormittal.zapsi.eu/en/info). Independent technical commentary; not a Kỹ Sư Thập Cẩm installation.
 
 *Video và hình ảnh thuộc tác giả hoặc chủ sở hữu nguồn; Kỹ Sư Thập Cẩm không sao chép hoặc lưu trữ lại file video của họ.*
+
+*Cover uses a general HMI photo from the Kỹ Sư Thập Cẩm site, not a Zapsi interface screenshot.*
