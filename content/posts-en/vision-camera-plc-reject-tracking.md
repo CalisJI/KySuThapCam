@@ -3,7 +3,7 @@ title: "How a PLC rejects the correct product after a vision NG result"
 date: 2026-11-05
 tag: "Industrial Automation"
 color: "#1f9d4d"
-cover: "https://www.cognex.com/library/media/products/in-sight-2800/bottle-seal-check.jpg?h=393&hash=B6E0D9C76071155F10F1D69EBF983012&la=en&sc_lang=en&w=700"
+cover: "https://www.mitsubishielectric.co.jp/fa/solutions/competencies/ccpu/app/img/sys_conf10.jpg"
 excerpt: "Trigger timing, result IDs, encoder counts, reject queues and verification in an industrial vision station."
 translation: camera-plc-loai-san-pham-loi
 draft: false
@@ -54,3 +54,5 @@ Multi-lane lines or products that can overtake one another need more sophisticat
 *Independent technical analysis; demos and media belong to their cited sources.*
 
 **Cover image:** In-Sight 2800 OK/NG visual inspection example from [Cognex](https://www.cognex.com/products/machine-vision/2d-machine-vision-systems/in-sight-2800/applications); it illustrates inspection, not the particular PLC tracking installation in the article.
+
+*Cover image from Mitsubishi Electric illustrates industrial machine monitoring, not the specific vision reject system described.*
