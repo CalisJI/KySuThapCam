@@ -53,8 +53,6 @@ Multi-lane lines or products that can overtake one another need more sophisticat
 
 *Independent technical analysis; demos and media belong to their cited sources.*
 
-**Cover image:** In-Sight 2800 OK/NG visual inspection example from [Cognex](https://www.cognex.com/products/machine-vision/2d-machine-vision-systems/in-sight-2800/applications); it illustrates inspection, not the particular PLC tracking installation in the article.
 
-*Cover image from Mitsubishi Electric illustrates industrial machine monitoring, not the specific vision reject system described.*
 
 *Cover is the actual bottle-inspection line photo published by Vision Systems Design in EPIC Vision Systems case study: https://www.vision-systems.com/factory/article/14174407/cognex-in-sight-bottle-inspection-vision-system*
