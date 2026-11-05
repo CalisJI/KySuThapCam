@@ -31,6 +31,4 @@ Lighting, positioning, trigger timing and line speed all affect results. Measure
 
 *Video và hình ảnh thuộc tác giả hoặc chủ sở hữu nguồn; Kỹ Sư Thập Cẩm không sao chép hoặc lưu trữ lại file video của họ.*
 
-**Cover photo:** IDS NXT product illustration from [IDS Imaging](https://fr.ids-imaging.com/technical-articles-details/items/ids-nxt-ai-based-quality-inspection.html); not a photo taken by Kỹ Sư Thập Cẩm.
-
-*Cover is an official IDS NXT AI vision illustration from IDS Imaging: https://en.ids-imaging.com/technical-articles-details/items/sustainable-edge-intelligence.html*
+*Cover is an original conceptual technical diagram, not a photograph of an IDS demonstration.*
