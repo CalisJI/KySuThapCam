@@ -323,13 +323,13 @@ for (const lang of LANGS) {
   for (const a of articles) {
     const body = `<article style="padding-top:40px">
 <div class="meta"><span style="color:${a.color}">${esc(a.tag)}</span><span style="color:#8a8a84;font-weight:500">${esc(fmtDate(a.date, lang.locale))}</span></div>
-<h1>${esc(a.title)}</h1>${a.cover ? `<img class="cover" src="${esc(a.cover)}" alt="${esc(a.title)}">` : ''}
+<h1>${esc(a.title)}</h1>${a.cover ? `<img class="cover" src="${esc(a.cover)}" alt="${esc(a.title)}" onerror="this.onerror=null;this.src='/media/industrial-component.jpg'">` : ''}
 <div class="prose">${a.html}</div></article>`;
     const dir = path.join(outDir, lang.articles, a.slug);
     await mkdir(dir, { recursive: true });
     await writeFile(path.join(dir, 'index.html'), relativizeHtml(shell(lang, content, { title: a.title, description: a.excerpt || a.title, body, alt, hrefs: { [other.code]: PAIR[lang.code]?.[a.slug] ? artUrl(other, PAIR[lang.code][a.slug]) : listHrefs[other.code] }, seo: seoHead({ lang, content, title: `${a.title} · Kỹ Sư Thập Cẩm`, description: a.excerpt || a.title, path: `${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/`, image: a.cover || content.logo, type: 'article', ld: [{ '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.excerpt || a.title, image: [absUrl(a.cover || content.logo)], datePublished: isoDate(a.date) || undefined, inLanguage: lang.code, author: { '@type': 'Organization', name: 'Kỹ Sư Thập Cẩm' }, publisher: { '@type': 'Organization', name: 'Kỹ Sư Thập Cẩm', logo: { '@type': 'ImageObject', url: absUrl(content.logo) } }, mainEntityOfPage: `${SITE_URL}${lang.base}/${lang.articles}/${encodeURIComponent(a.slug)}/` }] }) }), '../'.repeat(depth + 1)), 'utf8');
   }
-  const thumb = (a) => (a.cover ? `<img class="thumb" src="${esc(a.cover)}" alt="" loading="lazy">` : `<div class="thumb ph"><img src="${esc(content.logo)}" alt=""></div>`);
+  const thumb = (a) => (a.cover ? `<img class="thumb" src="${esc(a.cover)}" alt="" loading="lazy" onerror="this.onerror=null;this.src='/media/industrial-component.jpg'">` : `<div class="thumb ph"><img src="${esc(content.logo)}" alt=""></div>`);
   const metaLine = (a) => `<div class="meta"><span style="color:${a.color}">${esc(a.tag)}</span><span style="color:#8a8a84;font-weight:500">${esc(fmtDate(a.date, lang.locale))}</span></div>`;
   const newsCard = (a) => `<a class="card" data-tag="${esc(a.tag)}" href="${href(a)}">${thumb(a)}<div class="txt">${metaLine(a)}<strong class="clamp2" style="font-size:19px;line-height:1.35">${esc(a.title)}</strong><span class="clamp3" style="color:#4a4a46;font-size:15px;line-height:1.6">${esc(a.excerpt)}</span></div></a>`;
   const [lead, ...rest] = articles;
