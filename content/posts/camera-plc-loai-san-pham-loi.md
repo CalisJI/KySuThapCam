@@ -59,8 +59,6 @@ Nếu băng tải có nhiều lane, sản phẩm sát nhau, sản phẩm trượ
 
 *Bài phân tích kỹ thuật độc lập; nội dung demo và hình ảnh thuộc nguồn được dẫn.*
 
-**Ảnh bìa:** Hình kiểm tra OK/NG của camera In-Sight 2800 từ [Cognex](https://www.cognex.com/products/machine-vision/2d-machine-vision-systems/in-sight-2800/applications); hình minh họa trạm kiểm tra, không phải hệ thống tracking PLC trong case study.
 
-*Ảnh bìa từ Mitsubishi Electric minh họa một hệ giám sát máy, không phải hệ vision reject được mô tả trong bài.*
 
 *Ảnh bìa là ảnh dây chuyền camera kiểm tra chai thực tế do Vision Systems Design đăng trong case của EPIC Vision Systems: https://www.vision-systems.com/factory/article/14174407/cognex-in-sight-bottle-inspection-vision-system*
