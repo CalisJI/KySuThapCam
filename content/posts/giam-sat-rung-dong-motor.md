@@ -3,7 +3,7 @@ title: "Giám sát rung động motor bằng Industrial Raspberry Pi và FFT"
 date: 2026-11-05
 tag: "Maintenance"
 color: "#1f9d4d"
-cover: ""
+cover: "https://pilink.jp/wp-content/uploads/2025/02/demo_video-1.webp"
 excerpt: "Demo PiLink dùng cảm biến gia tốc, Industrial Raspberry Pi và phổ FFT để theo dõi dấu hiệu bất thường."
 translation: motor-vibration-condition-monitoring
 draft: false
@@ -30,3 +30,5 @@ Cách gá cảm biến, tần số lấy mẫu, nhiễu và tốc độ quay ả
 **Nguồn:** [PiLink — Failure Prediction System Demonstration (Vibration), 04/02/2025](https://pilink.jp/en/condition-monitoring_demo1/).
 
 *Video và hình ảnh thuộc tác giả hoặc chủ sở hữu nguồn; Kỹ Sư Thập Cẩm không sao chép hoặc lưu trữ lại file video của họ.*
+
+*Ảnh bìa là hình gốc tại trang video demo của PiLink: https://pilink.jp/en/condition-monitoring_demo1/*
