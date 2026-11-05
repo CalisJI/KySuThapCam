@@ -31,6 +31,5 @@ Bắt đầu với **một loại lỗi có giá trị kinh tế rõ ràng**, v�
 
 *Video và hình ảnh thuộc tác giả hoặc chủ sở hữu nguồn; Kỹ Sư Thập Cẩm không sao chép hoặc lưu trữ lại file video của họ.*
 
-**Ảnh bìa:** Hình minh họa hệ thống IDS NXT từ [IDS Imaging](https://fr.ids-imaging.com/technical-articles-details/items/ids-nxt-ai-based-quality-inspection.html); không phải ảnh do Kỹ Sư Thập Cẩm chụp.
 
 *Ảnh bìa giới thiệu IDS NXT từ IDS Imaging (minh họa cơ chế AI xử lý OK/NG): https://en.ids-imaging.com/technical-articles-details/items/sustainable-edge-intelligence.html*
