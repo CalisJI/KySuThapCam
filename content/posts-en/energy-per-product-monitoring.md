@@ -3,7 +3,7 @@ title: "Energy per product: connecting power meters to production counts"
 date: 2026-11-05
 tag: "Energy"
 color: "#1f9d4d"
-cover: ""
+cover: "https://www.mitsubishielectric.com/fa/id_id/events-seminars/assets/img/showroom/F/B15-1.png"
 excerpt: "Muvia's sample-data demonstration joins Modbus meters, PLC counters and ERP orders."
 translation: dien-nang-theo-tung-san-pham
 draft: false
@@ -30,3 +30,5 @@ Separate idle and active energy, recover meter counters after network outages an
 **Source:** [Muvia Industrial — Energy use per line and per piece](https://muviabi.com/en/industrial/use-cases/energy).
 
 *Video và hình ảnh thuộc tác giả hoặc chủ sở hữu nguồn; Kỹ Sư Thập Cẩm không sao chép hoặc lưu trữ lại file video của họ.*
+
+**Reference cover image:** Energy-per-unit interface illustration by [Mitsubishi Electric](https://www.mitsubishielectric.com/fa/id_id/events-seminars/demokit/B-15.html), **not a screenshot from the Muvia demo**. The article analyses Muvia's approach.
