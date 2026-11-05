@@ -3,7 +3,7 @@ title: "Lắp camera AI kiểm tra thiếu chi tiết: nâng cấp một trạm 
 date: 2026-11-05
 tag: "Machine Vision"
 color: "#e8590c"
-cover: "https://en.ids-imaging.com/files/images/support/knowledgebase/technical-articles/sustainable-ai-acceleration/ids_nxt_ai_image_to_information.jpg"
+cover: "/media/camera-ai-inspection-diagram.svg"
 excerpt: "Video IDS NXT minh họa nhận biết lỗi lắp ráp và ngoại quan, cùng kiến trúc camera–PLC cho xưởng nhỏ."
 translation: ai-camera-quality-inspection
 draft: false
