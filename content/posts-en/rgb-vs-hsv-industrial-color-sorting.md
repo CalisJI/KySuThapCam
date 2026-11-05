@@ -3,7 +3,7 @@ title: "RGB vs HSV: making industrial color sorting more reliable"
 date: 2026-11-05
 tag: "Image Processing"
 color: "#e8590c"
-cover: ""
+cover: "https://rajasekharguptha.github.io/assets/images/finalimage.png"
 excerpt: "HSV segmentation in OpenCV, its limits under changing illumination, and practical validation steps."
 translation: phan-loai-mau-rgb-hsv-opencv
 draft: false
@@ -50,3 +50,5 @@ Hue is unstable near zero saturation. Glare, shadows, mixed-spectrum lighting an
 **Source:** [OpenCV — inRange HSV tutorial](https://docs.opencv.org/4.x/da/d97/tutorial_threshold_inRange.html).
 
 *Independent technical analysis; demos and media belong to their cited sources.*
+
+**Cover image:** OpenCV red-color segmentation result from [Rajasekhar Guptha's tutorial](https://rajasekharguptha.github.io/opencv/2020/07/18/color-detection.html); this is an algorithm demo, not a production line.
