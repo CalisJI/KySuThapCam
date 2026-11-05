@@ -1,11 +1,11 @@
 {
-  "siteTitle": "Kỹ Sư Thập Cẩm · Automation equipment & sensors",
-  "metaDescription": "Supplier of automation equipment, sensors and industrial components for production lines in Vietnam.",
-  "heroTitle": "Equipment supply",
+  "siteTitle": "Kỹ Sư Thập Cẩm · Automation solutions, industrial IoT & equipment",
+  "metaDescription": "Automation, monitoring and industrial IoT solutions, plus equipment, sensors and components for production lines in Ho Chi Minh City, Vietnam.",
+  "heroTitle": "Solutions and equipment",
   "heroHighlight": "for automated production lines.",
-  "heroDescription": "We supply industrial equipment, sensors and components for production lines, and help you choose by specification, installation environment and real operating needs.",
+  "heroDescription": "Kỹ Sư Thập Cẩm advises on control, monitoring and industrial IoT solutions, and supplies equipment, sensors and components. From understanding your setup to installation and after-handover support.",
   "ui": {
-    "topbar": "Automation equipment · Sensors · Industrial components",
+    "topbar": "Automation solutions · Industrial IoT · Equipment & sensors",
     "city": "Ho Chi Minh City, Vietnam",
     "tagline": "AUTOMATION · IoT · CONNECTED",
     "navFields": "Solutions",
@@ -15,7 +15,7 @@
     "navShare": "News",
     "navFaq": "FAQ",
     "navCta": "Send your request ↗",
-    "heroKicker": "Industrial equipment · Sensors · Components",
+    "heroKicker": "Automation solutions · Industrial IoT · Equipment",
     "heroCta1": "Send your request",
     "heroCta2": "Explore solutions ↓",
     "stats": [

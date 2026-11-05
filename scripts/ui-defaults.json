@@ -1,8 +1,8 @@
 {
   "vi": {
-    "metaDescription": "Cung cấp thiết bị tự động hóa, cảm biến và linh kiện công nghiệp phục vụ dây chuyền sản xuất.",
+    "metaDescription": "Tư vấn giải pháp tự động hóa, giám sát, IoT công nghiệp và cung cấp thiết bị, cảm biến, linh kiện cho dây chuyền sản xuất tại TP. Hồ Chí Minh.",
     "ui": {
-      "topbar": "Thiết bị tự động hóa · Cảm biến · Linh kiện công nghiệp",
+      "topbar": "Giải pháp tự động hóa · IoT công nghiệp · Thiết bị & cảm biến",
       "city": "TP. Hồ Chí Minh",
       "tagline": "AUTOMATION · IoT · KẾT NỐI",
       "navFields": "Lĩnh vực",
@@ -12,7 +12,7 @@
       "navShare": "Tin tức",
       "navFaq": "Hỏi đáp",
       "navCta": "Gửi nhu cầu ↗",
-      "heroKicker": "Thiết bị công nghiệp · Cảm biến · Linh kiện",
+      "heroKicker": "Giải pháp tự động hóa · IoT công nghiệp · Thiết bị",
       "heroCta1": "Gửi nhu cầu của bạn",
       "heroCta2": "Xem lĩnh vực ↓",
       "stats": [
@@ -73,9 +73,9 @@
     }
   },
   "en": {
-    "metaDescription": "Supplier of automation equipment, sensors and industrial components for production lines in Vietnam.",
+    "metaDescription": "Automation, monitoring and industrial IoT solutions, plus equipment, sensors and components for production lines in Ho Chi Minh City, Vietnam.",
     "ui": {
-      "topbar": "Automation equipment · Sensors · Industrial components",
+      "topbar": "Automation solutions · Industrial IoT · Equipment & sensors",
       "city": "Ho Chi Minh City, Vietnam",
       "tagline": "AUTOMATION · IoT · CONNECTED",
       "navFields": "Solutions",
@@ -85,7 +85,7 @@
       "navShare": "News",
       "navFaq": "FAQ",
       "navCta": "Send your request ↗",
-      "heroKicker": "Industrial equipment · Sensors · Components",
+      "heroKicker": "Automation solutions · Industrial IoT · Equipment",
       "heroCta1": "Send your request",
       "heroCta2": "Explore solutions ↓",
       "stats": [

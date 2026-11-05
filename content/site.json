@@ -1,9 +1,9 @@
 {
-  "siteTitle": "Kỹ Sư Thập Cẩm · Thiết bị & cảm biến tự động hóa",
-  "metaDescription": "Cung cấp thiết bị tự động hóa, cảm biến và linh kiện công nghiệp phục vụ dây chuyền sản xuất.",
-  "heroTitle": "Cung cấp thiết bị",
+  "siteTitle": "Kỹ Sư Thập Cẩm · Giải pháp tự động hóa, IoT & thiết bị công nghiệp",
+  "metaDescription": "Tư vấn giải pháp tự động hóa, giám sát, IoT công nghiệp và cung cấp thiết bị, cảm biến, linh kiện cho dây chuyền sản xuất tại TP. Hồ Chí Minh.",
+  "heroTitle": "Giải pháp và thiết bị",
   "heroHighlight": "cho dây chuyền tự động hóa.",
-  "heroDescription": "Chúng tôi cung cấp thiết bị, cảm biến và linh kiện công nghiệp phục vụ dây chuyền sản xuất — hỗ trợ lựa chọn theo thông số, môi trường lắp đặt và nhu cầu thực tế.",
+  "heroDescription": "Kỹ Sư Thập Cẩm tư vấn giải pháp điều khiển, giám sát và IoT công nghiệp, đồng thời cung cấp thiết bị, cảm biến, linh kiện. Từ tìm hiểu hiện trạng, lắp đặt đến hỗ trợ sau bàn giao.",
   "phoneDisplay": "+84 394 469 461",
   "phoneLink": "+84394469461",
   "contactEmail": "kysuthapcam@gmail.com",
@@ -216,7 +216,7 @@
     }
   ],
   "ui": {
-    "topbar": "Thiết bị tự động hóa · Cảm biến · Linh kiện công nghiệp",
+    "topbar": "Giải pháp tự động hóa · IoT công nghiệp · Thiết bị & cảm biến",
     "city": "TP. Hồ Chí Minh",
     "tagline": "AUTOMATION · IoT · KẾT NỐI",
     "navFields": "Lĩnh vực",
@@ -226,7 +226,7 @@
     "navShare": "Tin tức",
     "navFaq": "Hỏi đáp",
     "navCta": "Gửi nhu cầu ↗",
-    "heroKicker": "Thiết bị công nghiệp · Cảm biến · Linh kiện",
+    "heroKicker": "Giải pháp tự động hóa · IoT công nghiệp · Thiết bị",
     "heroCta1": "Gửi nhu cầu của bạn",
     "heroCta2": "Xem lĩnh vực ↓",
     "stats": [
