@@ -3,7 +3,7 @@ title: "Đo điện năng theo từng sản phẩm: từ kWh tổng sang dữ li
 date: 2026-11-05
 tag: "Energy"
 color: "#1f9d4d"
-cover: ""
+cover: "https://www.mitsubishielectric.com/fa/id_id/events-seminars/assets/img/showroom/F/B15-1.png"
 excerpt: "Demo Muvia sử dụng đồng hồ Modbus, bộ đếm PLC và dữ liệu đơn hàng để tính kWh/sản phẩm."
 translation: energy-per-product-monitoring
 draft: false
@@ -30,3 +30,5 @@ Tách điện năng chạy tải và không tải, kiểm tra bộ đếm khi m�
 **Nguồn:** [Muvia Industrial — Energy use per line and per piece](https://muviabi.com/en/industrial/use-cases/energy).
 
 *Video và hình ảnh thuộc tác giả hoặc chủ sở hữu nguồn; Kỹ Sư Thập Cẩm không sao chép hoặc lưu trữ lại file video của họ.*
+
+**Ảnh bìa tham khảo:** Giao diện minh họa chỉ số energy per unit của [Mitsubishi Electric](https://www.mitsubishielectric.com/fa/id_id/events-seminars/demokit/B-15.html), **không phải ảnh từ demo Muvia**. Nội dung bài vẫn phân tích giải pháp của Muvia.
