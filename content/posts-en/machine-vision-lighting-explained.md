@@ -3,7 +3,7 @@ title: "Why lighting can matter more than an expensive camera in machine vision"
 date: 2026-11-05
 tag: "Machine Vision"
 color: "#e8590c"
-cover: ""
+cover: "https://www.planistar.de/fileadmin/_processed_/d/2/csm_Unternehmen_Loesungen_3611f85be8.jpg"
 excerpt: "Backlight, dark field, ring and coaxial lighting: how illumination changes what a vision system can reliably detect."
 translation: anh-sang-trong-machine-vision
 draft: false
@@ -43,3 +43,5 @@ Compare good and defective samples under several lighting setups; judge feature-
 **Sources:** [KEYENCE lighting guide](https://www.keyence.com/products/vision/resources/vision-resources/basics-of-lighting-selection.jsp) · [CCS lighting applications](https://www.ccs-grp.com/product/vision/index.html).
 
 *Independent technical analysis; demos and media belong to their cited sources.*
+
+**Cover photo:** PCB inspection lighting installation from [planistar Lichttechnik](https://www.planistar.de/en/company), used as a lighting application example.
