@@ -41,6 +41,9 @@ content:
   - name: zaloUrl
     label: Link Zalo (vd https://zalo.me/84901234567 hoặc link Zalo OA; để trống = tự dùng số điện thoại)
     type: string
+  - name: messengerUrl
+    label: Link Messenger của Fanpage (vd https://m.me/tenfanpage; để trống = tự lấy từ link Fanpage)
+    type: string
   - name: analyticsToken
     label: Mã đếm truy cập Cloudflare Web Analytics (token 32 ký tự; để trống = tắt)
     type: string
@@ -347,6 +350,12 @@ content:
     - name: footZalo
       label: 'Chân trang: Zalo'
       type: string
+    - name: contactMessenger
+      label: 'Nút nổi: tên nút Messenger'
+      type: string
+    - name: contactEmailLabel
+      label: 'Nút nổi: tên nút email'
+      type: string
 - name: site-content-en
   label: 'Nội dung trang (English): tiêu đề, mô tả và chữ cố định'
   type: file
@@ -538,6 +547,12 @@ content:
       type: string
     - name: footZalo
       label: 'Chân trang: Zalo'
+      type: string
+    - name: contactMessenger
+      label: 'Nút nổi: tên nút Messenger'
+      type: string
+    - name: contactEmailLabel
+      label: 'Nút nổi: tên nút email'
       type: string
 - name: articles
   label: Bài viết chia sẻ (Tiếng Việt)

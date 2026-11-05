@@ -74,6 +74,8 @@
     "blogMore": "Load more articles",
     "articleCtaDesc": "Send us your current setup, specifications or requirements. Our engineers will discuss it with you and propose a suitable approach.",
     "contactZalo": "Chat on Zalo",
-    "footZalo": "Zalo"
+    "footZalo": "Zalo",
+    "contactMessenger": "Chat on Messenger",
+    "contactEmailLabel": "Send an email"
   }
 }
