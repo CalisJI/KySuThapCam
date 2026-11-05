@@ -3,7 +3,7 @@ title: "Lắp camera AI kiểm tra thiếu chi tiết: nâng cấp một trạm 
 date: 2026-11-05
 tag: "Machine Vision"
 color: "#e8590c"
-cover: ""
+cover: "https://fr.ids-imaging.com/files/images/support/knowledgebase/technical-articles/ids-nxt-ai-based-quality-inspection/ai-based_quality-inspection-3000x1800.jpg"
 excerpt: "Video IDS NXT minh họa nhận biết lỗi lắp ráp và ngoại quan, cùng kiến trúc camera–PLC cho xưởng nhỏ."
 translation: ai-camera-quality-inspection
 draft: false
@@ -30,3 +30,5 @@ Bắt đầu với **một loại lỗi có giá trị kinh tế rõ ràng**, v�
 **Nguồn:** [IDS Imaging — AI-based quality inspection with IDS NXT](https://www.ids-imaging.us/visionchannel-media-details/items/ai-based-quality-inspection.html).
 
 *Video và hình ảnh thuộc tác giả hoặc chủ sở hữu nguồn; Kỹ Sư Thập Cẩm không sao chép hoặc lưu trữ lại file video của họ.*
+
+**Ảnh bìa:** Hình minh họa hệ thống IDS NXT từ [IDS Imaging](https://fr.ids-imaging.com/technical-articles-details/items/ids-nxt-ai-based-quality-inspection.html); không phải ảnh do Kỹ Sư Thập Cẩm chụp.
