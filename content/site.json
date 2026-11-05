@@ -153,34 +153,34 @@
     {
       "num": "01 / TIẾP NHẬN",
       "numEn": "01 / INTAKE",
-      "title": "Tìm hiểu dây chuyền",
-      "titleEn": "Understand your line",
-      "desc": "Làm rõ công đoạn sử dụng, thiết bị hiện có, môi trường lắp đặt và yêu cầu vận hành.",
-      "descEn": "We clarify the process stage, existing equipment, installation environment and operating requirements."
+      "title": "Tìm hiểu bài toán",
+      "titleEn": "Understand the problem",
+      "desc": "Làm rõ dây chuyền, công đoạn, thiết bị hiện có, môi trường lắp đặt và mục tiêu cần cải thiện.",
+      "descEn": "We clarify the production line, process stage, existing equipment, installation environment and the improvement you are aiming for."
     },
     {
-      "num": "02 / XÁC ĐỊNH",
-      "numEn": "02 / DEFINE",
-      "title": "Chốt thông số kỹ thuật",
-      "titleEn": "Lock in the specifications",
-      "desc": "Xác định model, dải đo, nguồn cấp, chuẩn kết nối, số lượng và điều kiện làm việc.",
-      "descEn": "We define the model, measuring range, power supply, connectivity standard, quantity and working conditions."
+      "num": "02 / PHÂN TÍCH",
+      "numEn": "02 / ANALYZE",
+      "title": "Tư vấn giải pháp",
+      "titleEn": "Advise on the solution",
+      "desc": "Trao đổi phương án điều khiển, giám sát, kết nối IoT hoặc nâng cấp hệ thống, rồi xác định thông số kỹ thuật cần thiết.",
+      "descEn": "We discuss options for control, monitoring, IoT connectivity or system upgrades, then define the technical specifications required."
     },
     {
       "num": "03 / ĐỀ XUẤT",
       "numEn": "03 / PROPOSE",
-      "title": "Chọn thiết bị phù hợp",
-      "titleEn": "Select the right equipment",
-      "desc": "Đối chiếu yêu cầu với danh mục thiết bị, cảm biến và linh kiện; xác nhận cấu hình, báo giá.",
-      "descEn": "We match your requirements against our range of equipment, sensors and components, then confirm the configuration and quote."
+      "title": "Đề xuất cấu hình và báo giá",
+      "titleEn": "Propose a configuration and quote",
+      "desc": "Chọn thiết bị, cảm biến, linh kiện phù hợp; thống nhất cấu hình, số lượng và báo giá.",
+      "descEn": "We select suitable equipment, sensors and components, then agree on the configuration, quantity and quote."
     },
     {
-      "num": "04 / XÁC NHẬN",
-      "numEn": "04 / CONFIRM",
-      "title": "Hoàn tất đơn hàng",
-      "titleEn": "Complete the order",
-      "desc": "Thống nhất cấu hình, số lượng và phương thức giao nhận trước khi đặt hàng.",
-      "descEn": "We agree on configuration, quantity and delivery method before you place the order."
+      "num": "04 / BÀN GIAO",
+      "numEn": "04 / HANDOVER",
+      "title": "Lắp đặt, bàn giao và hỗ trợ",
+      "titleEn": "Install, hand over and support",
+      "desc": "Lắp đặt và vận hành thử; bàn giao khi hệ thống hoạt động đạt yêu cầu, sau đó tiếp tục hỗ trợ kỹ thuật.",
+      "descEn": "We install and commission the system, hand it over once it meets your requirements, and keep supporting you afterwards."
     }
   ],
   "faqs": [
@@ -253,9 +253,9 @@
     "devicesKicker": "Thiết bị tự động hóa",
     "devicesTitle": "Cung cấp thiết bị & cảm biến cho dây chuyền tự động hóa",
     "howKicker": "Cách hoạt động",
-    "howTitleA": "Chọn đúng thiết bị.",
-    "howTitleB": "Vận hành đúng nhu cầu.",
-    "howDesc": "Từ làm rõ thông số đến đề xuất thiết bị, quy trình giúp bạn chọn cấu hình phù hợp với từng dây chuyền.",
+    "howTitleA": "Hiểu đúng bài toán.",
+    "howTitleB": "Đề xuất đúng giải pháp.",
+    "howDesc": "Từ tìm hiểu hiện trạng đến tư vấn giải pháp, cung cấp thiết bị, lắp đặt và hỗ trợ sau bàn giao, quy trình giúp bạn đi đúng hướng cho từng dây chuyền.",
     "howCta": "Trao đổi với kỹ sư ↗",
     "projKicker": "Dự án tiêu biểu",
     "projTitle": "Ứng dụng thực tế",
