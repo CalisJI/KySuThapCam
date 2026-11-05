@@ -3,7 +3,7 @@ title: "Vì sao ánh sáng quan trọng hơn camera đắt tiền trong xử lý
 date: 2026-11-05
 tag: "Machine Vision"
 color: "#e8590c"
-cover: ""
+cover: "https://www.planistar.de/fileadmin/_processed_/d/2/csm_Unternehmen_Loesungen_3611f85be8.jpg"
 excerpt: "Backlight, dark field, ring light hay coaxial? Cùng một camera, đổi ánh sáng có thể làm khuyết tật hiện rõ hoặc biến mất."
 translation: machine-vision-lighting-explained
 draft: false
@@ -46,3 +46,5 @@ Muốn tìm **vết xước trên tấm kim loại**: thử đèn low-angle; ch�
 **Tham khảo:** [KEYENCE — Lighting Selection Guide](https://www.keyence.com/products/vision/resources/vision-resources/basics-of-lighting-selection.jsp) · [CCS — Lighting Applications](https://www.ccs-grp.com/product/vision/index.html).
 
 *Bài phân tích kỹ thuật độc lập; nội dung demo và hình ảnh thuộc nguồn được dẫn.*
+
+**Ảnh bìa:** Hệ thống camera/chiếu sáng kiểm tra PCB từ [planistar Lichttechnik](https://www.planistar.de/en/company), dùng minh họa kỹ thuật chiếu sáng.
