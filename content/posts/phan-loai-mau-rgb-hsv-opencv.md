@@ -3,7 +3,7 @@ title: "RGB vs HSV: phân loại màu sản phẩm thế nào để ít lỗi h�
 date: 2026-11-05
 tag: "Image Processing"
 color: "#e8590c"
-cover: ""
+cover: "https://rajasekharguptha.github.io/assets/images/finalimage.png"
 excerpt: "Tại sao HSV giúp tách màu trong OpenCV, trường hợp nào HSV vẫn thất bại và cách thử nghiệm với sản phẩm thật."
 translation: rgb-vs-hsv-industrial-color-sorting
 draft: false
@@ -57,3 +57,5 @@ Khi S quá thấp (gần xám/trắng), Hue không còn ổn định. Phản x�
 **Nguồn:** [OpenCV — Thresholding Operations using inRange](https://docs.opencv.org/4.x/da/d97/tutorial_threshold_inRange.html).
 
 *Bài phân tích kỹ thuật độc lập; nội dung demo và hình ảnh thuộc nguồn được dẫn.*
+
+**Ảnh bìa:** Kết quả phân vùng màu đỏ bằng OpenCV từ [bài thực hành của Rajasekhar Guptha](https://rajasekharguptha.github.io/opencv/2020/07/18/color-detection.html); đây là demo thuật toán, không phải dây chuyền sản xuất.
