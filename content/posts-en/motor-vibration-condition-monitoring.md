@@ -3,7 +3,7 @@ title: "Motor vibration condition monitoring with an industrial Raspberry Pi and
 date: 2026-11-05
 tag: "Maintenance"
 color: "#1f9d4d"
-cover: ""
+cover: "https://pilink.jp/wp-content/uploads/2025/02/demo_video-1.webp"
 excerpt: "PiLink's industrial Raspberry Pi vibration demo shows acceleration signals, FFT and trends."
 translation: giam-sat-rung-dong-motor
 draft: false
@@ -30,3 +30,5 @@ Sensor mounting, sampling frequency, noise and rotation speed matter. **Conditio
 **Source:** [PiLink — Failure Prediction System Demonstration (Vibration), February 4, 2025](https://pilink.jp/en/condition-monitoring_demo1/).
 
 *Video và hình ảnh thuộc tác giả hoặc chủ sở hữu nguồn; Kỹ Sư Thập Cẩm không sao chép hoặc lưu trữ lại file video của họ.*
+
+*Cover is sourced from the original PiLink vibration demo page: https://pilink.jp/en/condition-monitoring_demo1/*
