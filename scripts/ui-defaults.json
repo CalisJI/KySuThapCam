@@ -69,7 +69,9 @@
       "readMore": "Đọc bài viết",
       "blogFilterAll": "Tất cả",
       "blogMore": "Xem thêm bài viết",
-      "articleCtaDesc": "Gửi hiện trạng, thông số hoặc yêu cầu của bạn. Kỹ sư sẽ trao đổi và đề xuất phương án phù hợp."
+      "articleCtaDesc": "Gửi hiện trạng, thông số hoặc yêu cầu của bạn. Kỹ sư sẽ trao đổi và đề xuất phương án phù hợp.",
+      "contactZalo": "Nhắn Zalo",
+      "footZalo": "Zalo"
     }
   },
   "en": {
@@ -142,7 +144,9 @@
       "readMore": "Read the article",
       "blogFilterAll": "All",
       "blogMore": "Load more articles",
-      "articleCtaDesc": "Send us your current setup, specifications or requirements. Our engineers will discuss it with you and propose a suitable approach."
+      "articleCtaDesc": "Send us your current setup, specifications or requirements. Our engineers will discuss it with you and propose a suitable approach.",
+      "contactZalo": "Chat on Zalo",
+      "footZalo": "Zalo"
     }
   }
 }

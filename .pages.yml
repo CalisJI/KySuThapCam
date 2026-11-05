@@ -38,6 +38,9 @@ content:
   - name: fbUrl
     label: Đường dẫn Fanpage
     type: string
+  - name: zaloUrl
+    label: Link Zalo (vd https://zalo.me/84901234567 hoặc link Zalo OA; để trống = tự dùng số điện thoại)
+    type: string
   - name: analyticsToken
     label: Mã đếm truy cập Cloudflare Web Analytics (token 32 ký tự; để trống = tắt)
     type: string
@@ -338,6 +341,12 @@ content:
     - name: blogMore
       label: 'Trang tin tức: nút xem thêm'
       type: string
+    - name: contactZalo
+      label: Nút Zalo (khối liên hệ, nút nổi, cuối bài viết)
+      type: string
+    - name: footZalo
+      label: 'Chân trang: Zalo'
+      type: string
 - name: site-content-en
   label: 'Nội dung trang (English): tiêu đề, mô tả và chữ cố định'
   type: file
@@ -523,6 +532,12 @@ content:
       type: string
     - name: blogMore
       label: 'Trang tin tức: nút xem thêm'
+      type: string
+    - name: contactZalo
+      label: Nút Zalo (khối liên hệ, nút nổi, cuối bài viết)
+      type: string
+    - name: footZalo
+      label: 'Chân trang: Zalo'
       type: string
 - name: articles
   label: Bài viết chia sẻ (Tiếng Việt)
