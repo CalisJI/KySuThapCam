@@ -3,7 +3,7 @@ title: "Camera calibration: why a sharp image can still give wrong dimensions"
 date: 2026-11-05
 tag: "Machine Vision"
 color: "#1f9d4d"
-cover: ""
+cover: "https://user-images.githubusercontent.com/62354721/244020119-6f1f7cef-93df-42df-b728-15e5cc0c9f66.PNG"
 excerpt: "Lens distortion, perspective, pixel-to-mm scaling, and a practical checkerboard calibration workflow."
 translation: hieu-chuan-camera-do-kich-thuoc
 draft: false
@@ -45,3 +45,5 @@ For tight tolerances, include pixel sampling, edge localisation, fixture repeata
 **Sources:** [OpenCV Python calibration tutorial](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html) · [OpenCV calibration guide](https://docs.opencv.org/4.x/d4/d94/tutorial_camera_calibration.html).
 
 *Independent technical analysis; demos and media belong to their cited sources.*
+
+**Cover image:** Checkerboard calibration captures from [Camera Calibration with PiCamera2/OpenCV](https://github.com/Petros626/Camera-Calibration-with-PiCamera2-OpenCV).
