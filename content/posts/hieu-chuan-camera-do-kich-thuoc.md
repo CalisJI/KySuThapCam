@@ -3,7 +3,7 @@ title: "Camera Calibration: vì sao ảnh nét vẫn đo kích thước sai?"
 date: 2026-11-05
 tag: "Machine Vision"
 color: "#1f9d4d"
-cover: ""
+cover: "https://user-images.githubusercontent.com/62354721/244020119-6f1f7cef-93df-42df-b728-15e5cc0c9f66.PNG"
 excerpt: "Hiểu méo ống kính, phối cảnh, pixel/mm, sai số đo và quy trình hiệu chuẩn camera bằng checkerboard."
 translation: camera-calibration-for-dimensional-measurement
 draft: false
@@ -47,3 +47,5 @@ Một hệ số pixel/mm đơn giản chỉ đáng tin khi mặt phẳng vật, 
 **Nguồn:** [OpenCV Camera Calibration](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html) · [OpenCV Calibration Guide](https://docs.opencv.org/4.x/d4/d94/tutorial_camera_calibration.html).
 
 *Bài phân tích kỹ thuật độc lập; nội dung demo và hình ảnh thuộc nguồn được dẫn.*
+
+**Ảnh bìa:** Các góc chụp bảng checkerboard từ [dự án Camera Calibration with PiCamera2/OpenCV](https://github.com/Petros626/Camera-Calibration-with-PiCamera2-OpenCV).
