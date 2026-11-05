@@ -3,7 +3,7 @@ title: "AI camera inspection: retrofit one quality-control station"
 date: 2026-11-05
 tag: "Machine Vision"
 color: "#e8590c"
-cover: "https://fr.ids-imaging.com/files/images/support/knowledgebase/technical-articles/ids-nxt-ai-based-quality-inspection/ai-based_quality-inspection-3000x1800.jpg"
+cover: "https://en.ids-imaging.com/files/images/support/knowledgebase/technical-articles/sustainable-ai-acceleration/ids_nxt_ai_image_to_information.jpg"
 excerpt: "IDS NXT inspection examples and a practical camera-to-PLC retrofit architecture."
 translation: camera-ai-kiem-tra-san-pham
 draft: false
@@ -32,3 +32,5 @@ Lighting, positioning, trigger timing and line speed all affect results. Measure
 *Video và hình ảnh thuộc tác giả hoặc chủ sở hữu nguồn; Kỹ Sư Thập Cẩm không sao chép hoặc lưu trữ lại file video của họ.*
 
 **Cover photo:** IDS NXT product illustration from [IDS Imaging](https://fr.ids-imaging.com/technical-articles-details/items/ids-nxt-ai-based-quality-inspection.html); not a photo taken by Kỹ Sư Thập Cẩm.
+
+*Cover is an official IDS NXT AI vision illustration from IDS Imaging: https://en.ids-imaging.com/technical-articles-details/items/sustainable-edge-intelligence.html*
